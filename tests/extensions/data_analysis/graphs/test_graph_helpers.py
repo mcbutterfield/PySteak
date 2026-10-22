@@ -27,7 +27,7 @@ import pytest
 import pandas as pd
 import matplotlib
 from stk_environment import stk_root
-from ansys.stk.extensions.data_analysis.graphs.graph_helpers import interval_pie_chart, line_chart, interval_plot, polar_chart
+from br.ok.extensions.data_analysis.graphs.graph_helpers import interval_pie_chart, line_chart, interval_plot, polar_chart
 
 @pytest.mark.mpl_image_compare
 def test_interval_pie_chart_leap_second(stk_root):

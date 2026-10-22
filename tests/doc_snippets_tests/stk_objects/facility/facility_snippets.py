@@ -23,8 +23,8 @@
 import os
 import sys
 
-from ansys.stk.core.stkobjects import AzElMaskType, STKObjectType
-from ansys.stk.core.utilities.colors import Colors
+from br.ok.core.stkobjects import AzElMaskType, STKObjectType
+from br.ok.core.utilities.colors import Colors
 
 # Add path to the parent directory to use some common utilities
 sys.path.insert(1, os.path.join(os.path.dirname(os.path.realpath(__file__)), ".."))
@@ -78,7 +78,7 @@ class FacilitySnippets(CodeSnippetsTestBase):
     )
     def GetValidFacilitySnippet(self, root):
         # STKObjectRoot root: STK Object Model Root
-        from ansys.stk.core.stkobjects import Facility, STKObjectType
+        from br.ok.core.stkobjects import Facility, STKObjectType
 
         try:
             # this facility is not a valid STK reference
@@ -106,7 +106,7 @@ class FacilitySnippets(CodeSnippetsTestBase):
     )
     def SetHeightFacilitySnippet(self, root):
         # STKObjectRoot root: STK Object Model Root
-        from ansys.stk.core.stkobjects import Facility, STKObjectType
+        from br.ok.core.stkobjects import Facility, STKObjectType
 
         facility = Facility(root.current_scenario.children.new(STKObjectType.FACILITY, "facility1"))
         facility.height_above_ground = 123.4

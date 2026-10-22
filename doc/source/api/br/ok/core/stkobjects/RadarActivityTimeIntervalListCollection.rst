@@ -1,0 +1,165 @@
+RadarActivityTimeIntervalListCollection
+=======================================
+
+.. py:class:: br.ok.core.stkobjects.RadarActivityTimeIntervalListCollection
+
+   Class defining an radar antenna beam collection.
+
+.. py:currentmodule:: RadarActivityTimeIntervalListCollection
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.ok.core.stkobjects.RadarActivityTimeIntervalListCollection.add`
+              - Add a new element to the collection.
+            * - :py:attr:`~br.ok.core.stkobjects.RadarActivityTimeIntervalListCollection.clear`
+              - Clear all elements from the collection.
+            * - :py:attr:`~br.ok.core.stkobjects.RadarActivityTimeIntervalListCollection.import_from_component`
+              - Import time intervals from specified time component.
+            * - :py:attr:`~br.ok.core.stkobjects.RadarActivityTimeIntervalListCollection.insert_at`
+              - Insert a new element at the supplied index.
+            * - :py:attr:`~br.ok.core.stkobjects.RadarActivityTimeIntervalListCollection.item`
+              - Given an index, returns the element in the collection.
+            * - :py:attr:`~br.ok.core.stkobjects.RadarActivityTimeIntervalListCollection.load_from_file`
+              - Load time intervals from file.
+            * - :py:attr:`~br.ok.core.stkobjects.RadarActivityTimeIntervalListCollection.remove_at`
+              - Remove the element with the specified index.
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.ok.core.stkobjects.RadarActivityTimeIntervalListCollection._new_enum`
+              - Return an enumerator for the collection.
+            * - :py:attr:`~br.ok.core.stkobjects.RadarActivityTimeIntervalListCollection.count`
+              - Return the number of elements in the collection.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.ok.core.stkobjects import RadarActivityTimeIntervalListCollection
+
+
+Property detail
+---------------
+
+.. py:property:: _new_enum
+    :canonical: br.ok.core.stkobjects.RadarActivityTimeIntervalListCollection._new_enum
+    :type: EnumeratorProxy
+
+    Return an enumerator for the collection.
+
+.. py:property:: count
+    :canonical: br.ok.core.stkobjects.RadarActivityTimeIntervalListCollection.count
+    :type: int
+
+    Return the number of elements in the collection.
+
+
+Method detail
+-------------
+
+.. py:method:: add(self) -> RadarActivityTimeIntervalListElement
+    :canonical: br.ok.core.stkobjects.RadarActivityTimeIntervalListCollection.add
+
+    Add a new element to the collection.
+
+    :Returns:
+
+        :obj:`~RadarActivityTimeIntervalListElement`
+
+.. py:method:: clear(self) -> None
+    :canonical: br.ok.core.stkobjects.RadarActivityTimeIntervalListCollection.clear
+
+    Clear all elements from the collection.
+
+    :Returns:
+
+        :obj:`~None`
+
+
+.. py:method:: import_from_component(self, identifier: str) -> None
+    :canonical: br.ok.core.stkobjects.RadarActivityTimeIntervalListCollection.import_from_component
+
+    Import time intervals from specified time component.
+
+    :Parameters:
+
+        **identifier** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: insert_at(self, index: int) -> RadarActivityTimeIntervalListElement
+    :canonical: br.ok.core.stkobjects.RadarActivityTimeIntervalListCollection.insert_at
+
+    Insert a new element at the supplied index.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~RadarActivityTimeIntervalListElement`
+
+.. py:method:: item(self, index: int) -> RadarActivityTimeIntervalListElement
+    :canonical: br.ok.core.stkobjects.RadarActivityTimeIntervalListCollection.item
+
+    Given an index, returns the element in the collection.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~RadarActivityTimeIntervalListElement`
+
+.. py:method:: load_from_file(self, path: str) -> None
+    :canonical: br.ok.core.stkobjects.RadarActivityTimeIntervalListCollection.load_from_file
+
+    Load time intervals from file.
+
+    :Parameters:
+
+        **path** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: br.ok.core.stkobjects.RadarActivityTimeIntervalListCollection.remove_at
+
+    Remove the element with the specified index.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+

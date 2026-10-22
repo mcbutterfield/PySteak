@@ -5,7 +5,7 @@ on:
       - "v*.*.*"
 
 env:
-  ANSYS_STK: 'ansys-stk'
+  ANSYS_STK: 'br-ok'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
   LICENSE_SERVER_PORT: '1055'
   MAIN_PYTHON_VERSION: '3.13'
@@ -88,7 +88,7 @@ jobs:
           fail-level: "warning"
 
   build-wheelhouse:
-    name: "Wheelhouse ansys-stk[${{ matrix.target }}] / ${{ matrix.os }} / ${{ matrix.python-version
+    name: "Wheelhouse br-ok[${{ matrix.target }}] / ${{ matrix.os }} / ${{ matrix.python-version
       }}"
     runs-on: ${{ matrix.os }}
     needs: [code-style, doc-style]

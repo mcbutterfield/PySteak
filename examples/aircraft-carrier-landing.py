@@ -19,7 +19,7 @@
 # Start by launching a new STK instance. In this example, STKEngine is used.
 
 # +
-from ansys.stk.core.stkengine import STKEngine
+from br.ok.core.stkengine import STKEngine
 
 
 stk = STKEngine.start_application(no_graphics=False)
@@ -36,7 +36,7 @@ root.new_scenario("AviatorAircraftCarrier")
 # Once the scenario is created, it is possible to show a 3D graphics window by running:
 
 # +
-from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
+from br.ok.core.experimental.jupyterwidgets import GlobeWidget
 
 
 globe_plotter = GlobeWidget(root, 640, 480)
@@ -46,7 +46,7 @@ globe_plotter.show()
 # Show a 2D graphics window by running:
 
 # +
-from ansys.stk.core.experimental.jupyterwidgets import MapWidget
+from br.ok.core.experimental.jupyterwidgets import MapWidget
 
 
 map_plotter = MapWidget(root, 640, 480)
@@ -66,7 +66,7 @@ root.rewind()
 # To best display Aviator graphics, set the scenario's 3D graphics to use mean sea level as the surface reference:
 
 # +
-from ansys.stk.core.stkobjects import SurfaceReference
+from br.ok.core.stkobjects import SurfaceReference
 
 
 scenario.graphics_3d.surface_reference = SurfaceReference.MEAN_SEA_LEVEL
@@ -77,7 +77,7 @@ scenario.graphics_3d.surface_reference = SurfaceReference.MEAN_SEA_LEVEL
 # The aircraft leaves from Oceana Naval Air Station. Insert a facility object to represent the station:
 
 # +
-from ansys.stk.core.stkobjects import STKObjectType
+from br.ok.core.stkobjects import STKObjectType
 
 
 oceana_station = root.current_scenario.children.new(
@@ -102,7 +102,7 @@ carrier = root.current_scenario.children.new(STKObjectType.SHIP, "USSAbrahamLinc
 # The carrier is modeled with a Great Arc propagator, which propagates the ship's route based on waypoints. Assign a Great Arc propagator to the ship:
 
 # +
-from ansys.stk.core.stkobjects import PropagatorType
+from br.ok.core.stkobjects import PropagatorType
 
 
 carrier.set_route_type(PropagatorType.GREAT_ARC)
@@ -111,7 +111,7 @@ carrier.set_route_type(PropagatorType.GREAT_ARC)
 # Configure the propagator to use terrain along the ship's route as the altitude reference for its waypoints:
 
 # +
-from ansys.stk.core.stkobjects import VehicleAltitudeReference
+from br.ok.core.stkobjects import VehicleAltitudeReference
 
 
 carrier.route.set_altitude_reference_type(VehicleAltitudeReference.TERRAIN)
@@ -224,7 +224,7 @@ oceana_runway = runway_catalog.arinc424_runways.get_arinc424_item(
 # Next, add a takeoff procedure to the aircraft's first phase. The aircraft takes off from the Oceana runway in this procedure, so the procedure has a site type of runway and a procedure type of takeoff.
 
 # +
-from ansys.stk.core.stkobjects.aviator import ProcedureType, SiteType
+from br.ok.core.stkobjects.aviator import ProcedureType, SiteType
 
 
 takeoff_procedure = lead_procedures.add(
@@ -242,7 +242,7 @@ takeoff_procedure.site.name = (
 # Then, set the runway heading, which describes the direction the aircraft points on the runway. Set the heading to low:
 
 # +
-from ansys.stk.core.stkobjects.aviator import RunwayHighLowEnd
+from br.ok.core.stkobjects.aviator import RunwayHighLowEnd
 
 
 takeoff_procedure.runway_heading_options.runway_mode = RunwayHighLowEnd.LOW_END
@@ -251,7 +251,7 @@ takeoff_procedure.runway_heading_options.runway_mode = RunwayHighLowEnd.LOW_END
 # Then, set the takeoff mode to normal. In a normal takeoff, the aircraft pulls up off the runway and flies up to the departure altitude at the takeoff climb angle.
 
 # +
-from ansys.stk.core.stkobjects.aviator import TakeoffMode
+from br.ok.core.stkobjects.aviator import TakeoffMode
 
 
 takeoff_procedure.takeoff_mode = TakeoffMode.TAKEOFF_NORMAL
@@ -288,7 +288,7 @@ enroute_procedure.site.waypoint_time = scenario.start_time
 # Then, set the waypoint's offset mode, which offsets the site location relative from the STK Object. Set the mode to use a bearing/range relative to the aircraft's course:
 
 # +
-from ansys.stk.core.stkobjects.aviator import STKObjectWaypointOffsetMode
+from br.ok.core.stkobjects.aviator import STKObjectWaypointOffsetMode
 
 
 enroute_procedure.site.offset_mode = (
@@ -309,7 +309,7 @@ enroute_procedure.altitude_msl_options.msl_altitude = 20000
 # Finally, set the procedure's navigation options, which define the heading or course of the aircraft at the beginning of the procedure and the direction of the turns taken to arrive at the procedure site. Set the navigation mode to arrive on course, which means that the aircraft arrives at the procedure site on a specific course:
 
 # +
-from ansys.stk.core.stkobjects.aviator import PointToPointMode
+from br.ok.core.stkobjects.aviator import PointToPointMode
 
 
 enroute_procedure.navigation_options.navigation_mode = PointToPointMode.ARRIVE_ON_COURSE
@@ -361,7 +361,7 @@ enroute_procedure2.navigation_options.navigation_mode = (
 # Then, set the enroute cruise airspeed speed type to max endurance airspeed. This option uses a variable airspeed to maximize the length of time that the aircraft can remain in flight.
 
 # +
-from ansys.stk.core.stkobjects.aviator import CruiseSpeed
+from br.ok.core.stkobjects.aviator import CruiseSpeed
 
 
 enroute_procedure2.enroute_cruise_airspeed_options.cruise_speed_type = (
@@ -398,7 +398,7 @@ station_keeping_basic_maneuver.navigation.target_name = "Ship/USSAbrahamLincoln"
 # Then, set the station options. The aircraft maintains a bearing relative to the ship of $-90^\circ$, holds a range of $2.7$ nm from the ship, flies while waiting on the station with a holding circle goal radius of $2.5$ nm, and turns left into the holding circle.
 
 # +
-from ansys.stk.core.stkobjects.aviator import TurnDirection
+from br.ok.core.stkobjects.aviator import TurnDirection
 
 
 station_keeping_basic_maneuver.navigation.relative_bearing = -90
@@ -410,7 +410,7 @@ station_keeping_basic_maneuver.navigation.turn_direction = TurnDirection.TURN_LE
 # Next, set the maneuver's stopping condition, which dictates when the maneuver ends regardless of whether any other goals are met. Each maneuver requires at least one stopping condition, and stops if any of the conditions are met. Set the aircraft to stop after 5 turns:
 
 # +
-from ansys.stk.core.stkobjects.aviator import StationkeepingStopCondition
+from br.ok.core.stkobjects.aviator import StationkeepingStopCondition
 
 
 station_keeping_basic_maneuver.navigation.stop_condition = (
@@ -435,7 +435,7 @@ station_keeping_profile = station_keeping_basic_maneuver.profile
 # Next, configure the autopilot strategy. First, set the autopilot profile to use an absolute altitude of $2000$ ft by setting the autopilot altitude mode to specify altitude:
 
 # +
-from ansys.stk.core.stkobjects.aviator import AutopilotAltitudeMode
+from br.ok.core.stkobjects.aviator import AutopilotAltitudeMode
 
 
 station_keeping_profile.altitude_mode = AutopilotAltitudeMode.AUTOPILOT_SPECIFY_ALTITUDE
@@ -445,7 +445,7 @@ station_keeping_profile.absolute_altitude = 2000
 # Then, set a control altitude rate of $2000$ ft/min by first setting the altitude control mode:
 
 # +
-from ansys.stk.core.stkobjects.aviator import AutopilotAltitudeControlMode
+from br.ok.core.stkobjects.aviator import AutopilotAltitudeControlMode
 
 
 station_keeping_profile.altitude_control_mode = (
@@ -457,7 +457,7 @@ station_keeping_profile.control_altitude_rate_value = 2000
 # Then, set the control limit mode to override the performance model value:
 
 # +
-from ansys.stk.core.stkobjects.aviator import PerformanceModelOverride
+from br.ok.core.stkobjects.aviator import PerformanceModelOverride
 
 
 station_keeping_profile.control_limit_mode = PerformanceModelOverride.OVERRIDE
@@ -471,7 +471,7 @@ station_keeping_profile.damping_ratio = 2
 # Finally, configure the profile's airspeed options, which designate the type of response Aviator has if the basic maneuver attempts to exceed the airspeed limit. Constrain the aircraft to not drop beneath its minimum speed limit, and not exceed its maximum speed limit:
 
 # +
-from ansys.stk.core.stkobjects.aviator import (
+from br.ok.core.stkobjects.aviator import (
     BasicManeuverAirspeedMode,
     BasicManeuverStrategyAirspeedPerformanceLimits,
 )
@@ -491,7 +491,7 @@ station_keeping_profile.airspeed_options.max_speed_limits = (
 # Next, set the maneuver's flight mode, which designates the type of performance model that the aircraft uses to fly the maneuver. Set the flight mode to cruise:
 
 # +
-from ansys.stk.core.stkobjects.aviator import PhaseOfFlight
+from br.ok.core.stkobjects.aviator import PhaseOfFlight
 
 
 station_keeping_basic_maneuver.flight_mode = PhaseOfFlight.FLIGHT_PHASE_CRUISE
@@ -500,7 +500,7 @@ station_keeping_basic_maneuver.flight_mode = PhaseOfFlight.FLIGHT_PHASE_CRUISE
 # Then, set the fuel flow type, which sets which performance model is used to calculate the fuel flow for the maneuver. Set the fuel flow type to cruise:
 
 # +
-from ansys.stk.core.stkobjects.aviator import BasicManeuverFuelFlowType
+from br.ok.core.stkobjects.aviator import BasicManeuverFuelFlowType
 
 
 station_keeping_basic_maneuver.fuel_flow_type = (
@@ -522,7 +522,7 @@ station_keeping_basic_maneuver.max_downrange = 500
 # Then, set the altitude limit mode to create an error if the aircraft exceeds the altitude limit during the maneuver:
 
 # +
-from ansys.stk.core.stkobjects.aviator import BasicManeuverAltitudeLimit
+from br.ok.core.stkobjects.aviator import BasicManeuverAltitudeLimit
 
 
 station_keeping_basic_maneuver.altitude_limit_mode = (
@@ -572,7 +572,7 @@ relative_course_basic_maneuver.navigation.use_approach_turn_mode = True
 # Next, configure the procedure's closure mode, which defines the closure requirement for the maneuver. Set the closure mode to High Off Boresight, which indicates that the maneuver stops if closure stops, unless the aircraft is within the HOBs Max Angle Off and HOBs Angle Tolerance values:
 
 # +
-from ansys.stk.core.stkobjects.aviator import ClosureMode
+from br.ok.core.stkobjects.aviator import ClosureMode
 
 
 relative_course_basic_maneuver.navigation.closure_mode = ClosureMode.HOBS
@@ -615,7 +615,7 @@ relative_course_basic_maneuver.profile.damping_ratio = 2
 # Next, set the autopilot airspeed options. Set the airspeed mode to maintain a specified airspeed of $350$ nm/hr, designated with calibrated airspeed:
 
 # +
-from ansys.stk.core.stkobjects.aviator import (
+from br.ok.core.stkobjects.aviator import (
     AirspeedType,
     BasicManeuverAirspeedMode,
 )
@@ -700,7 +700,7 @@ relative_course_basic_maneuver2.navigation.maneuver_factor = 1
 # Then, set the procedure's control limit to a maximum turn rate of $29.9725^\circ$/s:
 
 # +
-from ansys.stk.core.stkobjects.aviator import (
+from br.ok.core.stkobjects.aviator import (
     BasicManeuverStrategyNavigationControlLimit,
 )
 
@@ -844,7 +844,7 @@ landing.profile.anchor_altitude_offset = 100
 # Next, set the control limit, which constrains the aircraft's performance during the maneuver. Constrain the pitch rate, which represents the maximum rate at which the aircraft can climb or descend. Set the maximum pitch rate to $10^\circ$/s:
 
 # +
-from ansys.stk.core.stkobjects.aviator import ProfileControlLimit
+from br.ok.core.stkobjects.aviator import ProfileControlLimit
 
 
 landing.profile.set_control_limit(ProfileControlLimit.PROFILE_PITCH_RATE, 10)
@@ -979,7 +979,7 @@ wing_intercept.profile_strategy_type = "Cruise Profile"
 # Then, configure the autopilot profile. Set the profile to use the Earth as its reference frame, and request an altitude of $18000$ ft:
 
 # +
-from ansys.stk.core.stkobjects.aviator import BasicManeuverReferenceFrame
+from br.ok.core.stkobjects.aviator import BasicManeuverReferenceFrame
 
 
 wing_intercept.profile.reference_frame = BasicManeuverReferenceFrame.EARTH_FRAME
@@ -989,7 +989,7 @@ wing_intercept.profile.requested_altitude = 18000
 # Configure the profile to use the maximum range airspeed:
 
 # +
-from ansys.stk.core.stkobjects.aviator import CruiseSpeed
+from br.ok.core.stkobjects.aviator import CruiseSpeed
 
 
 wing_intercept.profile.cruise_airspeed_options.cruise_speed_type = (
@@ -1069,7 +1069,7 @@ wing_rendezvous.navigation.max_speed_advantage = 75
 # Finally, set the maneuver to stop after the target completes the mission phase that it is performing when the aircraft rendezvous with it:
 
 # +
-from ansys.stk.core.stkobjects.aviator import RendezvousStopCondition
+from br.ok.core.stkobjects.aviator import RendezvousStopCondition
 
 
 wing_rendezvous.navigation.stop_condition = (

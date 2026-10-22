@@ -38,7 +38,7 @@ Enumerations
 
 Enumerations enable you to define a set of named constant values. Enumeration
 classes are located in the STK Object Model modules (for
-example—:py:mod:`~ansys.stk.core.stkobjects`). Most inherit from Python's
+example—:py:mod:`~br.ok.core.stkobjects`). Most inherit from Python's
 :obj:`enum.IntEnum` class while a few inherit from :obj:`enum.IntFlag` and may
 be combined using the bitwise OR operator to select multiple options from within the
 enumeration.
@@ -117,8 +117,8 @@ The multiple values are returned as a tuple.
 Colors
 ------
 
-The :py:mod:`~ansys.stk.core.utilities.colors` module contains the :py:class:`~ansys.stk.core.utilities.colors.Color`,
-:py:class:`~ansys.stk.core.utilities.colors.ColorRGBA`, and :py:class:`~ansys.stk.core.utilities.colors.Colors` classes used by PySTK.
+The :py:mod:`~br.ok.core.utilities.colors` module contains the :py:class:`~br.ok.core.utilities.colors.Color`,
+:py:class:`~br.ok.core.utilities.colors.ColorRGBA`, and :py:class:`~br.ok.core.utilities.colors.Colors` classes used by PySTK.
 
 .. list-table::
     :widths: auto
@@ -178,7 +178,7 @@ single batch. This reduces the overhead of multiple round trips, improves
 performance, and enhances scalability.
 
 Calling the application-level method ``new_grpc_call_batcher`` returns an object
-of type :py:class:`~ansys.stk.core.utilities.grpcutilities.GrpcCallBatcher`.
+of type :py:class:`~br.ok.core.utilities.grpcutilities.GrpcCallBatcher`.
 This feature is provided as an option to reduce the communication over the
 gRPC server in performance-critical applications. API calls may be batched
 together and sent to STK in one remote procedure call if no return value is
@@ -226,21 +226,21 @@ the table below.
     * - **Event interface**
       - **Parent object**
     * - ``IStkObjectRootEvents``
-      - :py:class:`~ansys.stk.core.stkobjects.StkObjectRoot`
+      - :py:class:`~br.ok.core.stkobjects.StkObjectRoot`
     * - ``ISTKXApplicationEvents``
-      - :py:class:`~ansys.stk.core.stkengine.STKEngineApplication`
+      - :py:class:`~br.ok.core.stkengine.STKEngineApplication`
     * - ``IUiAxGraphics3DCntrlEvents``
-      - :py:class:`~ansys.stk.core.stkengine.tkcontrols.GlobeControl`
+      - :py:class:`~br.ok.core.stkengine.tkcontrols.GlobeControl`
     * - ``IUiAxGraphics2DCntrlEvents``
-      - :py:class:`~ansys.stk.core.stkengine.tkcontrols.MapControl`
+      - :py:class:`~br.ok.core.stkengine.tkcontrols.MapControl`
     * - ``ISceneEventHandlers``
-      - :py:class:`~ansys.stk.core.graphics.Scene`
+      - :py:class:`~br.ok.core.graphics.Scene`
     * - ``IKmlGraphicsEvents``
-      - :py:class:`~ansys.stk.core.graphics.KmlGraphics`
+      - :py:class:`~br.ok.core.graphics.KmlGraphics`
     * - ``IImageCollectionEvents``
-      - :py:class:`~ansys.stk.core.graphics.ImageCollection`
+      - :py:class:`~br.ok.core.graphics.ImageCollection`
     * - ``ITerrainOverlayCollectionEvents``
-      - :py:class:`~ansys.stk.core.graphics.TerrainOverlayCollection`
+      - :py:class:`~br.ok.core.graphics.TerrainOverlayCollection`
 
 Events are accessed through the ``subscribe()`` method on the parent object,
 which returns an event handler subscribed to events on the queried object. You

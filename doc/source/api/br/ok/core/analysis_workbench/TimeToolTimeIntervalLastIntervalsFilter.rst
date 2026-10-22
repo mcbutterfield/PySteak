@@ -1,0 +1,45 @@
+TimeToolTimeIntervalLastIntervalsFilter
+=======================================
+
+.. py:class:: br.ok.core.analysis_workbench.TimeToolTimeIntervalLastIntervalsFilter
+
+   Bases: :py:class:`~br.ok.core.analysis_workbench.ITimeToolPruneFilter`
+
+   The filter selects a portion of last intervals.
+
+.. py:currentmodule:: TimeToolTimeIntervalLastIntervalsFilter
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.ok.core.analysis_workbench.TimeToolTimeIntervalLastIntervalsFilter.maximum_number_of_intervals`
+              - Maximum number of intervals.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.ok.core.analysis_workbench import TimeToolTimeIntervalLastIntervalsFilter
+
+
+Property detail
+---------------
+
+.. py:property:: maximum_number_of_intervals
+    :canonical: br.ok.core.analysis_workbench.TimeToolTimeIntervalLastIntervalsFilter.maximum_number_of_intervals
+    :type: int
+
+    Maximum number of intervals.
+
+

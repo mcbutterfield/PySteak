@@ -22,14 +22,14 @@
 
 """Test the `satellite_graphs` module."""
 
-from ansys.stk.extensions.data_analysis.graphs.satellite_graphs import beta_angle_line_chart, classical_orbit_elements_line_chart, euler_angles_line_chart, fixed_position_velocity_line_chart, inertial_position_velocity_line_chart, j2000_position_velocity_line_chart, solar_elevation_body_fixed_line_chart, solar_intensity_line_chart, sun_vector_fixed_line_chart, yaw_pitch_roll_line_chart, sunlight_intervals_interval_pie_chart, cumulative_sunlight_cumulative_pie_chart, eclipse_times_interval_graph, lighting_times_interval_graph, solar_az_el_polar_center_0_graph, solar_aer_line_chart, lla_position_line_chart
+from br.ok.extensions.data_analysis.graphs.satellite_graphs import beta_angle_line_chart, classical_orbit_elements_line_chart, euler_angles_line_chart, fixed_position_velocity_line_chart, inertial_position_velocity_line_chart, j2000_position_velocity_line_chart, solar_elevation_body_fixed_line_chart, solar_intensity_line_chart, sun_vector_fixed_line_chart, yaw_pitch_roll_line_chart, sunlight_intervals_interval_pie_chart, cumulative_sunlight_cumulative_pie_chart, eclipse_times_interval_graph, lighting_times_interval_graph, solar_az_el_polar_center_0_graph, solar_aer_line_chart, lla_position_line_chart
 import pytest
 from pathlib import Path
 from stk_environment import stk_root
 
 @pytest.fixture()
 def satellite(stk_root):
-    from ansys.stk.core.stkobjects import STKObjectType, PropagatorType
+    from br.ok.core.stkobjects import STKObjectType, PropagatorType
 
     stk_root.new_scenario("GraphTest")
     scenario = stk_root.current_scenario

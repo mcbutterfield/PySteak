@@ -24,11 +24,11 @@
 
 import pytest
 from stk_environment import stk_root
-from ansys.stk.extensions.data_analysis.graphs.transmitter_graphs import transmitter_spectrum_and_filter_line_chart
+from br.ok.extensions.data_analysis.graphs.transmitter_graphs import transmitter_spectrum_and_filter_line_chart
 
 @pytest.fixture()
 def transmitter(stk_root):
-    from ansys.stk.core.stkobjects import STKObjectType
+    from br.ok.core.stkobjects import STKObjectType
 
     stk_root.new_scenario("GraphTest")
     stk_root.execute_command("Terrain * TerrainServer UseTerrainForAnalysis No")

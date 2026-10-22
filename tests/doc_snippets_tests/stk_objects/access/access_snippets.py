@@ -23,7 +23,7 @@
 import os
 import sys
 
-from ansys.stk.core.stkobjects import (
+from br.ok.core.stkobjects import (
     AberrationType,
     AccessConstraintType,
     AccessTimeType,
@@ -33,7 +33,7 @@ from ansys.stk.core.stkobjects import (
     OnePointAccessSummary,
     STKObjectType,
 )
-from ansys.stk.core.analysis_workbench import SmartIntervalState
+from br.ok.core.analysis_workbench import SmartIntervalState
 
 # Add path to the parent directory to use some common utilities
 sys.path.insert(1, os.path.join(os.path.dirname(os.path.realpath(__file__)), ".."))

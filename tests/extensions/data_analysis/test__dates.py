@@ -25,7 +25,7 @@
 
 import pytest
 
-from ansys.stk.extensions.data_analysis._dates import _STKDate
+from br.ok.extensions.data_analysis._dates import _STKDate
 
 from stk_environment import stk_root
 

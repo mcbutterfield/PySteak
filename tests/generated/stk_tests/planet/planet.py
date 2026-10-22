@@ -28,9 +28,9 @@ from assertion_harness import *
 from chain_analysis_options_helper import *
 from interfaces.stk_objects import *
 from logger import *
-from ansys.stk.core.utilities.colors import *
-from ansys.stk.core.stkobjects import *
-from ansys.stk.core.stkutil import *
+from br.ok.core.utilities.colors import *
+from br.ok.core.stkobjects import *
+from br.ok.core.stkutil import *
 
 
 class EarlyBoundTests(TestBase):

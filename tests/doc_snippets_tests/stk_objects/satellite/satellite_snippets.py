@@ -24,7 +24,7 @@ import os
 import pytest
 import sys
 
-from ansys.stk.core.stkobjects import (
+from br.ok.core.stkobjects import (
     ClassicalLocation,
     ClassicalSizeShape,
     LeadTrailData,
@@ -42,8 +42,8 @@ from ansys.stk.core.stkobjects import (
     Graphics3DFontSize,
     Graphics3DMarkerOrientation,
 )
-from ansys.stk.core.stkutil import CoordinateSystem, LineStyle, OrbitStateType
-from ansys.stk.core.utilities.colors import Colors
+from br.ok.core.stkutil import CoordinateSystem, LineStyle, OrbitStateType
+from br.ok.core.utilities.colors import Colors
 
 # Add path to the parent directory to use some common utilities
 sys.path.insert(1, os.path.join(os.path.dirname(os.path.realpath(__file__)), ".."))

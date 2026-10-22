@@ -635,7 +635,7 @@ Get and set a four-channel color for the graphics of an STK graphics primitive
 
 .. code-block:: python
 
-    from ansys.stk.core.utilities.colors import Colors, ColorRGBA
+    from br.ok.core.utilities.colors import Colors, ColorRGBA
 
     manager = root.current_scenario.scene_manager
     point = manager.initializers.point_batch_primitive.initialize()
@@ -653,8 +653,8 @@ Get and set a three-channel color for the graphics of an STK graphics primitive
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import STKObjectType
-    from ansys.stk.core.utilities.colors import Color, Colors
+    from br.ok.core.stkobjects import STKObjectType
+    from br.ok.core.utilities.colors import Color, Colors
 
     facility = root.current_scenario.children.new(STKObjectType.FACILITY, "facility1")
 
@@ -682,7 +682,7 @@ Use arrays to send and retrieve data with connect
 
 .. code-block:: python
 
-    from ansys.stk.core.stkutil import ExecuteMultipleCommandsMode
+    from br.ok.core.stkutil import ExecuteMultipleCommandsMode
 
     connect_cmds = ["GetStkVersion /", "New / Scenario ExampleScenario"]
     results = root.execute_multiple_commands(connect_cmds, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR)
@@ -1101,7 +1101,7 @@ Combine enumerations with the logical or operator
 
 .. code-block:: python
 
-    from ansys.stk.core.graphics import CylinderFillOptions
+    from br.ok.core.graphics import CylinderFillOptions
 
     # CylinderFillOptions inherits from enum.IntFlag and may be combined
     # using the `|` operator
@@ -1115,7 +1115,7 @@ Attach to an already running STK runtime instance and get a reference to the STK
 .. code-block:: python
 
     # Attach to already running instance of STK Runtime
-    from ansys.stk.core.stkruntime import STKRuntime
+    from br.ok.core.stkruntime import STKRuntime
 
     stk = STKRuntime.attach_to_application()
 
@@ -1130,7 +1130,7 @@ Start STK runtime and get a reference to the STK object root
 .. code-block:: python
 
     # Start new instance of STK Runtime
-    from ansys.stk.core.stkruntime import STKRuntime
+    from br.ok.core.stkruntime import STKRuntime
 
     stk = STKRuntime.start_application()
 
@@ -1145,7 +1145,7 @@ Start STK Desktop and get a reference to the STK object root
 .. code-block:: python
 
     # Start new instance of STK Desktop
-    from ansys.stk.core.stkdesktop import STKDesktop
+    from br.ok.core.stkdesktop import STKDesktop
 
     stk = STKDesktop.start_application(visible=True)  # using optional visible argument
 
@@ -1165,7 +1165,7 @@ Get a reference to the STK object root using a running STK desktop application i
 .. code-block:: python
 
     # Get reference to running STK Desktop instance
-    from ansys.stk.core.stkdesktop import STKDesktop
+    from br.ok.core.stkdesktop import STKDesktop
 
     stk = STKDesktop.attach_to_application()
 
@@ -1180,7 +1180,7 @@ Initialize STK Engine in no graphics mode and get a reference to the STK object 
 .. code-block:: python
 
     # Initialize STK Engine without graphics in the current process
-    from ansys.stk.core.stkengine import STKEngine
+    from br.ok.core.stkengine import STKEngine
 
     stk = STKEngine.start_application(no_graphics=True)
 
@@ -1195,7 +1195,7 @@ Initialize STK Engine with graphics and get a reference to the STK object root
 .. code-block:: python
 
     # Initialize STK Engine with graphics in the current process
-    from ansys.stk.core.stkengine import STKEngine
+    from br.ok.core.stkengine import STKEngine
 
     stk = STKEngine.start_application(no_graphics=False)
 
@@ -2100,7 +2100,7 @@ Create a facility and set its height relative to ground level
 .. code-block:: python
 
     # STKObjectRoot root: STK Object Model Root
-    from ansys.stk.core.stkobjects import Facility, STKObjectType
+    from br.ok.core.stkobjects import Facility, STKObjectType
 
     facility = Facility(root.current_scenario.children.new(STKObjectType.FACILITY, "facility1"))
     facility.height_above_ground = 123.4
@@ -2113,7 +2113,7 @@ Get a valid reference to a facility
 .. code-block:: python
 
     # STKObjectRoot root: STK Object Model Root
-    from ansys.stk.core.stkobjects import Facility, STKObjectType
+    from br.ok.core.stkobjects import Facility, STKObjectType
 
     try:
         # this facility is not a valid STK reference
@@ -3975,8 +3975,8 @@ Manage STK desktop application events
 
 .. code-block:: python
 
-    from ansys.stk.core.stkdesktop import STKDesktop
-    from ansys.stk.core.stkobjects import STKObjectType
+    from br.ok.core.stkdesktop import STKDesktop
+    from br.ok.core.stkobjects import STKObjectType
 
 
     def on_stk_object_added_custom_callback(path: str):

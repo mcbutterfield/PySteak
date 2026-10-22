@@ -34,24 +34,24 @@ from typing import List, TypeVar
 
 from datetime import datetime, timedelta
 
-from ansys.stk.core.stkengine import *
+from br.ok.core.stkengine import *
 
 if os.name == "nt":
-    from ansys.stk.core.stkdesktop import *
-from ansys.stk.core.stkobjects import *
-from ansys.stk.core.stkrfchannelmodeler import *
-from ansys.stk.core.stkobjects.astrogator import *
-from ansys.stk.core.stkobjects.aviator import *
-from ansys.stk.core.stkutil import *
-from ansys.stk.core.analysis_workbench import *
-from ansys.stk.core.internal.comutil import OLE32Lib
+    from br.ok.core.stkdesktop import *
+from br.ok.core.stkobjects import *
+from br.ok.core.stkrfchannelmodeler import *
+from br.ok.core.stkobjects.astrogator import *
+from br.ok.core.stkobjects.aviator import *
+from br.ok.core.stkutil import *
+from br.ok.core.analysis_workbench import *
+from br.ok.core.internal.comutil import OLE32Lib
 from app_provider import TestTarget
 
 
 class frmStkX:
     def __init__(self):
         from tkinter import Tk, BOTH, YES, LEFT
-        from ansys.stk.core.stkengine.tkcontrols import GlobeControl, MapControl
+        from br.ok.core.stkengine.tkcontrols import GlobeControl, MapControl
 
         self.window = Tk()
         self.globeControl = GlobeControl(self.window, width=320, height=200)
@@ -958,7 +958,7 @@ class PythonStkRuntimeApplicationProvider(IAgAppProvider):
     Application = None
 
     def __init__(self, no_graphics: bool, args):
-        from ansys.stk.core.stkruntime import STKRuntimeApplication, STKRuntime
+        from br.ok.core.stkruntime import STKRuntimeApplication, STKRuntime
 
         if args.attach:
             self.stk: "STKRuntimeApplication" = STKRuntime.attach_to_application(

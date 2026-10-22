@@ -1,0 +1,51 @@
+FuelModelKeroseneAFPROP
+=======================
+
+.. py:class:: br.ok.core.stkobjects.aviator.FuelModelKeroseneAFPROP
+
+   Class defining the Kerosense - AFPROP fuel type for a thermodynamic jet engine model.
+
+.. py:currentmodule:: FuelModelKeroseneAFPROP
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.ok.core.stkobjects.aviator.FuelModelKeroseneAFPROP.specific_energy`
+              - Get or set the specific energy of the jet fuel.
+            * - :py:attr:`~br.ok.core.stkobjects.aviator.FuelModelKeroseneAFPROP.subtype`
+              - Get or set the fuel subtype.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.ok.core.stkobjects.aviator import FuelModelKeroseneAFPROP
+
+
+Property detail
+---------------
+
+.. py:property:: specific_energy
+    :canonical: br.ok.core.stkobjects.aviator.FuelModelKeroseneAFPROP.specific_energy
+    :type: float
+
+    Get or set the specific energy of the jet fuel.
+
+.. py:property:: subtype
+    :canonical: br.ok.core.stkobjects.aviator.FuelModelKeroseneAFPROP.subtype
+    :type: AFPROPFuelType
+
+    Get or set the fuel subtype.
+
+

@@ -23,8 +23,8 @@
 import os
 import sys
 
-from ansys.stk.core.stkobjects import STKObjectType, PropagatorType
-from ansys.stk.core.stkobjects.aviator import (
+from br.ok.core.stkobjects import STKObjectType, PropagatorType
+from br.ok.core.stkobjects.aviator import (
     AdvancedFixedWingAerodynamicStrategy,
     AdvancedFixedWingPowerplantStrategy,
     AGLMSL,

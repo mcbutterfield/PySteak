@@ -28,7 +28,7 @@
 # Start by launching a new STK instance. In this example, `STKEngine` is used.
 
 # +
-from ansys.stk.core.stkengine import STKEngine
+from br.ok.core.stkengine import STKEngine
 
 
 stk = STKEngine.start_application(no_graphics=False)
@@ -65,7 +65,7 @@ scenario = root.current_scenario
 # Once the scenario is loaded, it is possible to show a 3D graphics window and view the aircraft's route by running:
 
 # +
-from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
+from br.ok.core.experimental.jupyterwidgets import GlobeWidget
 
 
 globe_plotter = GlobeWidget(root, 640, 480)
@@ -247,7 +247,7 @@ detection_processing = mfr.model_component_linking.component.detection_processin
 # Then, get the pulse integration settings. Pulse integration is set to use goal SNR, so the `pulse_integration` property returns a `RadarPulseIntegrationGoalSNR` object, through which it is possible to specify the goal SNR.
 
 # +
-from ansys.stk.core.stkobjects import RadarPulseIntegrationGoalSNR
+from br.ok.core.stkobjects import RadarPulseIntegrationGoalSNR
 
 
 pulse_integration = RadarPulseIntegrationGoalSNR(detection_processing.pulse_integration)

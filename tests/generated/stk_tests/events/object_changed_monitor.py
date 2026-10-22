@@ -22,7 +22,7 @@
 
 from test_util import *
 from events.object_model_event_monitor import *
-from ansys.stk.core.stkobjects import *
+from br.ok.core.stkobjects import *
 
 
 class ObjectChangedMonitor(IObjectModelEventMonitor):

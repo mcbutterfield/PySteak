@@ -30,7 +30,7 @@ import textwrap
 
 from pathlib import Path
 
-from ansys.stk.core.tools.api_migration_assistant import api_migration_assistant
+from br.ok.core.tools.api_migration_assistant import api_migration_assistant
 
 
 class Runner:

@@ -23,8 +23,8 @@
 from test_util import *
 from code_snippets.code_snippets_test_base import *
 
-from ansys.stk.core.stkobjects import *
-from ansys.stk.core.stkutil import *
+from br.ok.core.stkobjects import *
+from br.ok.core.stkutil import *
 
 
 class SatelliteSnippets(CodeSnippetsTestBase):

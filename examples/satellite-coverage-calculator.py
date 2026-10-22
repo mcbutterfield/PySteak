@@ -15,7 +15,7 @@
 # Start by launching a new STK instance. In this example, STKEngine is used.
 
 # +
-from ansys.stk.core.stkengine import STKEngine
+from br.ok.core.stkengine import STKEngine
 
 
 stk = STKEngine.start_application(no_graphics=False)
@@ -31,7 +31,7 @@ root.new_scenario("Coverage")
 # Once the scenario is created, it is possible to show a 3D graphics window by running:
 
 # +
-from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
+from br.ok.core.experimental.jupyterwidgets import GlobeWidget
 
 
 globe_plotter = GlobeWidget(root, 640, 480)
@@ -41,7 +41,7 @@ globe_plotter.show()
 # A 2D graphics window can be created to better visualize the satellite coverage area:
 
 # +
-from ansys.stk.core.experimental.jupyterwidgets import MapWidget
+from br.ok.core.experimental.jupyterwidgets import MapWidget
 
 
 map_plotter = MapWidget(root, 640, 480)
@@ -61,7 +61,7 @@ root.rewind()
 # First, add a satellite in a polar orbit:
 
 # +
-from ansys.stk.core.stkobjects import STKObjectType
+from br.ok.core.stkobjects import STKObjectType
 
 
 polar_sat = root.current_scenario.children.new(STKObjectType.SATELLITE, "PolarSat")
@@ -70,7 +70,7 @@ polar_sat = root.current_scenario.children.new(STKObjectType.SATELLITE, "PolarSa
 # Then, set the satellite's propagator to J4Pertubation:
 
 # +
-from ansys.stk.core.stkobjects import PropagatorType
+from br.ok.core.stkobjects import PropagatorType
 
 
 polar_sat.set_propagator_type(PropagatorType.J4_PERTURBATION)
@@ -79,7 +79,7 @@ polar_sat.set_propagator_type(PropagatorType.J4_PERTURBATION)
 # The satellite should have a circular orbit with an inclination of $97.3^\circ$ and an altitude of $400$ km, which translates to an initial state of $r_x = -6374.80$ km, $r_y = -2303.27$ km, $r_z = -0.0000357827$ km, $v_x = -0.499065$ km/s, $v_y = 1.38127$ km/s, and $v_z = 7.6064$ km/s given with respect to J2000 frame:
 
 # +
-from ansys.stk.core.stkobjects import CoordinateSystem
+from br.ok.core.stkobjects import CoordinateSystem
 
 
 polar_sat_propagator = polar_sat.propagator
@@ -129,7 +129,7 @@ tropics = root.current_scenario.children.new(
 # Assign the coverage definition a grid of type latitude bounds, with a minimum latitude of $-23.5^\circ$, a maximum latitude of $23.5^\circ$, and point granularity of $3.0^\circ$ lat/lon:
 
 # +
-from ansys.stk.core.stkobjects import CoverageBounds
+from br.ok.core.stkobjects import CoverageBounds
 
 
 tropics.grid.bounds_type = CoverageBounds.LATITUDE
@@ -242,7 +242,7 @@ coverage = tropics.children.new(STKObjectType.FIGURE_OF_MERIT, "Coverage")
 # Set the coverage definition to N Asset Coverage:
 
 # +
-from ansys.stk.core.stkobjects import FigureOfMeritDefinitionType
+from br.ok.core.stkobjects import FigureOfMeritDefinitionType
 
 
 coverage.set_definition_type(FigureOfMeritDefinitionType.N_ASSET_COVERAGE)
@@ -251,7 +251,7 @@ coverage.set_definition_type(FigureOfMeritDefinitionType.N_ASSET_COVERAGE)
 # Set the compute type to Maximum:
 
 # +
-from ansys.stk.core.stkobjects import FigureOfMeritCompute
+from br.ok.core.stkobjects import FigureOfMeritCompute
 
 
 coverage.definition.set_compute_type(FigureOfMeritCompute.MAXIMUM)
@@ -262,7 +262,7 @@ coverage.definition.set_compute_type(FigureOfMeritCompute.MAXIMUM)
 # Set some animation graphics options for the Figure of Merit object:
 
 # +
-from ansys.stk.core.stkobjects import FigureOfMeritGraphics2DAccumulation
+from br.ok.core.stkobjects import FigureOfMeritGraphics2DAccumulation
 
 
 coverage.graphics.animation_settings.show_graphics = True
@@ -290,7 +290,7 @@ globe_plotter.show()
 # Adjust the definition of the Figure of Merit's coverage to determine which points have coverage from both satellites at the same time:
 
 # +
-from ansys.stk.core.stkobjects import FigureOfMeritSatisfactionType
+from br.ok.core.stkobjects import FigureOfMeritSatisfactionType
 
 
 coverage.definition.satisfaction.enable_satisfaction = True
@@ -307,8 +307,8 @@ coverage.definition.satisfaction.satisfaction_threshold = 2
 # Set some animation graphics to see when points are covered by neither, one, or both satellites:
 
 # +
-from ansys.stk.core.stkobjects import FigureOfMeritGraphics2DColorMethod
-from ansys.stk.core.utilities.colors import Color
+from br.ok.core.stkobjects import FigureOfMeritGraphics2DColorMethod
+from br.ok.core.utilities.colors import Color
 
 
 coverage.graphics.static.show_graphics = False

@@ -21,13 +21,13 @@
 # SOFTWARE.
 
 """Test the `place_graphs` module."""
-from ansys.stk.extensions.data_analysis.graphs.place_graphs import cumulative_sunlight_cumulative_pie_chart, eclipse_times_interval_graph, lighting_times_interval_graph, solar_aer_line_chart, solar_az_el_polar_center_0_graph, sunlight_intervals_interval_pie_chart
+from br.ok.extensions.data_analysis.graphs.place_graphs import cumulative_sunlight_cumulative_pie_chart, eclipse_times_interval_graph, lighting_times_interval_graph, solar_aer_line_chart, solar_az_el_polar_center_0_graph, sunlight_intervals_interval_pie_chart
 import pytest
 from stk_environment import stk_root
 
 @pytest.fixture()
 def place(stk_root):
-    from ansys.stk.core.stkobjects import STKObjectType
+    from br.ok.core.stkobjects import STKObjectType
 
     stk_root.new_scenario("GraphTest")
     stk_root.execute_command("Terrain * TerrainServer UseTerrainForAnalysis No")

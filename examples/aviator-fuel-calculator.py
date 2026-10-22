@@ -34,7 +34,7 @@
 # Start by launching a new STK instance. In this example, STKEngine is used.
 
 # +
-from ansys.stk.core.stkengine import STKEngine
+from br.ok.core.stkengine import STKEngine
 
 
 stk = STKEngine.start_application(no_graphics=False)
@@ -51,7 +51,7 @@ root.new_scenario("CommercialFlight")
 # Once the scenario is created, it is possible to show a 3D graphics window by running:
 
 # +
-from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
+from br.ok.core.experimental.jupyterwidgets import GlobeWidget
 
 
 globe_plotter = GlobeWidget(root, 640, 480)
@@ -61,7 +61,7 @@ globe_plotter.show()
 # Show a 2D graphics window by running:
 
 # +
-from ansys.stk.core.experimental.jupyterwidgets import MapWidget
+from br.ok.core.experimental.jupyterwidgets import MapWidget
 
 
 map_plotter = MapWidget(root, 640, 480)
@@ -81,7 +81,7 @@ root.rewind()
 # Insert an aircraft object to model the jet that flies between Colorado Springs and Telluride:
 
 # +
-from ansys.stk.core.stkobjects import STKObjectType
+from br.ok.core.stkobjects import STKObjectType
 
 
 aircraft = root.current_scenario.children.new(
@@ -92,7 +92,7 @@ aircraft = root.current_scenario.children.new(
 # The `IAviatorPropagator` interface allows access to all Aviator functions. Through the propagator, it is possible to access the aircraft's mission and plan its route, as well as access the Aviator catalogs, which allow loading and saving aircraft, airports, navaids, runways, VTOL points, and waypoints. To start using Aviator capabilities, first set the aircraft's propagator type to the Aviator propagator:
 
 # +
-from ansys.stk.core.stkobjects import PropagatorType
+from br.ok.core.stkobjects import PropagatorType
 
 
 aircraft.set_route_type(PropagatorType.AVIATOR)
@@ -230,7 +230,7 @@ acceleration_performance_model = phase.get_performance_model_by_type(
 # Through the `IAircraftBasicAccelerationModel` object, it is possible to configure the basic, aerodynamics, and propulsion characteristics of the aircraft. Set the level turns to scale by atmosphere density, which causes the aircraft to consider dynamic pressure when calculating turn radius.
 
 # +
-from ansys.stk.core.stkobjects.aviator import AccelerationManeuverMode
+from br.ok.core.stkobjects.aviator import AccelerationManeuverMode
 
 
 acceleration_performance_model.level_turns.maneuver_mode = (
@@ -247,7 +247,7 @@ acceleration_performance_model.climb_and_descent_transitions.maneuver_mode = (
 # Then, configure the aerodynamics characteristics by setting the aerodynamic strategy type to basic fixed wing aerodynamics. To do so, use the performance model's `aerodynamics` property, which contains an `IAircraftAero` object:
 
 # +
-from ansys.stk.core.stkobjects.aviator import AircraftAerodynamicStrategy
+from br.ok.core.stkobjects.aviator import AircraftAerodynamicStrategy
 
 
 acceleration_performance_model.aerodynamics.aerodynamic_strategy = (
@@ -258,7 +258,7 @@ acceleration_performance_model.aerodynamics.aerodynamic_strategy = (
 # Then, set the aircraft's propulsion to also use a basic fixed wing strategy by accessing the performance model's `propulsion` property, which contains an `IAircraftProp` object:
 
 # +
-from ansys.stk.core.stkobjects.aviator import AircraftPropulsionStrategy
+from br.ok.core.stkobjects.aviator import AircraftPropulsionStrategy
 
 
 acceleration_performance_model.propulsion.propulsion_strategy = (
@@ -339,7 +339,7 @@ wind_model.mode_as_constant.wind_speed = 20
 # The aircraft will first take off from the Colorado Springs runway named "CITY OF COLORADO SPRINGS MUNI 17L 35R", so the first procedure is a takeoff procedure using a catalog runway as a site type. Insert the first procedure in the phase:
 
 # +
-from ansys.stk.core.stkobjects.aviator import ProcedureType, SiteType
+from br.ok.core.stkobjects.aviator import ProcedureType, SiteType
 
 
 takeoff_procedure = phase.procedures.add(
@@ -358,7 +358,7 @@ takeoff_procedure.name = "COS Runway"
 # Then, set the runway's heading. The heading refers to the direction that the aircraft is pointing, and is derived from the runway site definition. The first numerical value indicates the bearing relative to magnetic north and the second value indicates the bearing relative to true north. Set the procedure to use the runway's low end:
 
 # +
-from ansys.stk.core.stkobjects.aviator import RunwayHighLowEnd
+from br.ok.core.stkobjects.aviator import RunwayHighLowEnd
 
 
 takeoff_procedure.runway_heading_options.runway_mode = RunwayHighLowEnd.LOW_END
@@ -398,7 +398,7 @@ climb_procedure.max_downrange = 20
 # Then, set the vertical/profile strategies. Set the altitude mode to specify altitude change:
 
 # +
-from ansys.stk.core.stkobjects.aviator import AutopilotAltitudeMode
+from br.ok.core.stkobjects.aviator import AutopilotAltitudeMode
 
 
 climb_procedure.profile.altitude_mode = (
@@ -444,7 +444,7 @@ blue_mesa_procedure.name = "Blue Mesa"
 # Then, set the procedure to use a fly direct navigation mode. This mode means that the aircraft flies directly to the procedure site from the end of the previous procedure, turning as necessary.
 
 # +
-from ansys.stk.core.stkobjects.aviator import PointToPointMode
+from br.ok.core.stkobjects.aviator import PointToPointMode
 
 
 blue_mesa_procedure.navigation_options.navigation_mode = PointToPointMode.FLY_DIRECT
@@ -496,7 +496,7 @@ cones_procedure.enroute_options.max_turn_radius_factor = 5
 # Then, configure the procedure's enroute cruise airspeed options. The enroute cruise airspeed parameters define the airspeed performance characteristics of the aircraft during enroute segments of the procedure. Set the airspeed type to other airspeed, which allows the manual setting of a constant airspeed:
 
 # +
-from ansys.stk.core.stkobjects.aviator import CruiseSpeed
+from br.ok.core.stkobjects.aviator import CruiseSpeed
 
 
 cones_procedure.enroute_cruise_airspeed_options.cruise_speed_type = (
@@ -507,7 +507,7 @@ cones_procedure.enroute_cruise_airspeed_options.cruise_speed_type = (
 # Set the airspeed to $250$ nm/hr using calibrated airspeed.:
 
 # +
-from ansys.stk.core.stkobjects.aviator import AirspeedType
+from br.ok.core.stkobjects.aviator import AirspeedType
 
 
 cones_procedure.enroute_cruise_airspeed_options.set_other_airspeed(
@@ -532,7 +532,7 @@ landing_procedure.name = "Telluride Runway"
 # Set the approach mode, which describes the type of landing, to Intercept Glideslope. An intercept glideslope approach designates that the aircraft performs a landing following VFR flight rules and uses Basic Point to Point methodology to fly to the Initial Approach Fix Range and then descend to landing along the glideslope.
 
 # +
-from ansys.stk.core.stkobjects.aviator import ApproachMode
+from br.ok.core.stkobjects.aviator import ApproachMode
 
 
 landing_procedure.approach_mode = ApproachMode.INTERCEPT_GLIDESLOPE

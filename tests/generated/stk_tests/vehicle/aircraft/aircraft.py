@@ -32,8 +32,8 @@ from math2 import *
 from vehicle.vehicle_basic import *
 from vehicle.vehicle_gfx import *
 from vehicle.vehicle_vo import *
-from ansys.stk.core.stkobjects import *
-from ansys.stk.core.stkobjects.aviator import *
+from br.ok.core.stkobjects import *
+from br.ok.core.stkobjects.aviator import *
 
 
 class EarlyBoundTests(TestBase):

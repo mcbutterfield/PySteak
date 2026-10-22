@@ -25,8 +25,8 @@
 
 import pytest
 
-from ansys.stk.extensions.scenario_construction import construct_scenario_from_dict
-from ansys.stk.core.stkobjects import Scenario, Place, Sensor, STKObjectType, Antenna
+from br.ok.extensions.scenario_construction import construct_scenario_from_dict
+from br.ok.core.stkobjects import Scenario, Place, Sensor, STKObjectType, Antenna
 
 from stk_environment import stk_root
 

@@ -1,0 +1,75 @@
+FigureOfMeritGraphics2DRangeColorOptions
+========================================
+
+.. py:class:: br.ok.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions
+
+   Range color options for contour legend.
+
+.. py:currentmodule:: FigureOfMeritGraphics2DRangeColorOptions
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.ok.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.color_square_height`
+              - Color square height in pixels.
+            * - :py:attr:`~br.ok.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.color_square_width`
+              - Color square width in pixels.
+            * - :py:attr:`~br.ok.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.direction`
+              - Direction and level order for layout of color squares.
+            * - :py:attr:`~br.ok.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.maximum_squares_per_column`
+              - Maximum number of color squares per column.
+            * - :py:attr:`~br.ok.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.maximum_squares_per_row`
+              - Maximum number of color squares per row.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.ok.core.stkobjects import FigureOfMeritGraphics2DRangeColorOptions
+
+
+Property detail
+---------------
+
+.. py:property:: color_square_height
+    :canonical: br.ok.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.color_square_height
+    :type: int
+
+    Color square height in pixels.
+
+.. py:property:: color_square_width
+    :canonical: br.ok.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.color_square_width
+    :type: int
+
+    Color square width in pixels.
+
+.. py:property:: direction
+    :canonical: br.ok.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.direction
+    :type: FigureOfMeritGraphics2DDirection
+
+    Direction and level order for layout of color squares.
+
+.. py:property:: maximum_squares_per_column
+    :canonical: br.ok.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.maximum_squares_per_column
+    :type: int
+
+    Maximum number of color squares per column.
+
+.. py:property:: maximum_squares_per_row
+    :canonical: br.ok.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.maximum_squares_per_row
+    :type: int
+
+    Maximum number of color squares per row.
+
+

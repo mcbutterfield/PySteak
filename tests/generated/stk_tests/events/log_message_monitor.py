@@ -22,8 +22,8 @@
 
 from test_util import *
 from events.object_model_event_monitor import *
-from ansys.stk.core.stkobjects import *
-from ansys.stk.core.stkutil import *
+from br.ok.core.stkobjects import *
+from br.ok.core.stkutil import *
 
 
 class LogMessageMonitor(IObjectModelEventMonitor):

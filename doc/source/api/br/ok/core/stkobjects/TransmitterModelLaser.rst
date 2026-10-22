@@ -1,0 +1,183 @@
+TransmitterModelLaser
+=====================
+
+.. py:class:: br.ok.core.stkobjects.TransmitterModelLaser
+
+   Bases: :py:class:`~br.ok.core.stkobjects.ITransmitterModel`, :py:class:`~br.ok.core.stkobjects.IComponentInfo`, :py:class:`~br.ok.core.stkobjects.ICloneable`
+
+   Class defining a laser transmitter model.
+
+.. py:currentmodule:: TransmitterModelLaser
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.ok.core.stkobjects.TransmitterModelLaser.set_modulator`
+              - Set the current modulator model by name.
+            * - :py:attr:`~br.ok.core.stkobjects.TransmitterModelLaser.set_polarization_type`
+              - Set the current polarization type.
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.ok.core.stkobjects.TransmitterModelLaser.antenna_control`
+              - Get the receiver antenna control.
+            * - :py:attr:`~br.ok.core.stkobjects.TransmitterModelLaser.data_rate`
+              - Get or set the data rate.
+            * - :py:attr:`~br.ok.core.stkobjects.TransmitterModelLaser.enable_filter`
+              - Get or set the flag determines whether or not to enable the Filter.
+            * - :py:attr:`~br.ok.core.stkobjects.TransmitterModelLaser.enable_polarization`
+              - Get or set the enable polarization option.
+            * - :py:attr:`~br.ok.core.stkobjects.TransmitterModelLaser.filter_component_linking`
+              - Get the link/embed controller for managing the filter model component.
+            * - :py:attr:`~br.ok.core.stkobjects.TransmitterModelLaser.frequency`
+              - Get or set the carrier frequency.
+            * - :py:attr:`~br.ok.core.stkobjects.TransmitterModelLaser.modulator`
+              - Get the current modulator model.
+            * - :py:attr:`~br.ok.core.stkobjects.TransmitterModelLaser.polarization`
+              - Get the polarization.
+            * - :py:attr:`~br.ok.core.stkobjects.TransmitterModelLaser.post_transmit_gains_losses`
+              - Get the collection of additional post transmit gains and losses.
+            * - :py:attr:`~br.ok.core.stkobjects.TransmitterModelLaser.power`
+              - Get or set the power.
+            * - :py:attr:`~br.ok.core.stkobjects.TransmitterModelLaser.supported_modulators`
+              - Get an array of supported modulator model names.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.ok.core.stkobjects import TransmitterModelLaser
+
+
+Property detail
+---------------
+
+.. py:property:: antenna_control
+    :canonical: br.ok.core.stkobjects.TransmitterModelLaser.antenna_control
+    :type: AntennaControl
+
+    Get the receiver antenna control.
+
+.. py:property:: data_rate
+    :canonical: br.ok.core.stkobjects.TransmitterModelLaser.data_rate
+    :type: float
+
+    Get or set the data rate.
+
+.. py:property:: enable_filter
+    :canonical: br.ok.core.stkobjects.TransmitterModelLaser.enable_filter
+    :type: bool
+
+    Get or set the flag determines whether or not to enable the Filter.
+
+.. py:property:: enable_polarization
+    :canonical: br.ok.core.stkobjects.TransmitterModelLaser.enable_polarization
+    :type: bool
+
+    Get or set the enable polarization option.
+
+.. py:property:: filter_component_linking
+    :canonical: br.ok.core.stkobjects.TransmitterModelLaser.filter_component_linking
+    :type: IComponentLinkEmbedControl
+
+    Get the link/embed controller for managing the filter model component.
+
+.. py:property:: frequency
+    :canonical: br.ok.core.stkobjects.TransmitterModelLaser.frequency
+    :type: float
+
+    Get or set the carrier frequency.
+
+.. py:property:: modulator
+    :canonical: br.ok.core.stkobjects.TransmitterModelLaser.modulator
+    :type: IModulatorModel
+
+    Get the current modulator model.
+
+.. py:property:: polarization
+    :canonical: br.ok.core.stkobjects.TransmitterModelLaser.polarization
+    :type: IPolarization
+
+    Get the polarization.
+
+.. py:property:: post_transmit_gains_losses
+    :canonical: br.ok.core.stkobjects.TransmitterModelLaser.post_transmit_gains_losses
+    :type: AdditionalGainLossCollection
+
+    Get the collection of additional post transmit gains and losses.
+
+.. py:property:: power
+    :canonical: br.ok.core.stkobjects.TransmitterModelLaser.power
+    :type: float
+
+    Get or set the power.
+
+.. py:property:: supported_modulators
+    :canonical: br.ok.core.stkobjects.TransmitterModelLaser.supported_modulators
+    :type: list
+
+    Get an array of supported modulator model names.
+
+
+Method detail
+-------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:method:: set_modulator(self, name: str) -> None
+    :canonical: br.ok.core.stkobjects.TransmitterModelLaser.set_modulator
+
+    Set the current modulator model by name.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: set_polarization_type(self, value: PolarizationType) -> None
+    :canonical: br.ok.core.stkobjects.TransmitterModelLaser.set_polarization_type
+
+    Set the current polarization type.
+
+    :Parameters:
+
+        **value** : :obj:`~PolarizationType`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+

@@ -1,0 +1,93 @@
+RangeDopplerResponse
+====================
+
+.. py:class:: br.ok.core.stkrfchannelmodeler.RangeDopplerResponse
+
+   Bases: :py:class:`~br.ok.core.stkrfchannelmodeler.IResponse`
+
+   The response data and properties for a range doppler channel characterization.
+
+.. py:currentmodule:: RangeDopplerResponse
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.ok.core.stkrfchannelmodeler.RangeDopplerResponse.angular_velocity`
+              - Get the angular velocity.
+            * - :py:attr:`~br.ok.core.stkrfchannelmodeler.RangeDopplerResponse.data_dimensions`
+              - Get the dimensions of the data. The dimensions are ordered in {Transmit Antenna Count, Receive Antenna Count, Velocity Count, Range Count, Complex Number (imaginary and real)}.
+            * - :py:attr:`~br.ok.core.stkrfchannelmodeler.RangeDopplerResponse.pulse_count`
+              - Get the pulse count.
+            * - :py:attr:`~br.ok.core.stkrfchannelmodeler.RangeDopplerResponse.range_count`
+              - Get the range count.
+            * - :py:attr:`~br.ok.core.stkrfchannelmodeler.RangeDopplerResponse.range_values`
+              - Get the range values.
+            * - :py:attr:`~br.ok.core.stkrfchannelmodeler.RangeDopplerResponse.velocity_count`
+              - Get the velocity count.
+            * - :py:attr:`~br.ok.core.stkrfchannelmodeler.RangeDopplerResponse.velocity_values`
+              - Get the velocity values.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.ok.core.stkrfchannelmodeler import RangeDopplerResponse
+
+
+Property detail
+---------------
+
+.. py:property:: angular_velocity
+    :canonical: br.ok.core.stkrfchannelmodeler.RangeDopplerResponse.angular_velocity
+    :type: float
+
+    Get the angular velocity.
+
+.. py:property:: data_dimensions
+    :canonical: br.ok.core.stkrfchannelmodeler.RangeDopplerResponse.data_dimensions
+    :type: list
+
+    Get the dimensions of the data. The dimensions are ordered in {Transmit Antenna Count, Receive Antenna Count, Velocity Count, Range Count, Complex Number (imaginary and real)}.
+
+.. py:property:: pulse_count
+    :canonical: br.ok.core.stkrfchannelmodeler.RangeDopplerResponse.pulse_count
+    :type: int
+
+    Get the pulse count.
+
+.. py:property:: range_count
+    :canonical: br.ok.core.stkrfchannelmodeler.RangeDopplerResponse.range_count
+    :type: int
+
+    Get the range count.
+
+.. py:property:: range_values
+    :canonical: br.ok.core.stkrfchannelmodeler.RangeDopplerResponse.range_values
+    :type: list
+
+    Get the range values.
+
+.. py:property:: velocity_count
+    :canonical: br.ok.core.stkrfchannelmodeler.RangeDopplerResponse.velocity_count
+    :type: int
+
+    Get the velocity count.
+
+.. py:property:: velocity_values
+    :canonical: br.ok.core.stkrfchannelmodeler.RangeDopplerResponse.velocity_values
+    :type: list
+
+    Get the velocity values.
+
+

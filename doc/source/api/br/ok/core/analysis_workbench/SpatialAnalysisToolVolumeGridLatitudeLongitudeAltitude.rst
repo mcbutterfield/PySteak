@@ -1,0 +1,77 @@
+SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude
+======================================================
+
+.. py:class:: br.ok.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude
+
+   Bases: :py:class:`~br.ok.core.analysis_workbench.ISpatialAnalysisToolVolumeGrid`, :py:class:`~br.ok.core.analysis_workbench.IAnalysisWorkbenchComponent`
+
+   A volume grid lat lon alt (Cartogrographic) interface.
+
+.. py:currentmodule:: SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.ok.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.altitude_grid_parameters`
+              - Return altitude parameters for the Height system.
+            * - :py:attr:`~br.ok.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.auto_fit_bounds`
+              - Specify whether to use the auto fit bounds. Set to true to use the auto fit bounds..
+            * - :py:attr:`~br.ok.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.latitude_coordinates`
+              - Return latitude Coordinates parameters for the Theta system.
+            * - :py:attr:`~br.ok.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.longitude_coordinates`
+              - Return longitude Coordinates parameters for the Radius system.
+            * - :py:attr:`~br.ok.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.reference_central_body`
+              - Get the central body for the volume grid. Both the central body reference shape and its CBF (central body centered fixed) system are used by this volume grid.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.ok.core.analysis_workbench import SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude
+
+
+Property detail
+---------------
+
+.. py:property:: altitude_grid_parameters
+    :canonical: br.ok.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.altitude_grid_parameters
+    :type: SpatialAnalysisToolGridCoordinateDefinition
+
+    Return altitude parameters for the Height system.
+
+.. py:property:: auto_fit_bounds
+    :canonical: br.ok.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.auto_fit_bounds
+    :type: bool
+
+    Specify whether to use the auto fit bounds. Set to true to use the auto fit bounds..
+
+.. py:property:: latitude_coordinates
+    :canonical: br.ok.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.latitude_coordinates
+    :type: SpatialAnalysisToolGridCoordinateDefinition
+
+    Return latitude Coordinates parameters for the Theta system.
+
+.. py:property:: longitude_coordinates
+    :canonical: br.ok.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.longitude_coordinates
+    :type: SpatialAnalysisToolGridCoordinateDefinition
+
+    Return longitude Coordinates parameters for the Radius system.
+
+.. py:property:: reference_central_body
+    :canonical: br.ok.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.reference_central_body
+    :type: str
+
+    Get the central body for the volume grid. Both the central body reference shape and its CBF (central body centered fixed) system are used by this volume grid.
+
+

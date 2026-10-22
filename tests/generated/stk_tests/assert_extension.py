@@ -21,7 +21,7 @@
 # SOFTWARE.
 
 from test_util import *
-from ansys.stk.core.utilities.colors import *
+from br.ok.core.utilities.colors import *
 
 
 class AssertEx(object):

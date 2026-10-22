@@ -28,9 +28,9 @@ from interfaces.stk_objects import *
 from logger import *
 from orbit_state_helper import *
 from orientation_helper import *
-from ansys.stk.core.stkobjects import *
-from ansys.stk.core.stkutil import *
-from ansys.stk.core.analysis_workbench import *
+from br.ok.core.stkobjects import *
+from br.ok.core.stkutil import *
+from br.ok.core.analysis_workbench import *
 
 
 # region ExportDataFileHelper

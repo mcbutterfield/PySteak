@@ -23,8 +23,8 @@
 import os
 import sys
 
-from ansys.stk.core.stkobjects import STKObjectType
-from ansys.stk.core.stkutil import ExecuteMultipleCommandsMode
+from br.ok.core.stkobjects import STKObjectType
+from br.ok.core.stkutil import ExecuteMultipleCommandsMode
 
 # Add path to the parent directory to use some common utilities
 sys.path.insert(1, os.path.join(os.path.dirname(os.path.realpath(__file__)), ".."))
@@ -91,7 +91,7 @@ class ConnectSnippets(CodeSnippetsTestBase):
         eid="stkobjects~STKObjectRoot",
     )
     def ConnectCommandArraysSnippet(self, root):
-        from ansys.stk.core.stkutil import ExecuteMultipleCommandsMode
+        from br.ok.core.stkutil import ExecuteMultipleCommandsMode
 
         connect_cmds = ["GetStkVersion /", "New / Scenario ExampleScenario"]
         results = root.execute_multiple_commands(connect_cmds, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR)

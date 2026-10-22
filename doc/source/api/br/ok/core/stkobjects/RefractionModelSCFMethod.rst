@@ -1,0 +1,99 @@
+RefractionModelSCFMethod
+========================
+
+.. py:class:: br.ok.core.stkobjects.RefractionModelSCFMethod
+
+   SCF Method.
+
+.. py:currentmodule:: RefractionModelSCFMethod
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.ok.core.stkobjects.RefractionModelSCFMethod.atmosphere_altitude`
+              - Altitude of the atmosphere. Used to compute the knee bend point of the refracted path. Uses Distance Dimension.
+            * - :py:attr:`~br.ok.core.stkobjects.RefractionModelSCFMethod.ceiling`
+              - Refraction will be ignored if object altitude is higher than the ceiling. Uses Distance Dimension.
+            * - :py:attr:`~br.ok.core.stkobjects.RefractionModelSCFMethod.coefficients`
+              - Get the polynomial coefficients.
+            * - :py:attr:`~br.ok.core.stkobjects.RefractionModelSCFMethod.knee_bend_factor`
+              - Used to compute the distance to the knee bend point of the refracted path. Dimensionless.
+            * - :py:attr:`~br.ok.core.stkobjects.RefractionModelSCFMethod.minimum_target_altitude`
+              - Minimum altitude of target for which the refraction will be computed unless extrapolation is used. Uses Distance Dimension.
+            * - :py:attr:`~br.ok.core.stkobjects.RefractionModelSCFMethod.refraction_index`
+              - Index of refraction at the surface. Dimensionless.
+            * - :py:attr:`~br.ok.core.stkobjects.RefractionModelSCFMethod.use_extrapolation`
+              - Flag controls whether extrapolation is used past the minimum target altitude.
+            * - :py:attr:`~br.ok.core.stkobjects.RefractionModelSCFMethod.use_refraction_index`
+              - Flag controls whether a constant refraction index is used or the refraction polynomial fit.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.ok.core.stkobjects import RefractionModelSCFMethod
+
+
+Property detail
+---------------
+
+.. py:property:: atmosphere_altitude
+    :canonical: br.ok.core.stkobjects.RefractionModelSCFMethod.atmosphere_altitude
+    :type: float
+
+    Altitude of the atmosphere. Used to compute the knee bend point of the refracted path. Uses Distance Dimension.
+
+.. py:property:: ceiling
+    :canonical: br.ok.core.stkobjects.RefractionModelSCFMethod.ceiling
+    :type: float
+
+    Refraction will be ignored if object altitude is higher than the ceiling. Uses Distance Dimension.
+
+.. py:property:: coefficients
+    :canonical: br.ok.core.stkobjects.RefractionModelSCFMethod.coefficients
+    :type: RefractionCoefficients
+
+    Get the polynomial coefficients.
+
+.. py:property:: knee_bend_factor
+    :canonical: br.ok.core.stkobjects.RefractionModelSCFMethod.knee_bend_factor
+    :type: float
+
+    Used to compute the distance to the knee bend point of the refracted path. Dimensionless.
+
+.. py:property:: minimum_target_altitude
+    :canonical: br.ok.core.stkobjects.RefractionModelSCFMethod.minimum_target_altitude
+    :type: float
+
+    Minimum altitude of target for which the refraction will be computed unless extrapolation is used. Uses Distance Dimension.
+
+.. py:property:: refraction_index
+    :canonical: br.ok.core.stkobjects.RefractionModelSCFMethod.refraction_index
+    :type: float
+
+    Index of refraction at the surface. Dimensionless.
+
+.. py:property:: use_extrapolation
+    :canonical: br.ok.core.stkobjects.RefractionModelSCFMethod.use_extrapolation
+    :type: bool
+
+    Flag controls whether extrapolation is used past the minimum target altitude.
+
+.. py:property:: use_refraction_index
+    :canonical: br.ok.core.stkobjects.RefractionModelSCFMethod.use_refraction_index
+    :type: bool
+
+    Flag controls whether a constant refraction index is used or the refraction polynomial fit.
+
+

@@ -29,9 +29,9 @@ from logger import *
 from math2 import *
 from orientation_helper import *
 from parameterized import *
-from ansys.stk.core.utilities.colors import *
-from ansys.stk.core.stkobjects import *
-from ansys.stk.core.stkobjects.astrogator import *
+from br.ok.core.utilities.colors import *
+from br.ok.core.stkobjects import *
+from br.ok.core.stkobjects.astrogator import *
 
 
 class EarlyBoundTests(TestBase):

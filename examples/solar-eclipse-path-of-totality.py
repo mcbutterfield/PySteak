@@ -19,7 +19,7 @@
 # Start by launching a new STK instance. In this example, STKEngine is used.
 
 # +
-from ansys.stk.core.stkengine import STKEngine
+from br.ok.core.stkengine import STKEngine
 
 
 stk = STKEngine.start_application(no_graphics=False)
@@ -36,7 +36,7 @@ root.new_scenario("SolarEclipse2026Spain")
 # Once the scenario is created, it is possible to show a 3D graphics window centered in Spain by running:
 
 # +
-from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
+from br.ok.core.experimental.jupyterwidgets import GlobeWidget
 
 
 globe_plotter = GlobeWidget(root, 640, 480)
@@ -73,7 +73,7 @@ root.rewind()
 # First, insert the satellite:
 
 # +
-from ansys.stk.core.stkobjects import STKObjectType
+from br.ok.core.stkobjects import STKObjectType
 
 
 asset_satellite = scenario.children.new(STKObjectType.SATELLITE, "Asset_Sat")
@@ -82,7 +82,7 @@ asset_satellite = scenario.children.new(STKObjectType.SATELLITE, "Asset_Sat")
 # Then, set the propagator to two-body, which is accurate enough for an asset that only needs to remain in view:
 
 # +
-from ansys.stk.core.stkobjects import PropagatorType
+from br.ok.core.stkobjects import PropagatorType
 
 
 asset_satellite.set_propagator_type(PropagatorType.TWO_BODY)
@@ -92,7 +92,7 @@ propagator = asset_satellite.propagator
 # Retrieve the initial state of the propagator as a set of classical orbital elements:
 
 # +
-from ansys.stk.core.stkutil import OrbitStateType
+from br.ok.core.stkutil import OrbitStateType
 
 
 orbit = propagator.initial_state.representation.convert_to(OrbitStateType.CLASSICAL)
@@ -101,7 +101,7 @@ orbit = propagator.initial_state.representation.convert_to(OrbitStateType.CLASSI
 # A geostationary orbit is a circular equatorial orbit with a semi-major axis of $42164.17$ km. Set the ``size_shape_type`` property to semi-major axis and eccentricity:
 
 # +
-from ansys.stk.core.stkobjects import ClassicalSizeShape
+from br.ok.core.stkobjects import ClassicalSizeShape
 
 
 orbit.size_shape_type = ClassicalSizeShape.SEMIMAJOR_AXIS
@@ -117,7 +117,7 @@ orbit.orientation.argument_of_periapsis = 0
 # The subsatellite point is controlled with the longitude of the ascending node. Set the ascending node type to longitude and place the satellite over $-3.7^\circ$, roughly the meridian of Madrid:
 
 # +
-from ansys.stk.core.stkobjects import OrientationAscNode
+from br.ok.core.stkobjects import OrientationAscNode
 
 
 orbit.orientation.ascending_node_type = OrientationAscNode.LONGITUDE_ASCENDING_NODE
@@ -127,7 +127,7 @@ orbit.orientation.ascending_node.value = -3.7
 # Finally, set the location type to true anomaly with a value of $0^\circ$:
 
 # +
-from ansys.stk.core.stkobjects import ClassicalLocation
+from br.ok.core.stkobjects import ClassicalLocation
 
 
 orbit.location_type = ClassicalLocation.TRUE_ANOMALY
@@ -151,7 +151,7 @@ eclipse_constraints.position.assign_geodetic(39.8587, -0.0706, 0)
 # A location experiences a total eclipse when it is inside the umbra, that is, the darkest part of the shadow cast by the Moon. Add a lighting access constraint to the place:
 
 # +
-from ansys.stk.core.stkobjects import AccessConstraintType
+from br.ok.core.stkobjects import AccessConstraintType
 
 
 lighting_constraint = eclipse_constraints.access_constraints.add_constraint(
@@ -162,7 +162,7 @@ lighting_constraint = eclipse_constraints.access_constraints.add_constraint(
 # Then, restrict the lighting condition to umbra:
 
 # +
-from ansys.stk.core.stkobjects import ConstraintLighting
+from br.ok.core.stkobjects import ConstraintLighting
 
 
 lighting_constraint.condition = ConstraintLighting.UMBRA
@@ -213,7 +213,7 @@ spain_coverage.interval.analysis_interval.set_start_and_stop_times(
 # The grid is bounded by the borders of Spain, which are available as an ArcView shapefile shipped with STK. First, set the bounds type to custom regions:
 
 # +
-from ansys.stk.core.stkobjects import CoverageBounds
+from br.ok.core.stkobjects import CoverageBounds
 
 
 spain_coverage.grid.bounds_type = CoverageBounds.CUSTOM_REGIONS
@@ -269,7 +269,7 @@ spain_coverage.grid.bounds.region_files.add(str(spain_shapefile))
 # First, set the resolution type to latitude/longitude:
 
 # +
-from ansys.stk.core.stkobjects import CoverageResolution
+from br.ok.core.stkobjects import CoverageResolution
 
 
 spain_coverage.grid.resolution_type = CoverageResolution.RESOLUTION_LATITUDE_LONGITUDE
@@ -284,7 +284,7 @@ spain_coverage.grid.resolution.latitude_longitude = 0.025
 # The grid points must behave like the place object previously inserted. Set the reference constraint class of the point definition to place:
 
 # +
-from ansys.stk.core.stkobjects import CoverageGridClass
+from br.ok.core.stkobjects import CoverageGridClass
 
 
 spain_coverage.point_definition.grid_class = CoverageGridClass.PLACE
@@ -326,7 +326,7 @@ eclipse_path = spain_coverage.children.new(
 # Then, set its definition type to access duration:
 
 # +
-from ansys.stk.core.stkobjects import FigureOfMeritDefinitionType
+from br.ok.core.stkobjects import FigureOfMeritDefinitionType
 
 
 eclipse_path.set_definition_type(FigureOfMeritDefinitionType.ACCESS_DURATION)
@@ -336,7 +336,7 @@ definition = eclipse_path.definition
 # Compute the average of the access durations at every grid point. Since a given location can only experience one totality interval, the average is the duration of the totality itself:
 
 # +
-from ansys.stk.core.stkobjects import FigureOfMeritCompute
+from br.ok.core.stkobjects import FigureOfMeritCompute
 
 
 definition.set_compute_type(FigureOfMeritCompute.AVERAGE)
@@ -345,7 +345,7 @@ definition.set_compute_type(FigureOfMeritCompute.AVERAGE)
 # Finally, enable the satisfaction criterion so that only the points experiencing more than $10$ seconds of totality are highlighted:
 
 # +
-from ansys.stk.core.stkobjects import FigureOfMeritSatisfactionType
+from br.ok.core.stkobjects import FigureOfMeritSatisfactionType
 
 
 definition.satisfaction.enable_satisfaction = True
@@ -365,7 +365,7 @@ eclipse_path.graphics.static.fill_translucency = 0
 # Then, enable the contours and interpolate the color smoothly between grid points:
 
 # +
-from ansys.stk.core.stkobjects import FigureOfMeritGraphics2DContourType
+from br.ok.core.stkobjects import FigureOfMeritGraphics2DContourType
 
 
 contours = eclipse_path.graphics.static.contours
@@ -382,8 +382,8 @@ contours.level_attributes.add_level_range(10, 120, 10)
 # Assign the colors of the levels with a color ramp going from green, for the shortest totalities, to red, for the longest ones:
 
 # +
-from ansys.stk.core.stkobjects import FigureOfMeritGraphics2DColorMethod
-from ansys.stk.core.utilities.colors import Color
+from br.ok.core.stkobjects import FigureOfMeritGraphics2DColorMethod
+from br.ok.core.utilities.colors import Color
 
 
 contours.color_method = FigureOfMeritGraphics2DColorMethod.COLOR_RAMP

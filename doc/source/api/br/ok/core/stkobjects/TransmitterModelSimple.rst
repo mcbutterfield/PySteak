@@ -1,0 +1,174 @@
+TransmitterModelSimple
+======================
+
+.. py:class:: br.ok.core.stkobjects.TransmitterModelSimple
+
+   Bases: :py:class:`~br.ok.core.stkobjects.ITransmitterModel`, :py:class:`~br.ok.core.stkobjects.IComponentInfo`, :py:class:`~br.ok.core.stkobjects.ICloneable`
+
+   Class defining a simple transmitter model.
+
+.. py:currentmodule:: TransmitterModelSimple
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.ok.core.stkobjects.TransmitterModelSimple.set_modulator`
+              - Set the current modulator model by name.
+            * - :py:attr:`~br.ok.core.stkobjects.TransmitterModelSimple.set_polarization_type`
+              - Set the current polarization type.
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.ok.core.stkobjects.TransmitterModelSimple.data_rate`
+              - Get or set the data rate.
+            * - :py:attr:`~br.ok.core.stkobjects.TransmitterModelSimple.eirp`
+              - Get or set the EIRP.
+            * - :py:attr:`~br.ok.core.stkobjects.TransmitterModelSimple.enable_filter`
+              - Get or set the flag determines whether or not to enable the Filter.
+            * - :py:attr:`~br.ok.core.stkobjects.TransmitterModelSimple.enable_polarization`
+              - Get or set the enable polarization option.
+            * - :py:attr:`~br.ok.core.stkobjects.TransmitterModelSimple.filter_component_linking`
+              - Get the link/embed controller for managing the filter model component.
+            * - :py:attr:`~br.ok.core.stkobjects.TransmitterModelSimple.frequency`
+              - Get or set the carrier frequency.
+            * - :py:attr:`~br.ok.core.stkobjects.TransmitterModelSimple.modulator`
+              - Get the current modulator model.
+            * - :py:attr:`~br.ok.core.stkobjects.TransmitterModelSimple.polarization`
+              - Get the polarization.
+            * - :py:attr:`~br.ok.core.stkobjects.TransmitterModelSimple.post_transmit_gains_losses`
+              - Get the collection of additional post transmit gains and losses.
+            * - :py:attr:`~br.ok.core.stkobjects.TransmitterModelSimple.supported_modulators`
+              - Get an array of supported modulator model names.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.ok.core.stkobjects import TransmitterModelSimple
+
+
+Property detail
+---------------
+
+.. py:property:: data_rate
+    :canonical: br.ok.core.stkobjects.TransmitterModelSimple.data_rate
+    :type: float
+
+    Get or set the data rate.
+
+.. py:property:: eirp
+    :canonical: br.ok.core.stkobjects.TransmitterModelSimple.eirp
+    :type: float
+
+    Get or set the EIRP.
+
+.. py:property:: enable_filter
+    :canonical: br.ok.core.stkobjects.TransmitterModelSimple.enable_filter
+    :type: bool
+
+    Get or set the flag determines whether or not to enable the Filter.
+
+.. py:property:: enable_polarization
+    :canonical: br.ok.core.stkobjects.TransmitterModelSimple.enable_polarization
+    :type: bool
+
+    Get or set the enable polarization option.
+
+.. py:property:: filter_component_linking
+    :canonical: br.ok.core.stkobjects.TransmitterModelSimple.filter_component_linking
+    :type: IComponentLinkEmbedControl
+
+    Get the link/embed controller for managing the filter model component.
+
+.. py:property:: frequency
+    :canonical: br.ok.core.stkobjects.TransmitterModelSimple.frequency
+    :type: float
+
+    Get or set the carrier frequency.
+
+.. py:property:: modulator
+    :canonical: br.ok.core.stkobjects.TransmitterModelSimple.modulator
+    :type: IModulatorModel
+
+    Get the current modulator model.
+
+.. py:property:: polarization
+    :canonical: br.ok.core.stkobjects.TransmitterModelSimple.polarization
+    :type: IPolarization
+
+    Get the polarization.
+
+.. py:property:: post_transmit_gains_losses
+    :canonical: br.ok.core.stkobjects.TransmitterModelSimple.post_transmit_gains_losses
+    :type: AdditionalGainLossCollection
+
+    Get the collection of additional post transmit gains and losses.
+
+.. py:property:: supported_modulators
+    :canonical: br.ok.core.stkobjects.TransmitterModelSimple.supported_modulators
+    :type: list
+
+    Get an array of supported modulator model names.
+
+
+Method detail
+-------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:method:: set_modulator(self, name: str) -> None
+    :canonical: br.ok.core.stkobjects.TransmitterModelSimple.set_modulator
+
+    Set the current modulator model by name.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: set_polarization_type(self, value: PolarizationType) -> None
+    :canonical: br.ok.core.stkobjects.TransmitterModelSimple.set_polarization_type
+
+    Set the current polarization type.
+
+    :Parameters:
+
+        **value** : :obj:`~PolarizationType`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+

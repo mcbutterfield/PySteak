@@ -21,10 +21,10 @@
 # SOFTWARE.
 
 from test_util import *
-from ansys.stk.core.stkobjects import *
-from ansys.stk.core.stkobjects.astrogator import *
-from ansys.stk.core.stkx import *
-from ansys.stk.core.stkutil import *
+from br.ok.core.stkobjects import *
+from br.ok.core.stkobjects.astrogator import *
+from br.ok.core.stkx import *
+from br.ok.core.stkutil import *
 
 
 class EarlyBoundTests(TestBase):

@@ -24,12 +24,12 @@
 
 import pytest
 from pathlib import Path
-from ansys.stk.extensions.data_analysis.graphs.comm_system_graphs import carrier_to_noise_vs_time_line_chart
+from br.ok.extensions.data_analysis.graphs.comm_system_graphs import carrier_to_noise_vs_time_line_chart
 from stk_environment import stk_root
 
 @pytest.fixture()
 def comm_system(stk_root):
-    from ansys.stk.core.stkobjects import STKObjectType, PropagatorType
+    from br.ok.core.stkobjects import STKObjectType, PropagatorType
 
     stk_root.new_scenario("GraphTest")
     scenario = stk_root.current_scenario

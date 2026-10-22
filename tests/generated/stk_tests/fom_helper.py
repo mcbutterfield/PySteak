@@ -26,9 +26,9 @@ from assert_extension import *
 from assertion_harness import *
 from logger import *
 from math2 import *
-from ansys.stk.core.utilities.colors import *
-from ansys.stk.core.stkobjects import *
-from ansys.stk.core.stkutil import *
+from br.ok.core.utilities.colors import *
+from br.ok.core.stkobjects import *
+from br.ok.core.stkutil import *
 
 
 class FOMHelper(object):

@@ -26,9 +26,9 @@ from assertion_harness import *
 from compatibility.interval_collection_extension_methods import *
 from logger import *
 
-from ansys.stk.core.stkobjects import *
-from ansys.stk.core.stkutil import *
-from ansys.stk.core.analysis_workbench import *
+from br.ok.core.stkobjects import *
+from br.ok.core.stkutil import *
+from br.ok.core.analysis_workbench import *
 
 
 class BugFixes(TestBase):

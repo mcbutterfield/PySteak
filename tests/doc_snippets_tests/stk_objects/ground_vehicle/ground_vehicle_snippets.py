@@ -23,7 +23,7 @@
 import os
 import sys
 
-from ansys.stk.core.stkobjects import (
+from br.ok.core.stkobjects import (
     STKObjectType,
     VehicleAltitudeReference,
     PropagatorType,

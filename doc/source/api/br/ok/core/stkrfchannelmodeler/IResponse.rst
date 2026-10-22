@@ -1,0 +1,66 @@
+IResponse
+=========
+
+.. py:class:: br.ok.core.stkrfchannelmodeler.IResponse
+
+   Properties and data for a channel characaterization response.
+
+.. py:currentmodule:: IResponse
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.ok.core.stkrfchannelmodeler.IResponse.data`
+              - Get the response data in a single dimension. Reshape to a multi-dimensional array using the DataDimensions property from the derived response class.
+            * - :py:attr:`~br.ok.core.stkrfchannelmodeler.IResponse.receive_antenna_count`
+              - Get the receive antenna count.
+            * - :py:attr:`~br.ok.core.stkrfchannelmodeler.IResponse.transmit_antenna_count`
+              - Get the transmit antenna count.
+            * - :py:attr:`~br.ok.core.stkrfchannelmodeler.IResponse.type`
+              - Get the response type.
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.ok.core.stkrfchannelmodeler import IResponse
+
+
+Property detail
+---------------
+
+.. py:property:: data
+    :canonical: br.ok.core.stkrfchannelmodeler.IResponse.data
+    :type: list
+
+    Get the response data in a single dimension. Reshape to a multi-dimensional array using the DataDimensions property from the derived response class.
+
+.. py:property:: receive_antenna_count
+    :canonical: br.ok.core.stkrfchannelmodeler.IResponse.receive_antenna_count
+    :type: int
+
+    Get the receive antenna count.
+
+.. py:property:: transmit_antenna_count
+    :canonical: br.ok.core.stkrfchannelmodeler.IResponse.transmit_antenna_count
+    :type: int
+
+    Get the transmit antenna count.
+
+.. py:property:: type
+    :canonical: br.ok.core.stkrfchannelmodeler.IResponse.type
+    :type: ChannelResponseType
+
+    Get the response type.
+
+

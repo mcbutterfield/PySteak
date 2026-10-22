@@ -1,0 +1,124 @@
+VehicleTargetPointingIntervalCollection
+=======================================
+
+.. py:class:: br.ok.core.stkobjects.VehicleTargetPointingIntervalCollection
+
+   Represents a collection of scheduled targeting intervals.
+
+.. py:currentmodule:: VehicleTargetPointingIntervalCollection
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.ok.core.stkobjects.VehicleTargetPointingIntervalCollection.add`
+              - Add a new element to the collection. Start/Stop Times use DateFormat Dimension.
+            * - :py:attr:`~br.ok.core.stkobjects.VehicleTargetPointingIntervalCollection.item`
+              - Given an index, returns an element in the collection.
+            * - :py:attr:`~br.ok.core.stkobjects.VehicleTargetPointingIntervalCollection.remove_all`
+              - Remove all elements from the collection.
+            * - :py:attr:`~br.ok.core.stkobjects.VehicleTargetPointingIntervalCollection.remove_at`
+              - Remove an element from the collection using specified index.
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.ok.core.stkobjects.VehicleTargetPointingIntervalCollection._new_enum`
+              - Return an enumerator that can iterate through the collection.
+            * - :py:attr:`~br.ok.core.stkobjects.VehicleTargetPointingIntervalCollection.count`
+              - Return the number of elements in a collection.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.ok.core.stkobjects import VehicleTargetPointingIntervalCollection
+
+
+Property detail
+---------------
+
+.. py:property:: _new_enum
+    :canonical: br.ok.core.stkobjects.VehicleTargetPointingIntervalCollection._new_enum
+    :type: EnumeratorProxy
+
+    Return an enumerator that can iterate through the collection.
+
+.. py:property:: count
+    :canonical: br.ok.core.stkobjects.VehicleTargetPointingIntervalCollection.count
+    :type: int
+
+    Return the number of elements in a collection.
+
+
+Method detail
+-------------
+
+.. py:method:: add(self, start_time: typing.Any, stop_time: typing.Any) -> AttitudeScheduleTimesElement
+    :canonical: br.ok.core.stkobjects.VehicleTargetPointingIntervalCollection.add
+
+    Add a new element to the collection. Start/Stop Times use DateFormat Dimension.
+
+    :Parameters:
+
+        **start_time** : :obj:`~typing.Any`
+
+        **stop_time** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~AttitudeScheduleTimesElement`
+
+
+.. py:method:: item(self, index: int) -> AttitudeScheduleTimesElement
+    :canonical: br.ok.core.stkobjects.VehicleTargetPointingIntervalCollection.item
+
+    Given an index, returns an element in the collection.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~AttitudeScheduleTimesElement`
+
+.. py:method:: remove_all(self) -> None
+    :canonical: br.ok.core.stkobjects.VehicleTargetPointingIntervalCollection.remove_all
+
+    Remove all elements from the collection.
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: br.ok.core.stkobjects.VehicleTargetPointingIntervalCollection.remove_at
+
+    Remove an element from the collection using specified index.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+

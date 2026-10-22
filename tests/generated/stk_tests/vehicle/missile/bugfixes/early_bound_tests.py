@@ -24,8 +24,8 @@ from test_util import *
 from math2 import *
 from unit_preference_extension import *
 from parameterized import *
-from ansys.stk.core.stkobjects import *
-from ansys.stk.core.stkutil import *
+from br.ok.core.stkobjects import *
+from br.ok.core.stkutil import *
 
 
 class EarlyBoundTests(TestBase):

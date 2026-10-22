@@ -1,0 +1,170 @@
+CalculationToolScalarGroup
+==========================
+
+.. py:class:: br.ok.core.analysis_workbench.CalculationToolScalarGroup
+
+   Access or create VGT calculation scalars associated with an object or a central body.
+
+.. py:currentmodule:: CalculationToolScalarGroup
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.ok.core.analysis_workbench.CalculationToolScalarGroup.contains`
+              - Search for a an element with a given name. Returns false if the specified element does not exist.
+            * - :py:attr:`~br.ok.core.analysis_workbench.CalculationToolScalarGroup.get_item_by_index`
+              - Retrieve an element from the collection by index.
+            * - :py:attr:`~br.ok.core.analysis_workbench.CalculationToolScalarGroup.get_item_by_name`
+              - Retrieve an element from the collection by name.
+            * - :py:attr:`~br.ok.core.analysis_workbench.CalculationToolScalarGroup.item`
+              - Return an element by name or at a specified position.
+            * - :py:attr:`~br.ok.core.analysis_workbench.CalculationToolScalarGroup.remove`
+              - Remove a specified element.
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.ok.core.analysis_workbench.CalculationToolScalarGroup._new_enum`
+              - Return a COM enumerator.
+            * - :py:attr:`~br.ok.core.analysis_workbench.CalculationToolScalarGroup.common_tasks`
+              - Calc Scalar common tasks.
+            * - :py:attr:`~br.ok.core.analysis_workbench.CalculationToolScalarGroup.context`
+              - Return a context object. The context can be used to find out which central body or STK object this instance is associated with.
+            * - :py:attr:`~br.ok.core.analysis_workbench.CalculationToolScalarGroup.count`
+              - Return a number of elements in the group.
+            * - :py:attr:`~br.ok.core.analysis_workbench.CalculationToolScalarGroup.factory`
+              - Return a factory object used to create calc scalar components.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.ok.core.analysis_workbench import CalculationToolScalarGroup
+
+
+Property detail
+---------------
+
+.. py:property:: _new_enum
+    :canonical: br.ok.core.analysis_workbench.CalculationToolScalarGroup._new_enum
+    :type: EnumeratorProxy
+
+    Return a COM enumerator.
+
+.. py:property:: common_tasks
+    :canonical: br.ok.core.analysis_workbench.CalculationToolScalarGroup.common_tasks
+    :type: CalculationToolScalarCommonTasks
+
+    Calc Scalar common tasks.
+
+.. py:property:: context
+    :canonical: br.ok.core.analysis_workbench.CalculationToolScalarGroup.context
+    :type: IAnalysisWorkbenchComponentContext
+
+    Return a context object. The context can be used to find out which central body or STK object this instance is associated with.
+
+.. py:property:: count
+    :canonical: br.ok.core.analysis_workbench.CalculationToolScalarGroup.count
+    :type: int
+
+    Return a number of elements in the group.
+
+.. py:property:: factory
+    :canonical: br.ok.core.analysis_workbench.CalculationToolScalarGroup.factory
+    :type: CalculationToolScalarFactory
+
+    Return a factory object used to create calc scalar components.
+
+
+Method detail
+-------------
+
+
+.. py:method:: contains(self, name: str) -> bool
+    :canonical: br.ok.core.analysis_workbench.CalculationToolScalarGroup.contains
+
+    Search for a an element with a given name. Returns false if the specified element does not exist.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~bool`
+
+
+
+
+.. py:method:: get_item_by_index(self, index: int) -> ICalculationToolScalar
+    :canonical: br.ok.core.analysis_workbench.CalculationToolScalarGroup.get_item_by_index
+
+    Retrieve an element from the collection by index.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~ICalculationToolScalar`
+
+.. py:method:: get_item_by_name(self, name: str) -> ICalculationToolScalar
+    :canonical: br.ok.core.analysis_workbench.CalculationToolScalarGroup.get_item_by_name
+
+    Retrieve an element from the collection by name.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~ICalculationToolScalar`
+
+.. py:method:: item(self, index_or_name: typing.Any) -> ICalculationToolScalar
+    :canonical: br.ok.core.analysis_workbench.CalculationToolScalarGroup.item
+
+    Return an element by name or at a specified position.
+
+    :Parameters:
+
+        **index_or_name** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~ICalculationToolScalar`
+
+.. py:method:: remove(self, event_name: str) -> None
+    :canonical: br.ok.core.analysis_workbench.CalculationToolScalarGroup.remove
+
+    Remove a specified element.
+
+    :Parameters:
+
+        **event_name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+

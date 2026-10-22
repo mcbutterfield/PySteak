@@ -1,0 +1,276 @@
+IGroundLocation
+===============
+
+.. py:class:: br.ok.core.stkobjects.IGroundLocation
+
+   Interface containing properties common to ground location objects (i.e. Target, Place, and Facility).
+
+.. py:currentmodule:: IGroundLocation
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.ok.core.stkobjects.IGroundLocation.get_az_el_mask`
+              - Get the az-el mask. A member of the AzElMaskType enumeration.
+            * - :py:attr:`~br.ok.core.stkobjects.IGroundLocation.get_az_el_mask_data`
+              - Get az-el mask data.
+            * - :py:attr:`~br.ok.core.stkobjects.IGroundLocation.reset_az_el_mask`
+              - Reset the az-el mask.
+            * - :py:attr:`~br.ok.core.stkobjects.IGroundLocation.set_az_el_mask`
+              - Set an az-el mask. A member of the AzElMaskType enumeration.
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.ok.core.stkobjects.IGroundLocation.access_constraints`
+              - Get the constraints imposed on the ground location.
+            * - :py:attr:`~br.ok.core.stkobjects.IGroundLocation.altitude_reference`
+              - Get or set the altitude reference of the object.
+            * - :py:attr:`~br.ok.core.stkobjects.IGroundLocation.chain_analysis_options`
+              - Get the ground location's chain analysis options.
+            * - :py:attr:`~br.ok.core.stkobjects.IGroundLocation.ground_location_graphics`
+              - Get the 2D Graphics properties of the ground location.
+            * - :py:attr:`~br.ok.core.stkobjects.IGroundLocation.ground_location_graphics_3d`
+              - Get the 3D Graphics properties of the ground location.
+            * - :py:attr:`~br.ok.core.stkobjects.IGroundLocation.height_above_ground`
+              - Height of ground location above its model of the ground. Height is measured along the normal to surface defined by reference ellipsoid of the central body. Models the ground as an ellipsoid passing through the ground position. Uses Distance Dimension.
+            * - :py:attr:`~br.ok.core.stkobjects.IGroundLocation.laser_environment`
+              - Get the laser environment.
+            * - :py:attr:`~br.ok.core.stkobjects.IGroundLocation.lighting_maximum_step`
+              - Get or set the maximum step size to use when computing lighting. Only applies (and only can be set) when LightingObstructionModel is eLightingObstructionAzElMask or eLightingObstructionTerrain. Uses Time Dimension.
+            * - :py:attr:`~br.ok.core.stkobjects.IGroundLocation.lighting_obstruction_model`
+              - Get or set the obstruction model used in lighting computations.
+            * - :py:attr:`~br.ok.core.stkobjects.IGroundLocation.local_time_offset`
+              - The amount of the time offset from GMT, if this option is used. Uses Time Dimension.
+            * - :py:attr:`~br.ok.core.stkobjects.IGroundLocation.max_range_when_computing_az_el_mask`
+              - Get or set the maximum range to use when computing the az el mask using terrain data. Zero indicates to use algorithm default. Only applies when GetAzElMask returns eTerrainData (cannot be set if eMaskFile). Uses Distance Dimension.
+            * - :py:attr:`~br.ok.core.stkobjects.IGroundLocation.position`
+              - Get the position of the ground location.
+            * - :py:attr:`~br.ok.core.stkobjects.IGroundLocation.radar_cross_section`
+              - Return the radar cross sectoin.
+            * - :py:attr:`~br.ok.core.stkobjects.IGroundLocation.rf_environment`
+              - Get the RF environment.
+            * - :py:attr:`~br.ok.core.stkobjects.IGroundLocation.save_terrain_mask_data_in_binary`
+              - Save terrain az-el mask data in binary.
+            * - :py:attr:`~br.ok.core.stkobjects.IGroundLocation.terrain_norm`
+              - Set the normal to the local terrain.
+            * - :py:attr:`~br.ok.core.stkobjects.IGroundLocation.terrain_norm_data`
+              - Data used in specifying terrain slope.
+            * - :py:attr:`~br.ok.core.stkobjects.IGroundLocation.use_local_time_offset`
+              - Opt whether to use a local time offset from GMT.
+            * - :py:attr:`~br.ok.core.stkobjects.IGroundLocation.use_terrain`
+              - Opt whether to set altitude automatically by using terrain data.
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.ok.core.stkobjects import IGroundLocation
+
+
+Property detail
+---------------
+
+.. py:property:: access_constraints
+    :canonical: br.ok.core.stkobjects.IGroundLocation.access_constraints
+    :type: AccessConstraintCollection
+
+    Get the constraints imposed on the ground location.
+
+.. py:property:: altitude_reference
+    :canonical: br.ok.core.stkobjects.IGroundLocation.altitude_reference
+    :type: None
+
+    Get or set the altitude reference of the object.
+
+.. py:property:: chain_analysis_options
+    :canonical: br.ok.core.stkobjects.IGroundLocation.chain_analysis_options
+    :type: ChainAnalysisOptions
+
+    Get the ground location's chain analysis options.
+
+.. py:property:: ground_location_graphics
+    :canonical: br.ok.core.stkobjects.IGroundLocation.ground_location_graphics
+    :type: IGroundLocationGraphics
+
+    Get the 2D Graphics properties of the ground location.
+
+.. py:property:: ground_location_graphics_3d
+    :canonical: br.ok.core.stkobjects.IGroundLocation.ground_location_graphics_3d
+    :type: IGroundLocationGraphics3D
+
+    Get the 3D Graphics properties of the ground location.
+
+.. py:property:: height_above_ground
+    :canonical: br.ok.core.stkobjects.IGroundLocation.height_above_ground
+    :type: None
+
+    Height of ground location above its model of the ground. Height is measured along the normal to surface defined by reference ellipsoid of the central body. Models the ground as an ellipsoid passing through the ground position. Uses Distance Dimension.
+
+.. py:property:: laser_environment
+    :canonical: br.ok.core.stkobjects.IGroundLocation.laser_environment
+    :type: PlatformLaserEnvironment
+
+    Get the laser environment.
+
+.. py:property:: lighting_maximum_step
+    :canonical: br.ok.core.stkobjects.IGroundLocation.lighting_maximum_step
+    :type: float
+
+    Get or set the maximum step size to use when computing lighting. Only applies (and only can be set) when LightingObstructionModel is eLightingObstructionAzElMask or eLightingObstructionTerrain. Uses Time Dimension.
+
+.. py:property:: lighting_obstruction_model
+    :canonical: br.ok.core.stkobjects.IGroundLocation.lighting_obstruction_model
+    :type: LightingObstructionModelType
+
+    Get or set the obstruction model used in lighting computations.
+
+.. py:property:: local_time_offset
+    :canonical: br.ok.core.stkobjects.IGroundLocation.local_time_offset
+    :type: float
+
+    The amount of the time offset from GMT, if this option is used. Uses Time Dimension.
+
+.. py:property:: max_range_when_computing_az_el_mask
+    :canonical: br.ok.core.stkobjects.IGroundLocation.max_range_when_computing_az_el_mask
+    :type: float
+
+    Get or set the maximum range to use when computing the az el mask using terrain data. Zero indicates to use algorithm default. Only applies when GetAzElMask returns eTerrainData (cannot be set if eMaskFile). Uses Distance Dimension.
+
+.. py:property:: position
+    :canonical: br.ok.core.stkobjects.IGroundLocation.position
+    :type: IPosition
+
+    Get the position of the ground location.
+
+.. py:property:: radar_cross_section
+    :canonical: br.ok.core.stkobjects.IGroundLocation.radar_cross_section
+    :type: RadarCrossSectionInheritable
+
+    Return the radar cross sectoin.
+
+.. py:property:: rf_environment
+    :canonical: br.ok.core.stkobjects.IGroundLocation.rf_environment
+    :type: PlatformRFEnvironment
+
+    Get the RF environment.
+
+.. py:property:: save_terrain_mask_data_in_binary
+    :canonical: br.ok.core.stkobjects.IGroundLocation.save_terrain_mask_data_in_binary
+    :type: bool
+
+    Save terrain az-el mask data in binary.
+
+.. py:property:: terrain_norm
+    :canonical: br.ok.core.stkobjects.IGroundLocation.terrain_norm
+    :type: None
+
+    Set the normal to the local terrain.
+
+.. py:property:: terrain_norm_data
+    :canonical: br.ok.core.stkobjects.IGroundLocation.terrain_norm_data
+    :type: ITerrainNormData
+
+    Data used in specifying terrain slope.
+
+.. py:property:: use_local_time_offset
+    :canonical: br.ok.core.stkobjects.IGroundLocation.use_local_time_offset
+    :type: bool
+
+    Opt whether to use a local time offset from GMT.
+
+.. py:property:: use_terrain
+    :canonical: br.ok.core.stkobjects.IGroundLocation.use_terrain
+    :type: bool
+
+    Opt whether to set altitude automatically by using terrain data.
+
+
+Method detail
+-------------
+
+
+
+
+
+.. py:method:: get_az_el_mask(self) -> AzElMaskType
+    :canonical: br.ok.core.stkobjects.IGroundLocation.get_az_el_mask
+
+    Get the az-el mask. A member of the AzElMaskType enumeration.
+
+    :Returns:
+
+        :obj:`~AzElMaskType`
+
+.. py:method:: get_az_el_mask_data(self) -> typing.Any
+    :canonical: br.ok.core.stkobjects.IGroundLocation.get_az_el_mask_data
+
+    Get az-el mask data.
+
+    :Returns:
+
+        :obj:`~typing.Any`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:method:: reset_az_el_mask(self) -> None
+    :canonical: br.ok.core.stkobjects.IGroundLocation.reset_az_el_mask
+
+    Reset the az-el mask.
+
+    :Returns:
+
+        :obj:`~None`
+
+
+
+.. py:method:: set_az_el_mask(self, type: AzElMaskType, data: typing.Any) -> None
+    :canonical: br.ok.core.stkobjects.IGroundLocation.set_az_el_mask
+
+    Set an az-el mask. A member of the AzElMaskType enumeration.
+
+    :Parameters:
+
+        **type** : :obj:`~AzElMaskType`
+
+        **data** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+
+
+
+
+
+
+

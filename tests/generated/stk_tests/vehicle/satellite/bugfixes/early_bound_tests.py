@@ -24,10 +24,10 @@ import pytest
 from test_util import *
 from assertion_harness import *
 from parameterized import *
-from ansys.stk.core.stkobjects import *
-from ansys.stk.core.stkutil import *
-from ansys.stk.core.stkobjects.astrogator import *
-from ansys.stk.core.analysis_workbench import *
+from br.ok.core.stkobjects import *
+from br.ok.core.stkutil import *
+from br.ok.core.stkobjects.astrogator import *
+from br.ok.core.analysis_workbench import *
 
 
 class EarlyBoundTests(TestBase):

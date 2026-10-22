@@ -21,10 +21,10 @@ from ansys_sphinx_theme import (
     get_version_match,
 )
 
-from ansys.stk import __version__
+from br.ok import __version__
 
 # Project information
-project = "ansys-stk"
+project = "br-ok"
 copyright = f"(c) {datetime.now().year} ANSYS, Inc. All rights reserved"
 author = "ANSYS, Inc."
 version = __version__
@@ -758,7 +758,7 @@ def read_migration_tables(app: sphinx.application.Sphinx):
 
     """
     ROOT_DIR = pathlib.Path(app.srcdir).parent.parent
-    TOOLS_DIR = ROOT_DIR / "src" / "ansys" / "stk" / "core" / "tools"
+    TOOLS_DIR = ROOT_DIR / "src" / "br" / "ok" / "core" / "tools"
     API_MAPPINGS = TOOLS_DIR / "api_migration_assistant" / "api-mappings"
     if not API_MAPPINGS.exists():
         raise FileNotFoundError(f"API mappings directory not found at {API_MAPPINGS}")

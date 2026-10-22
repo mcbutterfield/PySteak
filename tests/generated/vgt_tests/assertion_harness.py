@@ -21,7 +21,7 @@
 # SOFTWARE.
 
 from test_util import *
-from ansys.stk.core.stkobjects import *
+from br.ok.core.stkobjects import *
 
 
 class Unit(object):

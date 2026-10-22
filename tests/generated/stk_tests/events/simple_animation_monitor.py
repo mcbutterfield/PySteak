@@ -23,7 +23,7 @@
 from test_util import *
 from events.object_model_event_monitor import *
 from logger import *
-from ansys.stk.core.stkobjects import *
+from br.ok.core.stkobjects import *
 
 
 class SimpleAnimationUpdateMonitor(IObjectModelEventMonitor):

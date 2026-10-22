@@ -1,0 +1,416 @@
+Scenario
+========
+
+.. py:class:: br.ok.core.stkobjects.Scenario
+
+   Bases: :py:class:`~br.ok.core.stkobjects.ISTKObject`, :py:class:`~br.ok.core.stkobjects.ILifetimeInformation`
+
+   Class defining the Scenario object.
+
+.. py:currentmodule:: Scenario
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.get_access_between_objects_by_path`
+              - Return an Access object associated with the two STK objects specified using their paths. The paths can be fully-qualified or truncated.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.get_existing_accesses`
+              - Return an array of existing accesses in the current scenario. The result is a two-dimensional array of triplets where each triplet contains the paths of two objects participating in the access and a flag indicating whether the access is computed.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.set_dirty`
+              - Set the flag indicating the scenario has been modified.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.set_time_period`
+              - Set the Scenario time period. startTime/stopTime use DateFormat Dimension.
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.aircraft_wgs84_warning`
+              - Specify when to display the aircraft mission modeler WGS84 warning.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.analysis_epoch`
+              - Allow the user to configure the scenario's analysis epoch.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.analysis_interval`
+              - Allow the user to configure the scenario's analysis time period.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.animation_settings`
+              - Scenario animation settings.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.component_directory`
+              - Get the component directory interface.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.database_settings`
+              - Scenario database settings.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.display_warning_if_orbit_impacts_ground`
+              - Specify whether to display a warning when a satellite orbit intersects the central body.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.earth_data`
+              - Scenario Earth Data settings.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.epoch`
+              - Scenario epoch. Uses DateFormat Dimension.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.graphics`
+              - Scenario 2D Graphics settings.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.graphics_3d`
+              - Scenario 3D Graphics settings.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.is_dirty`
+              - Specify whether scenario needs to be saved.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.laser_environment`
+              - Return the laser environment.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.radar_cross_section`
+              - Return the global radar cross section.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.rf_environment`
+              - Return the RF environment.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.scenario_files`
+              - Return list of scenario files.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.scene_manager`
+              - A scene manager.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.show_warning_if_missile_fails_to_impact`
+              - Specify whether to display a warning when a missile trajectory does not impact the central body.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.show_warning_whether_missile_achieves_orbit_or_not`
+              - Generate a message that warns the user if the missile achieves orbit (and give the perigee) or impacts the surface (and give the interval after missile's stop time).
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.space_environment`
+              - Scenario SpaceEnvironment settings.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.start_time`
+              - Scenario start time. Uses DateFormat Dimension.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.stop_time`
+              - Scenario stop time. Uses DateFormat Dimension.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.terrain`
+              - Return a list of central bodies and their terrains.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.tilesets`
+              - Return a list of 3D Tilesets used for Analysis.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.use_analysis_start_time_for_epoch`
+              - Whether the scenario Epoch is the same as the scenario's StartTime.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.use_terrain_server_for_analysis`
+              - Whether STK uses the Terrain Server for analysis.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.use_terrain_server_for_az_el_mask`
+              - Whether STK uses the Terrain Server for Azimuth/Elevation mask.
+            * - :py:attr:`~br.ok.core.stkobjects.Scenario.use_terrain_server_for_line_of_sight_terrain_mask`
+              - Whether STK uses the Terrain Server for Line-of-sight terrain mask.
+
+
+
+Examples
+--------
+
+Save the current scenario
+
+.. code-block:: python
+
+    from pathlib import Path
+
+    # Create a directory for scenario files
+    scenario_directory = Path.cwd() / "MyScenario"
+    scenario_directory.mkdir(parents=True, exist_ok=True)
+
+    # Save the scenario
+    scenario_path = scenario_directory / "MyScenario.sc"
+    root.save_as(str(scenario_path))
+
+
+Save the current scenario as a VDF
+
+.. code-block:: python
+
+    # STKObjectRoot root: STK Object Model Root
+    scenario = root.current_scenario
+    root.preferences.vdf_preferences.save_scenario_as_vdf = True
+
+
+Set the current scenario's time period
+
+.. code-block:: python
+
+    # STKObjectRoot root: STK Object Model Root
+    scenario = root.current_scenario
+    scenario.set_time_period(start_time="1 Jan 2012 12:00:00.000", stop_time="2 Jan 2012 12:00:00.000")
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.ok.core.stkobjects import Scenario
+
+
+Property detail
+---------------
+
+.. py:property:: aircraft_wgs84_warning
+    :canonical: br.ok.core.stkobjects.Scenario.aircraft_wgs84_warning
+    :type: AircraftWGS84WarningType
+
+    Specify when to display the aircraft mission modeler WGS84 warning.
+
+.. py:property:: analysis_epoch
+    :canonical: br.ok.core.stkobjects.Scenario.analysis_epoch
+    :type: ITimeToolInstantSmartEpoch
+
+    Allow the user to configure the scenario's analysis epoch.
+
+.. py:property:: analysis_interval
+    :canonical: br.ok.core.stkobjects.Scenario.analysis_interval
+    :type: ITimeToolTimeIntervalSmartInterval
+
+    Allow the user to configure the scenario's analysis time period.
+
+.. py:property:: animation_settings
+    :canonical: br.ok.core.stkobjects.Scenario.animation_settings
+    :type: ScenarioAnimation
+
+    Scenario animation settings.
+
+.. py:property:: component_directory
+    :canonical: br.ok.core.stkobjects.Scenario.component_directory
+    :type: ComponentDirectory
+
+    Get the component directory interface.
+
+.. py:property:: database_settings
+    :canonical: br.ok.core.stkobjects.Scenario.database_settings
+    :type: ScenarioDatabaseCollection
+
+    Scenario database settings.
+
+.. py:property:: display_warning_if_orbit_impacts_ground
+    :canonical: br.ok.core.stkobjects.Scenario.display_warning_if_orbit_impacts_ground
+    :type: bool
+
+    Specify whether to display a warning when a satellite orbit intersects the central body.
+
+.. py:property:: earth_data
+    :canonical: br.ok.core.stkobjects.Scenario.earth_data
+    :type: ScenarioEarthData
+
+    Scenario Earth Data settings.
+
+.. py:property:: epoch
+    :canonical: br.ok.core.stkobjects.Scenario.epoch
+    :type: typing.Any
+
+    Scenario epoch. Uses DateFormat Dimension.
+
+.. py:property:: graphics
+    :canonical: br.ok.core.stkobjects.Scenario.graphics
+    :type: ScenarioGraphics
+
+    Scenario 2D Graphics settings.
+
+.. py:property:: graphics_3d
+    :canonical: br.ok.core.stkobjects.Scenario.graphics_3d
+    :type: ScenarioGraphics3D
+
+    Scenario 3D Graphics settings.
+
+.. py:property:: is_dirty
+    :canonical: br.ok.core.stkobjects.Scenario.is_dirty
+    :type: bool
+
+    Specify whether scenario needs to be saved.
+
+.. py:property:: laser_environment
+    :canonical: br.ok.core.stkobjects.Scenario.laser_environment
+    :type: LaserEnvironment
+
+    Return the laser environment.
+
+.. py:property:: radar_cross_section
+    :canonical: br.ok.core.stkobjects.Scenario.radar_cross_section
+    :type: RadarCrossSection
+
+    Return the global radar cross section.
+
+.. py:property:: rf_environment
+    :canonical: br.ok.core.stkobjects.Scenario.rf_environment
+    :type: RFEnvironment
+
+    Return the RF environment.
+
+.. py:property:: scenario_files
+    :canonical: br.ok.core.stkobjects.Scenario.scenario_files
+    :type: list
+
+    Return list of scenario files.
+
+.. py:property:: scene_manager
+    :canonical: br.ok.core.stkobjects.Scenario.scene_manager
+    :type: ISceneManager
+
+    A scene manager.
+
+.. py:property:: show_warning_if_missile_fails_to_impact
+    :canonical: br.ok.core.stkobjects.Scenario.show_warning_if_missile_fails_to_impact
+    :type: bool
+
+    Specify whether to display a warning when a missile trajectory does not impact the central body.
+
+.. py:property:: show_warning_whether_missile_achieves_orbit_or_not
+    :canonical: br.ok.core.stkobjects.Scenario.show_warning_whether_missile_achieves_orbit_or_not
+    :type: bool
+
+    Generate a message that warns the user if the missile achieves orbit (and give the perigee) or impacts the surface (and give the interval after missile's stop time).
+
+.. py:property:: space_environment
+    :canonical: br.ok.core.stkobjects.Scenario.space_environment
+    :type: ScenarioSpaceEnvironment
+
+    Scenario SpaceEnvironment settings.
+
+.. py:property:: start_time
+    :canonical: br.ok.core.stkobjects.Scenario.start_time
+    :type: typing.Any
+
+    Scenario start time. Uses DateFormat Dimension.
+
+.. py:property:: stop_time
+    :canonical: br.ok.core.stkobjects.Scenario.stop_time
+    :type: typing.Any
+
+    Scenario stop time. Uses DateFormat Dimension.
+
+.. py:property:: terrain
+    :canonical: br.ok.core.stkobjects.Scenario.terrain
+    :type: CentralBodyTerrainCollection
+
+    Return a list of central bodies and their terrains.
+
+.. py:property:: tilesets
+    :canonical: br.ok.core.stkobjects.Scenario.tilesets
+    :type: Tileset3DCollection
+
+    Return a list of 3D Tilesets used for Analysis.
+
+.. py:property:: use_analysis_start_time_for_epoch
+    :canonical: br.ok.core.stkobjects.Scenario.use_analysis_start_time_for_epoch
+    :type: bool
+
+    Whether the scenario Epoch is the same as the scenario's StartTime.
+
+.. py:property:: use_terrain_server_for_analysis
+    :canonical: br.ok.core.stkobjects.Scenario.use_terrain_server_for_analysis
+    :type: bool
+
+    Whether STK uses the Terrain Server for analysis.
+
+.. py:property:: use_terrain_server_for_az_el_mask
+    :canonical: br.ok.core.stkobjects.Scenario.use_terrain_server_for_az_el_mask
+    :type: bool
+
+    Whether STK uses the Terrain Server for Azimuth/Elevation mask.
+
+.. py:property:: use_terrain_server_for_line_of_sight_terrain_mask
+    :canonical: br.ok.core.stkobjects.Scenario.use_terrain_server_for_line_of_sight_terrain_mask
+    :type: bool
+
+    Whether STK uses the Terrain Server for Line-of-sight terrain mask.
+
+
+Method detail
+-------------
+
+
+
+
+
+
+
+
+
+
+
+.. py:method:: get_access_between_objects_by_path(self, object_path1: str, object_path2: str) -> Access
+    :canonical: br.ok.core.stkobjects.Scenario.get_access_between_objects_by_path
+
+    Return an Access object associated with the two STK objects specified using their paths. The paths can be fully-qualified or truncated.
+
+    :Parameters:
+
+        **object_path1** : :obj:`~str`
+
+        **object_path2** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~Access`
+
+.. py:method:: get_existing_accesses(self) -> list
+    :canonical: br.ok.core.stkobjects.Scenario.get_existing_accesses
+
+    Return an array of existing accesses in the current scenario. The result is a two-dimensional array of triplets where each triplet contains the paths of two objects participating in the access and a flag indicating whether the access is computed.
+
+    :Returns:
+
+        :obj:`~list`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:method:: set_dirty(self) -> None
+    :canonical: br.ok.core.stkobjects.Scenario.set_dirty
+
+    Set the flag indicating the scenario has been modified.
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: set_time_period(self, start_time: typing.Any, stop_time: typing.Any) -> None
+    :canonical: br.ok.core.stkobjects.Scenario.set_time_period
+
+    Set the Scenario time period. startTime/stopTime use DateFormat Dimension.
+
+    :Parameters:
+
+        **start_time** : :obj:`~typing.Any`
+
+        **stop_time** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Examples
+    --------
+
+    Set the current scenario's time period
+
+    .. code-block:: python
+
+        # STKObjectRoot root: STK Object Model Root
+        scenario = root.current_scenario
+        scenario.set_time_period(start_time="1 Jan 2012 12:00:00.000", stop_time="2 Jan 2012 12:00:00.000")
+
+
+

@@ -23,7 +23,7 @@
 # Start by launching a new STK instance. In this example, STKEngine is used.
 
 # +
-from ansys.stk.core.stkengine import STKEngine
+from br.ok.core.stkengine import STKEngine
 
 
 stk = STKEngine.start_application(no_graphics=False)
@@ -39,7 +39,7 @@ root.new_scenario("MultifunctionRadar")
 # Once the scenario is created, it is possible to show a 3D graphics window by running:
 
 # +
-from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
+from br.ok.core.experimental.jupyterwidgets import GlobeWidget
 
 
 globe_plotter = GlobeWidget(root, 640, 480)
@@ -49,7 +49,7 @@ globe_plotter.show()
 # Show a 2D graphics window by running:
 
 # +
-from ansys.stk.core.experimental.jupyterwidgets import MapWidget
+from br.ok.core.experimental.jupyterwidgets import MapWidget
 
 
 map_plotter = MapWidget(root, 640, 480)
@@ -61,7 +61,7 @@ map_plotter.show()
 # Using the newly created scenario, set the start and stop times. Rewind the scenario so that the graphics match the start and stop times of the scenario:
 
 # +
-from ansys.stk.core.stkobjects import Scenario
+from br.ok.core.stkobjects import Scenario
 
 
 scenario = Scenario(root.current_scenario)
@@ -80,7 +80,7 @@ root.units_preferences.set_current_unit("distance", "ft")
 # The radar site is located near a regional airport, at latitude $34.7422^\circ$ and longitude $-118.225^\circ$ with a height $50$ ft above ground. First, insert a place object to represent the site:
 
 # +
-from ansys.stk.core.stkobjects import Place, STKObjectType
+from br.ok.core.stkobjects import Place, STKObjectType
 
 
 radar_site = Place(scenario.children.new(STKObjectType.PLACE, "RadarSite"))
@@ -99,7 +99,7 @@ radar_site.height_above_ground = 50
 # To model the small private aircraft flying from east to west through the airfield, insert an aircraft object:
 
 # +
-from ansys.stk.core.stkobjects import Aircraft
+from br.ok.core.stkobjects import Aircraft
 
 
 small_aircraft = Aircraft(
@@ -110,7 +110,7 @@ small_aircraft = Aircraft(
 # Then, configure the aircraft to use Mean Sea Level (MSL) as its altitude reference:
 
 # +
-from ansys.stk.core.stkobjects import VehicleAltitudeReference
+from br.ok.core.stkobjects import VehicleAltitudeReference
 
 
 small_aircraft.route.set_altitude_reference_type(
@@ -160,7 +160,7 @@ small_aircraft_rcs.inherit = False
 # Get the aircraft's RCS model, select the model's first frequency band, and configure the model to use a constant RCS of $10$ dBsm:
 
 # +
-from ansys.stk.core.stkobjects import RadarCrossSectionModel
+from br.ok.core.stkobjects import RadarCrossSectionModel
 
 
 rcs_model = RadarCrossSectionModel(small_aircraft_rcs.model_component_linking.component)
@@ -179,7 +179,7 @@ map_plotter.show()
 # To create the multifunction radar system, first insert a radar object on the radar site:
 
 # +
-from ansys.stk.core.stkobjects import Radar
+from br.ok.core.stkobjects import Radar
 
 
 radar = Radar(radar_site.children.new(STKObjectType.RADAR, "MultifunctionRadar"))
@@ -192,7 +192,7 @@ radar.model_component_linking.set_component("Multifunction")
 # Then, get the radar's model, which is now a `RadarModelMultifunction` object:
 
 # +
-from ansys.stk.core.stkobjects import RadarModelMultifunction
+from br.ok.core.stkobjects import RadarModelMultifunction
 
 
 multifunction_model = RadarModelMultifunction(radar.model_component_linking.component)
@@ -201,7 +201,7 @@ multifunction_model = RadarModelMultifunction(radar.model_component_linking.comp
 # All the beams created in this scenario are oriented along the radar object's pointing type, which is fixed. Configure the radar model to use a fixed pointing strategy:
 
 # +
-from ansys.stk.core.stkobjects import PointingStrategyType
+from br.ok.core.stkobjects import PointingStrategyType
 
 
 multifunction_model.set_pointing_strategy_type(PointingStrategyType.FIXED)
@@ -222,7 +222,7 @@ multifunction_model.transmitter.enable_polarization = True
 # Set the transmitter's polarization type to linear:
 
 # +
-from ansys.stk.core.stkobjects import PolarizationType
+from br.ok.core.stkobjects import PolarizationType
 
 
 multifunction_model.transmitter.set_polarization_type(PolarizationType.LINEAR)
@@ -249,7 +249,7 @@ multifunction_model.receiver.pre_receive_gains_losses.add(10)
 # To create waveform strategies, first get all available radar components from the component directory:
 
 # +
-from ansys.stk.core.stkobjects import Component
+from br.ok.core.stkobjects import Component
 
 
 radar_components = scenario.component_directory.get_components(Component.RADAR)
@@ -288,7 +288,7 @@ horizon_search_rectangular_waveform = radar_waveform_components.duplicate_compon
 # Then, configure the waveform to have a frequency of $3.5$ GHz:
 
 # +
-from ansys.stk.core.stkobjects import FrequencySpecificationType
+from br.ok.core.stkobjects import FrequencySpecificationType
 
 
 horizon_search_rectangular_waveform.frequency_specification = (
@@ -306,7 +306,7 @@ horizon_search.waveform_selection_strategy.fixed_waveform = "Horizon Search Rect
 # By default, the beam's pointing strategy is already set to fixed. Assign the azimuth and elevation for the beam, and configure it to rotate about the boresight:
 
 # +
-from ansys.stk.core.stkutil import AzElAboutBoresight
+from br.ok.core.stkutil import AzElAboutBoresight
 
 
 horizon_search.pointing_strategy.orientation.assign_az_el(
@@ -402,7 +402,7 @@ first_time = horizon_search_access_df[
 # Then set the beam's activity to use time intervals:
 
 # +
-from ansys.stk.core.stkobjects import RadarActivityType
+from br.ok.core.stkobjects import RadarActivityType
 
 
 horizon_search.set_activity_type(RadarActivityType.TIME_INTERVAL_LIST)
@@ -438,7 +438,7 @@ long_range_rectangular_waveform = radar_waveform_components.duplicate_component(
 # The long-range rectangular waveform uses low pulse repetition frequency (PRF) rectangular pulses, with a default PRF of $0.0005$ MHz. Configure the waveform's frequency to $2.0$ GHz:
 
 # +
-from ansys.stk.core.stkobjects import FrequencySpecificationType
+from br.ok.core.stkobjects import FrequencySpecificationType
 
 
 long_range_rectangular_waveform.frequency_specification = (
@@ -489,7 +489,7 @@ ultra_long_range_rectangular_waveform.frequency = 1.0
 # Next, override the beam's default waveform strategies in order to support dynamic waveform switching. Configure the beam's waveform strategy to use range limits to choose between waveforms:
 
 # +
-from ansys.stk.core.stkobjects import WaveformSelectionStrategyType
+from br.ok.core.stkobjects import WaveformSelectionStrategyType
 
 
 horizon_targeted.set_waveform_selection_strategy(
@@ -630,7 +630,7 @@ plt.show()
 # Next, configure the beam to start tracking the private plane when the horizon search beam is first able to track it. Configure the beam to use a time interval list as its activity type:
 
 # +
-from ansys.stk.core.stkobjects import RadarActivityType
+from br.ok.core.stkobjects import RadarActivityType
 
 
 horizon_targeted.set_activity_type(RadarActivityType.TIME_INTERVAL_LIST)

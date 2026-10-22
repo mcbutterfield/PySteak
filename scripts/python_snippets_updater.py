@@ -478,8 +478,8 @@ def main():
     pystk_root_dir = Path(__file__).parent.parent
 
     snippets_dir = pystk_root_dir / "tests" / "doc_snippets_tests"
-    src_core_dir = pystk_root_dir / "src" / "ansys" / "stk" / "core"
-    doc_core_dir = pystk_root_dir / "doc" / "source" / "api" / "ansys" / "stk" / "core"
+    src_core_dir = pystk_root_dir / "src" / "br" / "ok" / "core"
+    doc_core_dir = pystk_root_dir / "doc" / "source" / "api" / "br" / "ok" / "core"
 
     combined_snippets_rst_path = pystk_root_dir / "doc" / "source" / "user-guide" / "code-snippets.rst"
 

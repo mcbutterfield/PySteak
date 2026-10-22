@@ -5,6 +5,15 @@ This topic provides details on installing PySTK in Windows platforms.
 
 .. note::
 
+    For this PyOK fork, install directly from GitHub::
+
+        python -m pip install "br-ok @ git+https://github.com/mcbutterfield/PyOK.git"
+
+    Import the API with ``import br.ok.core``. PyOK is not published to PyPI;
+    the artifact and PyPI instructions below describe the upstream workflow.
+
+.. note::
+
     This topic assumes that you have a local installation of STK and a valid
     license in your machine.
 
@@ -64,7 +73,7 @@ Install Windows artifacts by using the `pip`_ command:
 
             .. code-block:: text
 
-                python -m pip install "ansys-stk=={{ PYSTK_VERSION }}"
+                python -m pip install "br-ok=={{ PYSTK_VERSION }}"
         {% endif %}
 
         .. tab-item:: **Wheels install**
@@ -111,7 +120,7 @@ select the type of installation.
 
                     .. code-block:: bash
 
-                        python -m pip install ansys-stk[{{ target }}]
+                        python -m pip install br-ok[{{ target }}]
 
                 .. tab-item:: Wheelhouse install
 
@@ -126,7 +135,7 @@ select the type of installation.
 
                     .. code-block:: bash
 
-                        python -m pip install --find-links wheelhouse ansys-stk[{{ target }}]
+                        python -m pip install --find-links wheelhouse br-ok[{{ target }}]
 
             Dependencies included with the ``{{ target }}`` target are:
 
@@ -169,7 +178,7 @@ Verify a successful installation of PySTK by running:
 
     .. code-block:: python
 
-        from ansys.stk.core.stkengine import STKEngine
+        from br.ok.core.stkengine import STKEngine
 
 
         stk = STKEngine.start_application(no_graphics=True)

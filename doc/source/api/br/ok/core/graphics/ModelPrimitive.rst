@@ -1,0 +1,163 @@
+ModelPrimitive
+==============
+
+.. py:class:: br.ok.core.graphics.ModelPrimitive
+
+   Bases: :py:class:`~br.ok.core.graphics.IPrimitive`
+
+   The model primitive loads and renders `glTF 2.0 <https://www.khronos.org/gltf/>`_ (.gltf, .glb), `COLLADA <https://www.khronos.org/collada/>`_ (DAE) and AGI `MDL <https://support.agi.com/3d-models/>`_ (MDL) models.
+
+.. py:currentmodule:: ModelPrimitive
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.ok.core.graphics.ModelPrimitive.allow_collada_models`
+              - Do not use this method, as it is deprecated. support for COLLADA 3D models has been removed Support for loading COLLADA 3D model format has been officially removed. This method will allow users to continue loading COLLADA models for a short period of time.
+            * - :py:attr:`~br.ok.core.graphics.ModelPrimitive.load_with_string_uri`
+              - For convenience. Loads a `glTF 2.0 <https://www.khronos.org/gltf/>`_ (.gltf, .glb), `COLLADA <https://www.khronos.org/collada/>`_ (DAE) or AGI `MDL <https://support.agi.com/3d-models/>`_ (MDL) model using a file path.
+            * - :py:attr:`~br.ok.core.graphics.ModelPrimitive.load_with_string_uri_and_up_axis`
+              - For convenience. Loads a `glTF 2.0 <https://www.khronos.org/gltf/>`_ (.gltf, .glb), `COLLADA <https://www.khronos.org/collada/>`_ (DAE) or AGI `MDL <https://support.agi.com/3d-models/>`_ (MDL) model using a file path.
+            * - :py:attr:`~br.ok.core.graphics.ModelPrimitive.set_position_cartographic`
+              - For convenience. Sets the cartographic position of the model. This also sets position.
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.ok.core.graphics.ModelPrimitive.articulations`
+              - Get the model's articulations. Articulations identify geometry and contain transformations for manipulating that geometry.
+            * - :py:attr:`~br.ok.core.graphics.ModelPrimitive.orientation`
+              - Get or set the model's orientation. The quaternion is a rotation from the model's local axes to the axes of the model's reference frame.
+            * - :py:attr:`~br.ok.core.graphics.ModelPrimitive.position`
+              - Get or set the position of the model. The position is defined in the model's reference frame. The array contains the components of the position in the order x, y, z.
+            * - :py:attr:`~br.ok.core.graphics.ModelPrimitive.scale`
+              - Get or set the linear scale used to increase or decrease the size of the rendered model.
+            * - :py:attr:`~br.ok.core.graphics.ModelPrimitive.uri_as_string`
+              - Get the URI of the file used to load the file.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.ok.core.graphics import ModelPrimitive
+
+
+Property detail
+---------------
+
+.. py:property:: articulations
+    :canonical: br.ok.core.graphics.ModelPrimitive.articulations
+    :type: ModelArticulationCollection
+
+    Get the model's articulations. Articulations identify geometry and contain transformations for manipulating that geometry.
+
+.. py:property:: orientation
+    :canonical: br.ok.core.graphics.ModelPrimitive.orientation
+    :type: IOrientation
+
+    Get or set the model's orientation. The quaternion is a rotation from the model's local axes to the axes of the model's reference frame.
+
+.. py:property:: position
+    :canonical: br.ok.core.graphics.ModelPrimitive.position
+    :type: list
+
+    Get or set the position of the model. The position is defined in the model's reference frame. The array contains the components of the position in the order x, y, z.
+
+.. py:property:: scale
+    :canonical: br.ok.core.graphics.ModelPrimitive.scale
+    :type: float
+
+    Get or set the linear scale used to increase or decrease the size of the rendered model.
+
+.. py:property:: uri_as_string
+    :canonical: br.ok.core.graphics.ModelPrimitive.uri_as_string
+    :type: str
+
+    Get the URI of the file used to load the file.
+
+
+Method detail
+-------------
+
+.. py:method:: allow_collada_models(self, allow: bool) -> None
+    :canonical: br.ok.core.graphics.ModelPrimitive.allow_collada_models
+
+    Do not use this method, as it is deprecated. support for COLLADA 3D models has been removed Support for loading COLLADA 3D model format has been officially removed. This method will allow users to continue loading COLLADA models for a short period of time.
+
+    :Parameters:
+
+        **allow** : :obj:`~bool`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+
+.. py:method:: load_with_string_uri(self, uri: str) -> None
+    :canonical: br.ok.core.graphics.ModelPrimitive.load_with_string_uri
+
+    For convenience. Loads a `glTF 2.0 <https://www.khronos.org/gltf/>`_ (.gltf, .glb), `COLLADA <https://www.khronos.org/collada/>`_ (DAE) or AGI `MDL <https://support.agi.com/3d-models/>`_ (MDL) model using a file path.
+
+    :Parameters:
+
+        **uri** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: load_with_string_uri_and_up_axis(self, uri: str, up_axis: ModelUpAxis) -> None
+    :canonical: br.ok.core.graphics.ModelPrimitive.load_with_string_uri_and_up_axis
+
+    For convenience. Loads a `glTF 2.0 <https://www.khronos.org/gltf/>`_ (.gltf, .glb), `COLLADA <https://www.khronos.org/collada/>`_ (DAE) or AGI `MDL <https://support.agi.com/3d-models/>`_ (MDL) model using a file path.
+
+    :Parameters:
+
+        **uri** : :obj:`~str`
+
+        **up_axis** : :obj:`~ModelUpAxis`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+
+
+
+
+
+
+.. py:method:: set_position_cartographic(self, central_body: str, position: list) -> None
+    :canonical: br.ok.core.graphics.ModelPrimitive.set_position_cartographic
+
+    For convenience. Sets the cartographic position of the model. This also sets position.
+
+    :Parameters:
+
+        **central_body** : :obj:`~str`
+
+        **position** : :obj:`~list`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+

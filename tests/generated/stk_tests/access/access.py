@@ -26,10 +26,10 @@ from assertion_harness import *
 from compatibility.interval_collection_extension_methods import *
 from interfaces.stk_objects import *
 from logger import *
-from ansys.stk.core.utilities.colors import *
-from ansys.stk.core.stkobjects import *
-from ansys.stk.core.stkutil import *
-from ansys.stk.core.analysis_workbench import *
+from br.ok.core.utilities.colors import *
+from br.ok.core.stkobjects import *
+from br.ok.core.stkutil import *
+from br.ok.core.analysis_workbench import *
 
 
 class EarlyBoundTests(TestBase):

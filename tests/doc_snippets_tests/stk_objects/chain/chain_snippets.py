@@ -23,7 +23,7 @@
 import os
 import sys
 
-from ansys.stk.core.stkobjects import ChainTimePeriodType, DataSaveMode, STKObjectType
+from br.ok.core.stkobjects import ChainTimePeriodType, DataSaveMode, STKObjectType
 
 # Add path to the parent directory to use some common utilities
 sys.path.insert(1, os.path.join(os.path.dirname(os.path.realpath(__file__)), ".."))

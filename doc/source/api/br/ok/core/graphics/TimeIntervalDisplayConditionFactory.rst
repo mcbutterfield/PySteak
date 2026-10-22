@@ -1,0 +1,79 @@
+TimeIntervalDisplayConditionFactory
+===================================
+
+.. py:class:: br.ok.core.graphics.TimeIntervalDisplayConditionFactory
+
+   Define an inclusive time interval that determines when an object, such as a primitive, is rendered based on the current animation time .
+
+.. py:currentmodule:: TimeIntervalDisplayConditionFactory
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.ok.core.graphics.TimeIntervalDisplayConditionFactory.initialize`
+              - Initialize a default time display condition. minimum time is set to JulianDate.MinValue and maximum time is set to JulianDate.MaxValue. With this interval, an object is always rendered regardless of the current animation time.
+            * - :py:attr:`~br.ok.core.graphics.TimeIntervalDisplayConditionFactory.initialize_with_time_interval`
+              - Initialize a time display condition with a time interval.
+            * - :py:attr:`~br.ok.core.graphics.TimeIntervalDisplayConditionFactory.initialize_with_times`
+              - Initialize a time display condition with the inclusive time interval [minimumTime, maximumTime]...
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.ok.core.graphics import TimeIntervalDisplayConditionFactory
+
+
+
+Method detail
+-------------
+
+.. py:method:: initialize(self) -> TimeIntervalDisplayCondition
+    :canonical: br.ok.core.graphics.TimeIntervalDisplayConditionFactory.initialize
+
+    Initialize a default time display condition. minimum time is set to JulianDate.MinValue and maximum time is set to JulianDate.MaxValue. With this interval, an object is always rendered regardless of the current animation time.
+
+    :Returns:
+
+        :obj:`~TimeIntervalDisplayCondition`
+
+.. py:method:: initialize_with_time_interval(self, time_interval: list) -> TimeIntervalDisplayCondition
+    :canonical: br.ok.core.graphics.TimeIntervalDisplayConditionFactory.initialize_with_time_interval
+
+    Initialize a time display condition with a time interval.
+
+    :Parameters:
+
+        **time_interval** : :obj:`~list`
+
+
+    :Returns:
+
+        :obj:`~TimeIntervalDisplayCondition`
+
+.. py:method:: initialize_with_times(self, minimum_time: Date, maximum_time: Date) -> TimeIntervalDisplayCondition
+    :canonical: br.ok.core.graphics.TimeIntervalDisplayConditionFactory.initialize_with_times
+
+    Initialize a time display condition with the inclusive time interval [minimumTime, maximumTime]...
+
+    :Parameters:
+
+        **minimum_time** : :obj:`~Date`
+
+        **maximum_time** : :obj:`~Date`
+
+
+    :Returns:
+
+        :obj:`~TimeIntervalDisplayCondition`
+

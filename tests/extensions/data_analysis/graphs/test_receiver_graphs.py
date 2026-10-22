@@ -23,11 +23,11 @@
 """Test the `receiver_graphs` module."""
 import pytest
 from stk_environment import stk_root
-from ansys.stk.extensions.data_analysis.graphs.receiver_graphs import receiver_filter_line_chart
+from br.ok.extensions.data_analysis.graphs.receiver_graphs import receiver_filter_line_chart
 
 @pytest.fixture()
 def receiver(stk_root):
-    from ansys.stk.core.stkobjects import STKObjectType
+    from br.ok.core.stkobjects import STKObjectType
 
     stk_root.new_scenario("GraphTest")
     stk_root.execute_command("Terrain * TerrainServer UseTerrainForAnalysis No")

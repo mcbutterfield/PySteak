@@ -61,7 +61,7 @@ class InitializationSnippets(CodeSnippetsTestBase):
     )
     def StartSTKEngineWithGfxSnippet(self):
         # Initialize STK Engine with graphics in the current process
-        from ansys.stk.core.stkengine import STKEngine
+        from br.ok.core.stkengine import STKEngine
 
         stk = STKEngine.start_application(no_graphics=False)
 
@@ -80,7 +80,7 @@ class InitializationSnippets(CodeSnippetsTestBase):
     )
     def StartSTKEngineWithoutGfxSnippet(self):
         # Initialize STK Engine without graphics in the current process
-        from ansys.stk.core.stkengine import STKEngine
+        from br.ok.core.stkengine import STKEngine
 
         stk = STKEngine.start_application(no_graphics=True)
 
@@ -100,7 +100,7 @@ class InitializationSnippets(CodeSnippetsTestBase):
     )
     def AttachSTKSnippet(self):
         # Get reference to running STK Desktop instance
-        from ansys.stk.core.stkdesktop import STKDesktop
+        from br.ok.core.stkdesktop import STKDesktop
 
         stk = STKDesktop.attach_to_application()
 
@@ -119,7 +119,7 @@ class InitializationSnippets(CodeSnippetsTestBase):
     )
     def CreateSTKNewSnippet(self):
         # Start new instance of STK Desktop
-        from ansys.stk.core.stkdesktop import STKDesktop
+        from br.ok.core.stkdesktop import STKDesktop
 
         stk = STKDesktop.start_application(visible=True)  # using optional visible argument
 
@@ -142,7 +142,7 @@ class InitializationSnippets(CodeSnippetsTestBase):
     )
     def CreateSTKRuntimeNewSnippet(self):
         # Start new instance of STK Runtime
-        from ansys.stk.core.stkruntime import STKRuntime
+        from br.ok.core.stkruntime import STKRuntime
 
         stk = STKRuntime.start_application()
 
@@ -161,7 +161,7 @@ class InitializationSnippets(CodeSnippetsTestBase):
     )
     def AttachSTKRuntimeSnippet(self):
         # Attach to already running instance of STK Runtime
-        from ansys.stk.core.stkruntime import STKRuntime
+        from br.ok.core.stkruntime import STKRuntime
 
         stk = STKRuntime.attach_to_application()
 

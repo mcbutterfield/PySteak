@@ -63,7 +63,7 @@ phasing_orbits = 5
 # Start by launching a new STK instance. In this example, ``STKEngine`` is used with graphics (``no_graphics`` mode set to ``False``). This means that the STK graphic user interface (GUI) of the product is not launched but 2D and 3D visualization is still available through the STK Engine controls:
 
 # +
-from ansys.stk.core.stkengine import STKEngine
+from br.ok.core.stkengine import STKEngine
 
 
 stk = STKEngine.start_application(no_graphics=False)
@@ -86,7 +86,7 @@ scenario.set_time_period(start_time, stop_time)
 # It is now possible to show a 3D graphics window by running:
 
 # +
-from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
+from br.ok.core.experimental.jupyterwidgets import GlobeWidget
 
 
 plotter = GlobeWidget(root, 640, 480)
@@ -98,7 +98,7 @@ plotter.show()
 # Create the target satellite which will remain at a fixed position in geostationary orbit. This satellite serves as the reference point for the phasing maneuver:
 
 # +
-from ansys.stk.core.stkobjects import STKObjectType
+from br.ok.core.stkobjects import STKObjectType
 
 
 target_satellite = scenario.children.new(STKObjectType.SATELLITE, "Target")
@@ -121,7 +121,7 @@ earth_angle_factory = awb_root.get_provider("CentralBody/Earth").angles.factory
 # Create a dihedral angle component, which is a type of angle between two vectors and about a vector:
 
 # +
-from ansys.stk.core.analysis_workbench import AngleType
+from br.ok.core.analysis_workbench import AngleType
 
 
 phase_angle_awb = earth_angle_factory.create("Phase", "Phase", AngleType.DIHEDRAL_ANGLE)
@@ -168,7 +168,7 @@ phase_angle_calc.input_angle = phase_angle_awb
 # Declare the type of orbit propagator used for the target satellite. Set the propagator to an Astrogator type:
 
 # +
-from ansys.stk.core.stkobjects import PropagatorType
+from br.ok.core.stkobjects import PropagatorType
 
 
 target_satellite.set_propagator_type(PropagatorType.ASTROGATOR)
@@ -187,7 +187,7 @@ target_satellite.propagator.options.draw_trajectory_in_3d = True
 # Access the existing initial state segment in the main sequence and configure the element type to a Keplerian element:
 
 # +
-from ansys.stk.core.stkobjects.astrogator import ElementSetType, SegmentType
+from br.ok.core.stkobjects.astrogator import ElementSetType, SegmentType
 
 
 target_initial_state = target_satellite.propagator.main_sequence.insert(
@@ -226,7 +226,7 @@ target_propagate_segment.stopping_conditions[
 # Use the color red to identify the target satellite:
 
 # +
-from ansys.stk.core.utilities.colors import Colors
+from br.ok.core.utilities.colors import Colors
 
 
 target_propagate_segment.properties.color = Colors.Red
@@ -235,7 +235,7 @@ target_propagate_segment.properties.color = Colors.Red
 # Propagate the target satellite and verify that the propagation worked correctly:
 
 # +
-from ansys.stk.core.stkobjects.astrogator import RunCode
+from br.ok.core.stkobjects.astrogator import RunCode
 
 
 run_code = target_satellite.propagator.run_mcs()
@@ -407,7 +407,7 @@ delta_v_estimate = velocity_periapsis_final - velocity_periapsis_initial
 # Add a target sequence to perform the first Delta-V maneuver and propagate through the phasing orbits. Add the first target sequence segment and configure it to use the active profiles:
 
 # +
-from ansys.stk.core.stkobjects.astrogator import TargetSequenceAction
+from br.ok.core.stkobjects.astrogator import TargetSequenceAction
 
 
 phasing_start_sequence = chaser_satellite.propagator.main_sequence.insert(
@@ -419,7 +419,7 @@ phasing_start_sequence.action = TargetSequenceAction.RUN_ACTIVE_PROFILES
 # Next, add an impulsive maneuver segment, through which Astrogator calculates the new state of the satellite by adding a Delta-V vector to the final state velocity of the previous segment. Configure the maneuver to use a Cartesian X control parameter:
 
 # +
-from ansys.stk.core.stkobjects.astrogator import ControlManeuver, ManeuverType
+from br.ok.core.stkobjects.astrogator import ControlManeuver, ManeuverType
 
 
 first_delta_v_maneuver = phasing_start_sequence.segments.insert(
@@ -432,7 +432,7 @@ first_delta_v_maneuver.enable_control_parameter(ControlManeuver.IMPULSIVE_CARTES
 # Configure the maneuver attitude to use a thrust vector with an x component 1000 times the estimated Delta-V:
 
 # +
-from ansys.stk.core.stkobjects.astrogator import AttitudeControl
+from br.ok.core.stkobjects.astrogator import AttitudeControl
 
 
 first_delta_v_maneuver.maneuver.set_attitude_control_type(AttitudeControl.THRUST_VECTOR)
@@ -480,7 +480,7 @@ phasing_orbit_propagate.results[0].vector2_name = "Satellite/Target Position"
 # Set up the differential corrector to adjust the first Delta-V to achieve zero phase angle at the end of the phasing orbits:
 
 # +
-from ansys.stk.core.stkobjects.astrogator import ProfileMode
+from br.ok.core.stkobjects.astrogator import ProfileMode
 
 
 phasing_differential_corrector = phasing_start_sequence.profiles[

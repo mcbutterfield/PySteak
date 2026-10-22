@@ -22,7 +22,7 @@
 
 from test_util import *
 from code_snippets.code_snippets_test_base import *
-from ansys.stk.core.stkobjects import *
+from br.ok.core.stkobjects import *
 
 
 class StkObjectSnippets(CodeSnippetsTestBase):

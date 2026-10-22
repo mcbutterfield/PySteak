@@ -30,10 +30,10 @@ from interfaces.stk_objects import *
 from logger import *
 from math2 import *
 from vehicle.vehicle_basic import *
-from ansys.stk.core.utilities.colors import *
+from br.ok.core.utilities.colors import *
 from parameterized import *
-from ansys.stk.core.stkobjects import *
-from ansys.stk.core.stkutil import *
+from br.ok.core.stkobjects import *
+from br.ok.core.stkutil import *
 
 
 class EarlyBoundTests(TestBase):

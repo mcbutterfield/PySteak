@@ -23,8 +23,8 @@
 import os
 import sys
 
-from ansys.stk.core.stkobjects import STKObjectType
-from ansys.stk.core.analysis_workbench import (
+from br.ok.core.stkobjects import STKObjectType
+from br.ok.core.analysis_workbench import (
     AngleType,
     AxesType,
     CalculationScalarType,

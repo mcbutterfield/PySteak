@@ -1,0 +1,291 @@
+ReceiverModelLaser
+==================
+
+.. py:class:: br.ok.core.stkobjects.ReceiverModelLaser
+
+   Bases: :py:class:`~br.ok.core.stkobjects.IReceiverModel`, :py:class:`~br.ok.core.stkobjects.IComponentInfo`, :py:class:`~br.ok.core.stkobjects.ICloneable`
+
+   Class defining a laser receiver model.
+
+.. py:currentmodule:: ReceiverModelLaser
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.ok.core.stkobjects.ReceiverModelLaser.set_demodulator`
+              - Set the current demodulator model by name.
+            * - :py:attr:`~br.ok.core.stkobjects.ReceiverModelLaser.set_polarization_type`
+              - Set the current polarization type.
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.ok.core.stkobjects.ReceiverModelLaser.antenna_control`
+              - Get the receiver antenna control.
+            * - :py:attr:`~br.ok.core.stkobjects.ReceiverModelLaser.bandwidth`
+              - Get or set the bandwidth.
+            * - :py:attr:`~br.ok.core.stkobjects.ReceiverModelLaser.demodulator`
+              - Get the current demodulator model.
+            * - :py:attr:`~br.ok.core.stkobjects.ReceiverModelLaser.detector_dark_current`
+              - Get or set the detector dark current.
+            * - :py:attr:`~br.ok.core.stkobjects.ReceiverModelLaser.detector_efficiency`
+              - Get or set the detector efficiency.
+            * - :py:attr:`~br.ok.core.stkobjects.ReceiverModelLaser.detector_gain`
+              - Get or set the detector gain.
+            * - :py:attr:`~br.ok.core.stkobjects.ReceiverModelLaser.detector_load_impedance`
+              - Get or set the detector load impedance.
+            * - :py:attr:`~br.ok.core.stkobjects.ReceiverModelLaser.detector_noise_figure`
+              - Get or set the detector noise figure.
+            * - :py:attr:`~br.ok.core.stkobjects.ReceiverModelLaser.detector_noise_temperature`
+              - Get or set the detector noise temperature.
+            * - :py:attr:`~br.ok.core.stkobjects.ReceiverModelLaser.enable_filter`
+              - Get or set the flag determines whether or not to enable the Filter.
+            * - :py:attr:`~br.ok.core.stkobjects.ReceiverModelLaser.enable_polarization`
+              - Get or set the enable polarization option.
+            * - :py:attr:`~br.ok.core.stkobjects.ReceiverModelLaser.filter_component_linking`
+              - Get the link/embed controller for managing the filter model component.
+            * - :py:attr:`~br.ok.core.stkobjects.ReceiverModelLaser.frequency`
+              - Get or set the frequency.
+            * - :py:attr:`~br.ok.core.stkobjects.ReceiverModelLaser.link_margin`
+              - Get the interface for configuring the link margin computation parameters.
+            * - :py:attr:`~br.ok.core.stkobjects.ReceiverModelLaser.polarization`
+              - Get the polarization.
+            * - :py:attr:`~br.ok.core.stkobjects.ReceiverModelLaser.pre_demodulator_gains_losses`
+              - Get the collection of additional pre-demod gains and losses.
+            * - :py:attr:`~br.ok.core.stkobjects.ReceiverModelLaser.pre_receive_gains_losses`
+              - Get the collection of additional pre-receive gains and losses.
+            * - :py:attr:`~br.ok.core.stkobjects.ReceiverModelLaser.scale_bandwidth_automatically`
+              - Get or set the auto scale bandwidth option.
+            * - :py:attr:`~br.ok.core.stkobjects.ReceiverModelLaser.select_demodulator_automatically`
+              - Get or set the auto select demodulator option.
+            * - :py:attr:`~br.ok.core.stkobjects.ReceiverModelLaser.supported_demodulators`
+              - Get an array of supported demodulator model names.
+            * - :py:attr:`~br.ok.core.stkobjects.ReceiverModelLaser.track_frequency_automatically`
+              - Get or set the auto track frequency option.
+            * - :py:attr:`~br.ok.core.stkobjects.ReceiverModelLaser.use_avalanche_photo_detector_model`
+              - Get or set the flag for using the APD detector model.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.ok.core.stkobjects import ReceiverModelLaser
+
+
+Property detail
+---------------
+
+.. py:property:: antenna_control
+    :canonical: br.ok.core.stkobjects.ReceiverModelLaser.antenna_control
+    :type: AntennaControl
+
+    Get the receiver antenna control.
+
+.. py:property:: bandwidth
+    :canonical: br.ok.core.stkobjects.ReceiverModelLaser.bandwidth
+    :type: float
+
+    Get or set the bandwidth.
+
+.. py:property:: demodulator
+    :canonical: br.ok.core.stkobjects.ReceiverModelLaser.demodulator
+    :type: IDemodulatorModel
+
+    Get the current demodulator model.
+
+.. py:property:: detector_dark_current
+    :canonical: br.ok.core.stkobjects.ReceiverModelLaser.detector_dark_current
+    :type: float
+
+    Get or set the detector dark current.
+
+.. py:property:: detector_efficiency
+    :canonical: br.ok.core.stkobjects.ReceiverModelLaser.detector_efficiency
+    :type: float
+
+    Get or set the detector efficiency.
+
+.. py:property:: detector_gain
+    :canonical: br.ok.core.stkobjects.ReceiverModelLaser.detector_gain
+    :type: float
+
+    Get or set the detector gain.
+
+.. py:property:: detector_load_impedance
+    :canonical: br.ok.core.stkobjects.ReceiverModelLaser.detector_load_impedance
+    :type: float
+
+    Get or set the detector load impedance.
+
+.. py:property:: detector_noise_figure
+    :canonical: br.ok.core.stkobjects.ReceiverModelLaser.detector_noise_figure
+    :type: float
+
+    Get or set the detector noise figure.
+
+.. py:property:: detector_noise_temperature
+    :canonical: br.ok.core.stkobjects.ReceiverModelLaser.detector_noise_temperature
+    :type: float
+
+    Get or set the detector noise temperature.
+
+.. py:property:: enable_filter
+    :canonical: br.ok.core.stkobjects.ReceiverModelLaser.enable_filter
+    :type: bool
+
+    Get or set the flag determines whether or not to enable the Filter.
+
+.. py:property:: enable_polarization
+    :canonical: br.ok.core.stkobjects.ReceiverModelLaser.enable_polarization
+    :type: bool
+
+    Get or set the enable polarization option.
+
+.. py:property:: filter_component_linking
+    :canonical: br.ok.core.stkobjects.ReceiverModelLaser.filter_component_linking
+    :type: IComponentLinkEmbedControl
+
+    Get the link/embed controller for managing the filter model component.
+
+.. py:property:: frequency
+    :canonical: br.ok.core.stkobjects.ReceiverModelLaser.frequency
+    :type: float
+
+    Get or set the frequency.
+
+.. py:property:: link_margin
+    :canonical: br.ok.core.stkobjects.ReceiverModelLaser.link_margin
+    :type: LinkMargin
+
+    Get the interface for configuring the link margin computation parameters.
+
+.. py:property:: polarization
+    :canonical: br.ok.core.stkobjects.ReceiverModelLaser.polarization
+    :type: IPolarization
+
+    Get the polarization.
+
+.. py:property:: pre_demodulator_gains_losses
+    :canonical: br.ok.core.stkobjects.ReceiverModelLaser.pre_demodulator_gains_losses
+    :type: AdditionalGainLossCollection
+
+    Get the collection of additional pre-demod gains and losses.
+
+.. py:property:: pre_receive_gains_losses
+    :canonical: br.ok.core.stkobjects.ReceiverModelLaser.pre_receive_gains_losses
+    :type: AdditionalGainLossCollection
+
+    Get the collection of additional pre-receive gains and losses.
+
+.. py:property:: scale_bandwidth_automatically
+    :canonical: br.ok.core.stkobjects.ReceiverModelLaser.scale_bandwidth_automatically
+    :type: bool
+
+    Get or set the auto scale bandwidth option.
+
+.. py:property:: select_demodulator_automatically
+    :canonical: br.ok.core.stkobjects.ReceiverModelLaser.select_demodulator_automatically
+    :type: bool
+
+    Get or set the auto select demodulator option.
+
+.. py:property:: supported_demodulators
+    :canonical: br.ok.core.stkobjects.ReceiverModelLaser.supported_demodulators
+    :type: list
+
+    Get an array of supported demodulator model names.
+
+.. py:property:: track_frequency_automatically
+    :canonical: br.ok.core.stkobjects.ReceiverModelLaser.track_frequency_automatically
+    :type: bool
+
+    Get or set the auto track frequency option.
+
+.. py:property:: use_avalanche_photo_detector_model
+    :canonical: br.ok.core.stkobjects.ReceiverModelLaser.use_avalanche_photo_detector_model
+    :type: bool
+
+    Get or set the flag for using the APD detector model.
+
+
+Method detail
+-------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:method:: set_demodulator(self, name: str) -> None
+    :canonical: br.ok.core.stkobjects.ReceiverModelLaser.set_demodulator
+
+    Set the current demodulator model by name.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: set_polarization_type(self, value: PolarizationType) -> None
+    :canonical: br.ok.core.stkobjects.ReceiverModelLaser.set_polarization_type
+
+    Set the current polarization type.
+
+    :Parameters:
+
+        **value** : :obj:`~PolarizationType`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+
+
+

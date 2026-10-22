@@ -27,8 +27,8 @@ from assertion_harness import *
 from interfaces.stk_objects import *
 from logger import *
 from vehicle.vehicle_basic import *
-from ansys.stk.core.utilities.colors import *
-from ansys.stk.core.stkobjects import *
+from br.ok.core.utilities.colors import *
+from br.ok.core.stkobjects import *
 
 
 class EarlyBoundTests(TestBase):

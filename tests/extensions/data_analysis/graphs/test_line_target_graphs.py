@@ -21,13 +21,13 @@
 # SOFTWARE.
 
 """Test the `line_target_graphs` module."""
-from ansys.stk.extensions.data_analysis.graphs.line_target_graphs import anchor_point_solar_az_el_line_chart
+from br.ok.extensions.data_analysis.graphs.line_target_graphs import anchor_point_solar_az_el_line_chart
 import pytest
 from stk_environment import stk_root
 
 @pytest.fixture()
 def line_target(stk_root):
-    from ansys.stk.core.stkobjects import STKObjectType
+    from br.ok.core.stkobjects import STKObjectType
 
     stk_root.new_scenario("GraphTest")
     scenario = stk_root.current_scenario

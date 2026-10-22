@@ -25,12 +25,12 @@
 
 import pytest
 
-from ansys.stk.extensions.data_analysis.graphs.aircraft_graphs import cumulative_sunlight_cumulative_pie_chart, eclipse_times_interval_graph, lighting_times_interval_graph, lla_position_line_chart, solar_aer_line_chart, solar_az_el_polar_center_0_graph, solar_intensity_line_chart, sun_vector_ecf_line_chart, sunlight_intervals_interval_pie_chart
+from br.ok.extensions.data_analysis.graphs.aircraft_graphs import cumulative_sunlight_cumulative_pie_chart, eclipse_times_interval_graph, lighting_times_interval_graph, lla_position_line_chart, solar_aer_line_chart, solar_az_el_polar_center_0_graph, solar_intensity_line_chart, sun_vector_ecf_line_chart, sunlight_intervals_interval_pie_chart
 from stk_environment import stk_root
 
 @pytest.fixture()
 def basic_aircraft(stk_root):
-    from ansys.stk.core.stkobjects import STKObjectType
+    from br.ok.core.stkobjects import STKObjectType
 
     stk_root.new_scenario("GraphTest")
     scenario = stk_root.current_scenario

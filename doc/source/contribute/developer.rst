@@ -152,7 +152,7 @@ Verify the installation by checking the version of the library:
 
 .. code-block:: python
 
-    from ansys.stk.core import __version__
+    from br.ok.core import __version__
 
 
     print(f"PySTK version is {__version__}")

@@ -35,9 +35,9 @@ from orientation_helper import *
 from vehicle.vehicle_basic import *
 from vehicle.vehicle_gfx import *
 from vehicle.vehicle_vo import *
-from ansys.stk.core.utilities.colors import *
-from ansys.stk.core.stkobjects import *
-from ansys.stk.core.stkutil import *
+from br.ok.core.utilities.colors import *
+from br.ok.core.stkobjects import *
+from br.ok.core.stkutil import *
 
 
 class EarlyBoundTests(TestBase):

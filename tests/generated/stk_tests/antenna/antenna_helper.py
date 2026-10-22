@@ -29,7 +29,7 @@ from math2 import *
 from orientation_helper import *
 from stk_util_helper import *
 
-from ansys.stk.core.stkobjects import *
+from br.ok.core.stkobjects import *
 
 
 # region AntennaHelper

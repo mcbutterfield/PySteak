@@ -22,7 +22,7 @@
 # Start by launching a new STK instance. In this example, `STKEngine` is used.
 
 # +
-from ansys.stk.core.stkengine import STKEngine
+from br.ok.core.stkengine import STKEngine
 
 
 stk = STKEngine.start_application(no_graphics=False)
@@ -33,7 +33,7 @@ stk = STKEngine.start_application(no_graphics=False)
 # The STK scenario used in this tutorial is included with the STK installation as a VDF file. To open the scenario, first access the STK Root object:
 
 # +
-from ansys.stk.core.stkobjects import STKObjectRoot
+from br.ok.core.stkobjects import STKObjectRoot
 
 
 root: STKObjectRoot = stk.new_object_root()
@@ -72,7 +72,7 @@ scenario = root.current_scenario
 # Position the camera so that the satellite is viewable along with the communications site in the background. Notice how the satellite is targeting the communications site.
 
 # + tags=["nbsphinx-thumbnail"]
-from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
+from br.ok.core.experimental.jupyterwidgets import GlobeWidget
 
 
 globe_widget = GlobeWidget(root, 640, 480)
@@ -91,7 +91,7 @@ globe_widget.show()
 # Begin with the receiver constellation. Create the Receiver Constellation and assign the receiver to it
 
 # +
-from ansys.stk.core.stkobjects import STKObjectType
+from br.ok.core.stkobjects import STKObjectType
 
 
 receiver_constellation = scenario.children.new(STKObjectType.CONSTELLATION, "Receiver")
@@ -149,7 +149,7 @@ comm_system.step_size = 60
 # +
 import matplotlib.pyplot as plt
 
-from ansys.stk.extensions.data_analysis.graphs.graph_helpers import line_chart
+from br.ok.extensions.data_analysis.graphs.graph_helpers import line_chart
 
 
 start_time = scenario.start_time
@@ -241,7 +241,7 @@ link_budget_report[["bandwidth", "bandwidth overlap"]]
 # Before using filters, experiment and change the receiver’s bandwidth to determine the effect that change might have on signal quality. The smaller the bandwidth, the less information that can be sent or received. The Bandwidth Auto Scale option allows the receiver to adjust its bandwidth to that of the current transmitter. To manually configure the receiver's bandwidth, disable the bandwidth autoscale option.
 
 # +
-from ansys.stk.core.stkobjects import ReceiverModelComplex
+from br.ok.core.stkobjects import ReceiverModelComplex
 
 
 urgent_receiver_model = ReceiverModelComplex(
@@ -285,7 +285,7 @@ root.units_preferences.item("Ratio").set_current_unit(
     "dB"
 )  # Change "Ratio" units back to a logarithmic scale to match tutorial graphs for the remainder of the tutorial.
 
-from ansys.stk.core.stkobjects import TransmitterModelComplex
+from br.ok.core.stkobjects import TransmitterModelComplex
 
 
 routine_transmitter_model = TransmitterModelComplex(
@@ -398,7 +398,7 @@ urgent_receiver_model.scale_bandwidth_automatically = True
 # Run a spectrum and filter graph to determine the cutoff frequency of the interference transmitter (Noise_Xmt):
 
 # +
-from ansys.stk.extensions.data_analysis.graphs.transmitter_graphs import (
+from br.ok.extensions.data_analysis.graphs.transmitter_graphs import (
     transmitter_spectrum_and_filter_line_chart,
 )
 
@@ -525,7 +525,7 @@ link_budget_report[["ber", "ber+i"]]
 # ## Graph the Receiver Filter
 
 # +
-from ansys.stk.extensions.data_analysis.graphs.receiver_graphs import (
+from br.ok.extensions.data_analysis.graphs.receiver_graphs import (
     receiver_filter_line_chart,
 )
 

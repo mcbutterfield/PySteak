@@ -121,7 +121,7 @@ Finally, here are some tips for writing examples:
   yourself. However, do include the graphics widgets (2D or 3D) at points in
   your example. When the documentation is built, a screenshot of the widget
   is inserted in its place. Jupyter widgets are included in
-  :py:mod:`~ansys.stk.core.experimental.jupyterwidgets`.
+  :py:mod:`~br.ok.core.experimental.jupyterwidgets`.
 
 .. _write-snippets:
 
@@ -141,10 +141,10 @@ enables the snippets to appear:
 
 To contribute your own code snippet, first identify the critical API element
 or elements used in the snippet. In the following example, the primary element
-of interest is the :py:class:`~ansys.stk.core.stkobjects.Scenario` object.
+of interest is the :py:class:`~br.ok.core.stkobjects.Scenario` object.
 Additionally, for instructional purposes, this example demonstrates the
 process of attaching this snippet to its
-:py:meth:`~ansys.stk.core.stkobjects.Scenario.set_time_period()` method.
+:py:meth:`~br.ok.core.stkobjects.Scenario.set_time_period()` method.
 
 .. literalinclude:: /../../tests/doc_snippets_tests/scenario/scenario_management/scenario_management_snippets.py
   :language: py
@@ -172,7 +172,7 @@ snippet's assumed configuration. Decorate this method with PySTK's
     * - **category**
       - A ``|``-separated list describing the organization of the capability. See the :ref:`code snippets <PySTK code snippets>` landing page for the list of existing categories and subcategories. New categories can be created on a need basis.
     * - **eid**
-      - A ``|``-separated list of ids for the one or more elements previously identified as central to the snippet. Each id should be of the form ``<module>~<class/interface name>(~<method/property name>)`` where ``module`` represents the namespace of the module where the element is defined, starting after ``ansys.stk.core``. Omit the parenthesized portion if the ``eid`` corresponds to a class or interface.
+      - A ``|``-separated list of ids for the one or more elements previously identified as central to the snippet. Each id should be of the form ``<module>~<class/interface name>(~<method/property name>)`` where ``module`` represents the namespace of the module where the element is defined, starting after ``br.ok.core``. Omit the parenthesized portion if the ``eid`` corresponds to a class or interface.
 
 Here is an example of a decorated method for the preceding code snippet:
 
@@ -188,7 +188,7 @@ Next, add a pytest-discoverable method (beginning with ``test``) that calls
 the decorated method. This new method should perform any configuration that
 the decorated method assumes upon entry. When automating this configuration,
 you may assume that an STK application is started and a basic STK scenario is
-open. You may access the :py:class:`~ansys.stk.core.stkobjects.StkObjectRoot`
+open. You may access the :py:class:`~br.ok.core.stkobjects.StkObjectRoot`
 for this application using ``self.get_root()``.
 
 .. literalinclude:: /../../tests/doc_snippets_tests/scenario/scenario_management/scenario_management_snippets.py

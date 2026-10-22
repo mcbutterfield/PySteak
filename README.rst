@@ -1,3 +1,36 @@
+PyOK — Butterfield Research Orbital Kit
+======================================
+
+PyOK is the ``br-ok`` distribution in this repository. It is a namespace fork
+of `Ansys PySTK <https://github.com/ansys/pystk>`_, based on upstream commit
+``669a4921c6ee9838aa757e726e0e171305bb6fe9``. Its Python API uses ``br.ok``
+in place of ``ansys.stk``; the STK interfaces and vendor identifiers are retained.
+The upstream README below is retained for attribution and background.
+
+Install PyOK from this repository (Python 3.10 or later)::
+
+    python -m pip install "br-ok @ git+https://github.com/mcbutterfield/PyOK.git"
+
+Then import the core API::
+
+    import br.ok.core
+    from br.ok.core.stkobjects import STKObjectType
+    from br.ok.core.stkengine import STKEngine
+
+Optional features use the same extras as upstream, for example::
+
+    python -m pip install "br-ok[grpc,migration] @ git+https://github.com/mcbutterfield/PyOK.git"
+
+Extensions live under ``br.ok.extensions``. The migration command is
+``pyok-migration-assistant`` and its bundled mappings target ``br.ok.core``.
+There is no ``pyok`` import alias. PyOK is not currently published to PyPI;
+install it using the GitHub URL above rather than ``pip install br-ok``.
+Executing STK functionality still requires the compatible STK runtime, platform,
+and license required by upstream. A package import does not start STK.
+
+Upstream project background
+---------------------------
+
 .. image:: https://raw.githubusercontent.com/ansys/pystk/main/doc/source/_static/logo.png
    :target: https://github.com/ansys/pystk/
    :alt: PySTK

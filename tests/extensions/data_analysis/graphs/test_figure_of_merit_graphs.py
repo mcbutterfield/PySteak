@@ -22,14 +22,14 @@
 
 """Test the `figure_of_merit_graphs` module."""
 
-from ansys.stk.extensions.data_analysis.graphs.figure_of_merit_graphs import gi_region_fom_line_chart, gi_region_satisfaction_interval_graph, grid_stats_over_time_line_chart, satisfied_by_time_line_chart, value_by_latitude_line_chart, value_by_longitude_line_chart, gi_point_fom_line_chart, gi_point_satisfaction_interval_graph, gi_all_dop_line_chart
+from br.ok.extensions.data_analysis.graphs.figure_of_merit_graphs import gi_region_fom_line_chart, gi_region_satisfaction_interval_graph, grid_stats_over_time_line_chart, satisfied_by_time_line_chart, value_by_latitude_line_chart, value_by_longitude_line_chart, gi_point_fom_line_chart, gi_point_satisfaction_interval_graph, gi_all_dop_line_chart
 import pytest
 from pathlib import Path
 from stk_environment import stk_root
 
 @pytest.fixture()
 def fom(stk_root):
-    from ansys.stk.core.stkobjects import STKObjectType, PropagatorType, FigureOfMeritSatisfactionType, FigureOfMeritDefinitionType, FigureOfMeritCompute
+    from br.ok.core.stkobjects import STKObjectType, PropagatorType, FigureOfMeritSatisfactionType, FigureOfMeritDefinitionType, FigureOfMeritCompute
 
     stk_root.new_scenario("GraphTest")
     scenario = stk_root.current_scenario
@@ -58,7 +58,7 @@ def fom(stk_root):
 
 @pytest.fixture()
 def fom_dop(stk_root):
-    from ansys.stk.core.stkobjects import STKObjectType, PropagatorType, FigureOfMeritSatisfactionType, FigureOfMeritDefinitionType, FigureOfMeritCompute
+    from br.ok.core.stkobjects import STKObjectType, PropagatorType, FigureOfMeritSatisfactionType, FigureOfMeritDefinitionType, FigureOfMeritCompute
 
     stk_root.new_scenario("GraphTest")
     scenario = stk_root.current_scenario
@@ -87,7 +87,7 @@ def fom_dop(stk_root):
 
 @pytest.fixture()
 def fom_selected_region(stk_root):
-    from ansys.stk.core.stkobjects import STKObjectType, PropagatorType, CoverageBounds, FigureOfMeritDefinitionType, FigureOfMeritCompute, FigureOfMeritSatisfactionType
+    from br.ok.core.stkobjects import STKObjectType, PropagatorType, CoverageBounds, FigureOfMeritDefinitionType, FigureOfMeritCompute, FigureOfMeritSatisfactionType
 
     stk_root.new_scenario("GraphTest")
     scenario = stk_root.current_scenario

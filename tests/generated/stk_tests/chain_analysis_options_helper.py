@@ -23,7 +23,7 @@
 import pytest
 from test_util import *
 from assertion_harness import *
-from ansys.stk.core.stkobjects import *
+from br.ok.core.stkobjects import *
 
 
 class ChainAnalysisOptionsHelper(object):

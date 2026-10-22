@@ -32,12 +32,12 @@ from orientation_helper import *
 from stk_util_helper import *
 from vehicle.vehicle_vo import *
 from parameterized import *
-from ansys.stk.core.utilities.colors import *
+from br.ok.core.utilities.colors import *
 
-from ansys.stk.core.stkobjects import *
-from ansys.stk.core.stkutil import *
+from br.ok.core.stkobjects import *
+from br.ok.core.stkutil import *
 
-from ansys.stk.core.analysis_workbench import *
+from br.ok.core.analysis_workbench import *
 
 
 # region EarlyBoundTests

@@ -740,9 +740,9 @@ class ManualRSTGenerator:
 
 def autodoc_extensions():
     """Automatically generate RST files for the extensions package."""
-    namespace = "ansys.stk.extensions"
-    module_path = Path(__file__).resolve().parent.parent / "src" / "ansys" / "stk" / "extensions"
-    doc_path = Path(__file__).resolve().parent.parent / "doc" / "source" / "api" / "ansys" / "stk" / "extensions"
+    namespace = "br.ok.extensions"
+    module_path = Path(__file__).resolve().parent.parent / "src" / "br" / "ok" / "extensions"
+    doc_path = Path(__file__).resolve().parent.parent / "doc" / "source" / "api" / "br" / "ok" / "extensions"
 
     autoapi = ManualRSTGenerator(namespace, module_path, doc_path)
     autoapi.generate_rst_for_manual_modules(auto_files=[])

@@ -1,0 +1,93 @@
+AtmosphericAbsorptionModelGraphics3DACAP
+========================================
+
+.. py:class:: br.ok.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP
+
+   Bases: :py:class:`~br.ok.core.stkobjects.IAtmosphericAbsorptionModel`, :py:class:`~br.ok.core.stkobjects.IComponentInfo`, :py:class:`~br.ok.core.stkobjects.ICloneable`
+
+   Class defining an atmospheric absorption model.
+
+.. py:currentmodule:: AtmosphericAbsorptionModelGraphics3DACAP
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.ok.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.coefficient_data_type`
+              - Get or set the coefficient data type.
+            * - :py:attr:`~br.ok.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.compute_alternate_frequencies`
+              - Get or set the indicator to compute alternate frequencies.
+            * - :py:attr:`~br.ok.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.multipath_delay_tolerance`
+              - Get or set the multipath delay tolerance.
+            * - :py:attr:`~br.ok.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.multipath_power_tolerance`
+              - Get or set the multipath power tolerance.
+            * - :py:attr:`~br.ok.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.solar_activity_configuration`
+              - Get or set the solar activity configuration.
+            * - :py:attr:`~br.ok.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.solar_activity_configuration_type`
+              - Get or set the solar activity configuration enumeration.
+            * - :py:attr:`~br.ok.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.use_day_of_month_average`
+              - Get or set the indicator to use day of month average.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.ok.core.stkobjects import AtmosphericAbsorptionModelGraphics3DACAP
+
+
+Property detail
+---------------
+
+.. py:property:: coefficient_data_type
+    :canonical: br.ok.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.coefficient_data_type
+    :type: Graphics3DACAPCoefficientDataType
+
+    Get or set the coefficient data type.
+
+.. py:property:: compute_alternate_frequencies
+    :canonical: br.ok.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.compute_alternate_frequencies
+    :type: bool
+
+    Get or set the indicator to compute alternate frequencies.
+
+.. py:property:: multipath_delay_tolerance
+    :canonical: br.ok.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.multipath_delay_tolerance
+    :type: float
+
+    Get or set the multipath delay tolerance.
+
+.. py:property:: multipath_power_tolerance
+    :canonical: br.ok.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.multipath_power_tolerance
+    :type: float
+
+    Get or set the multipath power tolerance.
+
+.. py:property:: solar_activity_configuration
+    :canonical: br.ok.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.solar_activity_configuration
+    :type: ISolarActivityConfiguration
+
+    Get or set the solar activity configuration.
+
+.. py:property:: solar_activity_configuration_type
+    :canonical: br.ok.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.solar_activity_configuration_type
+    :type: Graphics3DACAPSolarActivityConfigurationType
+
+    Get or set the solar activity configuration enumeration.
+
+.. py:property:: use_day_of_month_average
+    :canonical: br.ok.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.use_day_of_month_average
+    :type: bool
+
+    Get or set the indicator to use day of month average.
+
+

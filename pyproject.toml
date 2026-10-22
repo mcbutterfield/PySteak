@@ -3,13 +3,13 @@ build-backend = "flit_core.buildapi"
 requires = [ "flit-core>=3.2,<5" ]
 
 [project]
-name = "ansys-stk"
-description = "The next generation Python API for STK."
+name = "br-ok"
+description = "PyOK: Butterfield Research Orbital Kit, a namespace fork of PySTK."
 readme = "README.rst"
 license = "MIT"
 license-files = [ "LICENSE" ]
 maintainers = [
-  { name = "ANSYS, Inc.", email = "pyansys.core@ansys.com" },
+  { name = "Butterfield Research" },
 ]
 
 authors = [
@@ -39,10 +39,10 @@ dependencies = [
 optional-dependencies.all = [
   # NOTE: self-referential extras are supported by pip's requirement specifiers.
   # See: https://pip.pypa.io/en/latest/reference/requirement-specifiers/#self-referential-extras
-  "ansys-stk[core,extensions,grpc,jupyter,migration]",
+  "br-ok[core,extensions,grpc,jupyter,migration]",
 ]
 optional-dependencies.core = [
-  # NOTE: no dependencies are installed by default ensuring a dependency-free installation of ansys-stk[core]
+  # NOTE: no dependencies are installed by default ensuring a dependency-free installation of br-ok[core]
 ]
 optional-dependencies.extensions = [
   "matplotlib==3.10.9",
@@ -63,17 +63,17 @@ optional-dependencies.migration = [
   "libcst>=1.8.2",
 ]
 urls.Changelog = "https://github.com/ansys/pystk/blob/main/doc/source/changelog.rst"
-urls.Discussions = "https://github.com/ansys/pystk/discussions"
+urls.Discussions = "https://github.com/mcbutterfield/PyOK/discussions"
 urls.Documentation = "https://stk.docs.pyansys.com/"
 urls.Homepage = "https://www.ansys.com/products/missions/ansys-stk"
-urls.Issues = "https://github.com/ansys/pystk/issues"
-urls.Source = "https://github.com/ansys/pystk"
+urls.Issues = "https://github.com/mcbutterfield/PyOK/issues"
+urls.Source = "https://github.com/mcbutterfield/PyOK"
 # NOTE: The `project.optional-dependencies` section is used to define optional
 # dependencies that users can install to enable additional features.
 # NOTE: The `dependency-groups` section is used to define groups of dependencies
 # only available when a developer clones the repository and installs the package
 # for local development.
-scripts.pystk-migration-assistant = "ansys.stk.core.tools.api_migration_assistant.api_migration_assistant:main"
+scripts.pyok-migration-assistant = "br.ok.core.tools.api_migration_assistant.api_migration_assistant:main"
 
 [dependency-groups]
 vulnerabilities = [
@@ -120,13 +120,13 @@ docstyle = [
 ]
 
 [tool.flit.module]
-name = "ansys.stk"
+name = "br.ok"
 
 [tool.ruff]
 line-length = 120
 extend-exclude = [
   "doc/source/conf.py",
-  "src/ansys/stk/core/internal/*.py",
+  "src/br/ok/core/internal/*.py",
   "tests/**/*.py",
 ]
 
@@ -136,7 +136,7 @@ extend-exclude = [
 # Run: `pre-commit run codespell --all-files --show-diff-on-failure` to recreate
 # the conditions under which codespell runs during CI/CD.
 # [tool.codespell]
-# skip = './src/ansys/stk/core/internal,./tests,./doc/_build,./doc/styles'
+# skip = './src/br/ok/core/internal,./tests,./doc/_build,./doc/styles'
 # ignore-words = "./doc/styles/config/vocabularies/ANSYS/accept.txt"
 lint.select = [
   "D",   # pydocstyle, see https://beta.ruff.rs/docs/rules/#pydocstyle-d
@@ -159,7 +159,7 @@ lint.ignore = [
 ]
 lint.isort.combine-as-imports = true
 lint.isort.force-sort-within-sections = true
-lint.isort.known-first-party = [ "ansys" ]
+lint.isort.known-first-party = [ "br" ]
 # [tool.ruff.format]
 # quote-style = "double"
 # indent-style = "tab"
@@ -175,14 +175,14 @@ source = [
 
 [tool.coverage.run]
 branch = true
-source = [ "src/ansys/stk" ]
+source = [ "src/br/ok" ]
 relative_files = true
 
 [tool.coverage.report]
 show_missing = true
 
 [tool.towncrier]
-package = "ansys.stk.core"
+package = "br.ok.core"
 directory = "doc/source/changelog"
 filename = "doc/source/changelog.rst"
 start_string = ".. towncrier release notes start\n"

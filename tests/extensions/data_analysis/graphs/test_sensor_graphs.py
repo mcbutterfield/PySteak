@@ -24,11 +24,11 @@
 import pytest
 from pathlib import Path
 from stk_environment import stk_root
-from ansys.stk.extensions.data_analysis.graphs.sensor_graphs import azimuth_elevation_line_chart, footprint_area_line_chart
+from br.ok.extensions.data_analysis.graphs.sensor_graphs import azimuth_elevation_line_chart, footprint_area_line_chart
 
 @pytest.fixture()
 def sensor(stk_root):
-    from ansys.stk.core.stkobjects import STKObjectType
+    from br.ok.core.stkobjects import STKObjectType
 
     stk_root.new_scenario("GraphTest")
     stk_root.execute_command("Terrain * TerrainServer UseTerrainForAnalysis No")
@@ -44,7 +44,7 @@ def sensor(stk_root):
 
 @pytest.fixture()
 def sensor_from_satellite(stk_root):
-    from ansys.stk.core.stkobjects import STKObjectType, PropagatorType
+    from br.ok.core.stkobjects import STKObjectType, PropagatorType
 
     stk_root.new_scenario("GraphTest")
     scenario = stk_root.current_scenario

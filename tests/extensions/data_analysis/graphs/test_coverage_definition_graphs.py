@@ -22,14 +22,14 @@
 
 """Test the `coverage_definition_graphs` module."""
 
-from ansys.stk.extensions.data_analysis.graphs.coverage_definition_graphs import coverage_by_latitude_line_chart, gap_duration_line_chart, gi_point_coverage_interval_graph, gi_point_prob_of_coverage_line_chart, gi_region_coverage_line_chart, gi_region_time_to_cover_line_chart, percent_coverage_line_chart, gi_region_full_coverage_interval_graph
+from br.ok.extensions.data_analysis.graphs.coverage_definition_graphs import coverage_by_latitude_line_chart, gap_duration_line_chart, gi_point_coverage_interval_graph, gi_point_prob_of_coverage_line_chart, gi_region_coverage_line_chart, gi_region_time_to_cover_line_chart, percent_coverage_line_chart, gi_region_full_coverage_interval_graph
 import pytest
 from pathlib import Path
 from stk_environment import stk_root
 
 @pytest.fixture()
 def coverage_definition(stk_root):
-    from ansys.stk.core.stkobjects import STKObjectType, PropagatorType
+    from br.ok.core.stkobjects import STKObjectType, PropagatorType
 
     stk_root.new_scenario("GraphTest")
     scenario = stk_root.current_scenario
@@ -52,7 +52,7 @@ def coverage_definition(stk_root):
 
 @pytest.fixture()
 def coverage_definition_selected_region(stk_root):
-    from ansys.stk.core.stkobjects import STKObjectType, PropagatorType, CoverageBounds
+    from br.ok.core.stkobjects import STKObjectType, PropagatorType, CoverageBounds
 
     stk_root.new_scenario("GraphTest")
     scenario = stk_root.current_scenario
