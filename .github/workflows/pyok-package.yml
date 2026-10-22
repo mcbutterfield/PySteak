@@ -1,4 +1,4 @@
-name: PyOK package
+name: PySteak package
 
 on:
   push:

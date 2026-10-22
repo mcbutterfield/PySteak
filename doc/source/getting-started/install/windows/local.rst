@@ -5,11 +5,11 @@ This topic provides details on installing PySTK in Windows platforms.
 
 .. note::
 
-    For this PyOK fork, install directly from GitHub::
+    For this PySteak fork, install directly from GitHub::
 
-        python -m pip install "br-steak @ git+https://github.com/mcbutterfield/PyOK.git"
+        python -m pip install "br-steak @ git+https://github.com/mcbutterfield/PySteak.git"
 
-    Import the API with ``import br.steak.core``. PyOK is not published to PyPI;
+    Import the API with ``import br.steak.core``. PySteak is not published to PyPI;
     the artifact and PyPI instructions below describe the upstream workflow.
 
 .. note::

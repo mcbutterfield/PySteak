@@ -1,15 +1,15 @@
-PyOK — Butterfield Research Orbital Kit
-======================================
+PySteak — Butterfield Research Orbital Kit
+==========================================
 
-PyOK is the ``br-steak`` distribution in this repository. It is a namespace fork
+PySteak is the ``br-steak`` distribution in this repository. It is a namespace fork
 of `Ansys PySTK <https://github.com/ansys/pystk>`_, based on upstream commit
 ``669a4921c6ee9838aa757e726e0e171305bb6fe9``. Its Python API uses ``br.steak``
 in place of ``ansys.stk``; the STK interfaces and vendor identifiers are retained.
 The upstream README below is retained for attribution and background.
 
-Install PyOK from this repository (Python 3.10 or later)::
+Install PySteak from this repository (Python 3.10 or later)::
 
-    python -m pip install "br-steak @ git+https://github.com/mcbutterfield/PyOK.git"
+    python -m pip install "br-steak @ git+https://github.com/mcbutterfield/PySteak.git"
 
 If you installed the earlier ``br-ok`` distribution, first run
 ``python -m pip uninstall br-ok``, then use the installation command above.
@@ -22,11 +22,11 @@ Then import the core API::
 
 Optional features use the same extras as upstream, for example::
 
-    python -m pip install "br-steak[grpc,migration] @ git+https://github.com/mcbutterfield/PyOK.git"
+    python -m pip install "br-steak[grpc,migration] @ git+https://github.com/mcbutterfield/PySteak.git"
 
 Extensions live under ``br.steak.extensions``. The migration command is
 ``pyok-migration-assistant`` and its bundled mappings target ``br.steak.core``.
-There is no ``pyok`` import alias. PyOK is not currently published to PyPI;
+There is no ``pyok`` import alias. PySteak is not currently published to PyPI;
 install it using the GitHub URL above rather than ``pip install br-steak``.
 Executing STK functionality still requires the compatible STK runtime, platform,
 and license required by upstream. A package import does not start STK.
