@@ -27,8 +27,8 @@ from assertion_harness import *
 from logger import *
 from math2 import *
 from parameterized import *
-from br.ok.core.stkobjects import *
-from br.ok.core.analysis_workbench import *
+from br.steak.core.stkobjects import *
+from br.steak.core.analysis_workbench import *
 
 
 class EarlyBoundTests(TestBase):

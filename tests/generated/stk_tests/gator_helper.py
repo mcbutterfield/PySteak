@@ -26,11 +26,11 @@ from assert_extension import *
 from assertion_harness import *
 from logger import *
 from math2 import *
-from br.ok.core.utilities.colors import *
+from br.steak.core.utilities.colors import *
 
-from br.ok.core.stkobjects import *
-from br.ok.core.stkobjects.astrogator import *
-from br.ok.core.stkutil import *
+from br.steak.core.stkobjects import *
+from br.steak.core.stkobjects.astrogator import *
+from br.steak.core.stkutil import *
 
 
 class GatorHelper(object):

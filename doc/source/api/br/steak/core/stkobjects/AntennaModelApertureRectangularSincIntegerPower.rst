@@ -1,0 +1,125 @@
+AntennaModelApertureRectangularSincIntegerPower
+===============================================
+
+.. py:class:: br.steak.core.stkobjects.AntennaModelApertureRectangularSincIntegerPower
+
+   Bases: :py:class:`~br.steak.core.stkobjects.IAntennaModel`, :py:class:`~br.steak.core.stkobjects.IComponentInfo`, :py:class:`~br.steak.core.stkobjects.ICloneable`
+
+   Class defining a rectangular sinc integer power aperture antenna model.
+
+.. py:currentmodule:: AntennaModelApertureRectangularSincIntegerPower
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.steak.core.stkobjects.AntennaModelApertureRectangularSincIntegerPower.backlobe_gain`
+              - Get or set the backlobe gain.
+            * - :py:attr:`~br.steak.core.stkobjects.AntennaModelApertureRectangularSincIntegerPower.compute_mainlobe_gain`
+              - Get or set the option for computing the mainlobe gain.
+            * - :py:attr:`~br.steak.core.stkobjects.AntennaModelApertureRectangularSincIntegerPower.efficiency`
+              - Get or set the efficiency.
+            * - :py:attr:`~br.steak.core.stkobjects.AntennaModelApertureRectangularSincIntegerPower.function_power`
+              - Get or set the function power.
+            * - :py:attr:`~br.steak.core.stkobjects.AntennaModelApertureRectangularSincIntegerPower.input_type`
+              - Get or set the input type.
+            * - :py:attr:`~br.steak.core.stkobjects.AntennaModelApertureRectangularSincIntegerPower.mainlobe_gain`
+              - Get or set the mainlobe gain.
+            * - :py:attr:`~br.steak.core.stkobjects.AntennaModelApertureRectangularSincIntegerPower.use_backlobe_as_mainlobe_atten`
+              - Get or set the option for using the back lobe gain as a main lobe gain attenuation.
+            * - :py:attr:`~br.steak.core.stkobjects.AntennaModelApertureRectangularSincIntegerPower.x_beamwidth`
+              - Get or set the x beamwidth.
+            * - :py:attr:`~br.steak.core.stkobjects.AntennaModelApertureRectangularSincIntegerPower.x_dimension`
+              - Get or set the x dimension.
+            * - :py:attr:`~br.steak.core.stkobjects.AntennaModelApertureRectangularSincIntegerPower.y_beamwidth`
+              - Get or set the y beamwidth.
+            * - :py:attr:`~br.steak.core.stkobjects.AntennaModelApertureRectangularSincIntegerPower.y_dimension`
+              - Get or set the y dimension.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.steak.core.stkobjects import AntennaModelApertureRectangularSincIntegerPower
+
+
+Property detail
+---------------
+
+.. py:property:: backlobe_gain
+    :canonical: br.steak.core.stkobjects.AntennaModelApertureRectangularSincIntegerPower.backlobe_gain
+    :type: float
+
+    Get or set the backlobe gain.
+
+.. py:property:: compute_mainlobe_gain
+    :canonical: br.steak.core.stkobjects.AntennaModelApertureRectangularSincIntegerPower.compute_mainlobe_gain
+    :type: bool
+
+    Get or set the option for computing the mainlobe gain.
+
+.. py:property:: efficiency
+    :canonical: br.steak.core.stkobjects.AntennaModelApertureRectangularSincIntegerPower.efficiency
+    :type: float
+
+    Get or set the efficiency.
+
+.. py:property:: function_power
+    :canonical: br.steak.core.stkobjects.AntennaModelApertureRectangularSincIntegerPower.function_power
+    :type: int
+
+    Get or set the function power.
+
+.. py:property:: input_type
+    :canonical: br.steak.core.stkobjects.AntennaModelApertureRectangularSincIntegerPower.input_type
+    :type: RectangularApertureInputType
+
+    Get or set the input type.
+
+.. py:property:: mainlobe_gain
+    :canonical: br.steak.core.stkobjects.AntennaModelApertureRectangularSincIntegerPower.mainlobe_gain
+    :type: float
+
+    Get or set the mainlobe gain.
+
+.. py:property:: use_backlobe_as_mainlobe_atten
+    :canonical: br.steak.core.stkobjects.AntennaModelApertureRectangularSincIntegerPower.use_backlobe_as_mainlobe_atten
+    :type: bool
+
+    Get or set the option for using the back lobe gain as a main lobe gain attenuation.
+
+.. py:property:: x_beamwidth
+    :canonical: br.steak.core.stkobjects.AntennaModelApertureRectangularSincIntegerPower.x_beamwidth
+    :type: typing.Any
+
+    Get or set the x beamwidth.
+
+.. py:property:: x_dimension
+    :canonical: br.steak.core.stkobjects.AntennaModelApertureRectangularSincIntegerPower.x_dimension
+    :type: float
+
+    Get or set the x dimension.
+
+.. py:property:: y_beamwidth
+    :canonical: br.steak.core.stkobjects.AntennaModelApertureRectangularSincIntegerPower.y_beamwidth
+    :type: typing.Any
+
+    Get or set the y beamwidth.
+
+.. py:property:: y_dimension
+    :canonical: br.steak.core.stkobjects.AntennaModelApertureRectangularSincIntegerPower.y_dimension
+    :type: float
+
+    Get or set the y dimension.
+
+

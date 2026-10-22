@@ -24,8 +24,8 @@ import os
 import pytest
 import sys
 
-from br.ok.core.stkdesktop import STKDesktop
-from br.ok.core.stkobjects import AnimationEndTimeMode, AnimationOptionType
+from br.steak.core.stkdesktop import STKDesktop
+from br.steak.core.stkobjects import AnimationEndTimeMode, AnimationOptionType
 
 # Add path to the parent directory to use some common utilities
 sys.path.insert(1, os.path.join(os.path.dirname(os.path.realpath(__file__)), ".."))
@@ -143,8 +143,8 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         eid="stkobjects~STKObjectRoot",
     )
     def STKDesktopEventsSnippet(self):
-        from br.ok.core.stkdesktop import STKDesktop
-        from br.ok.core.stkobjects import STKObjectType
+        from br.steak.core.stkdesktop import STKDesktop
+        from br.steak.core.stkobjects import STKObjectType
 
         def on_stk_object_added_custom_callback(path: str):
             print(f"{path} has been added.")

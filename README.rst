@@ -1,30 +1,33 @@
 PyOK — Butterfield Research Orbital Kit
 ======================================
 
-PyOK is the ``br-ok`` distribution in this repository. It is a namespace fork
+PyOK is the ``br-steak`` distribution in this repository. It is a namespace fork
 of `Ansys PySTK <https://github.com/ansys/pystk>`_, based on upstream commit
-``669a4921c6ee9838aa757e726e0e171305bb6fe9``. Its Python API uses ``br.ok``
+``669a4921c6ee9838aa757e726e0e171305bb6fe9``. Its Python API uses ``br.steak``
 in place of ``ansys.stk``; the STK interfaces and vendor identifiers are retained.
 The upstream README below is retained for attribution and background.
 
 Install PyOK from this repository (Python 3.10 or later)::
 
-    python -m pip install "br-ok @ git+https://github.com/mcbutterfield/PyOK.git"
+    python -m pip install "br-steak @ git+https://github.com/mcbutterfield/PyOK.git"
+
+If you installed the earlier ``br-ok`` distribution, first run
+``python -m pip uninstall br-ok``, then use the installation command above.
 
 Then import the core API::
 
-    import br.ok.core
-    from br.ok.core.stkobjects import STKObjectType
-    from br.ok.core.stkengine import STKEngine
+    import br.steak.core
+    from br.steak.core.stkobjects import STKObjectType
+    from br.steak.core.stkengine import STKEngine
 
 Optional features use the same extras as upstream, for example::
 
-    python -m pip install "br-ok[grpc,migration] @ git+https://github.com/mcbutterfield/PyOK.git"
+    python -m pip install "br-steak[grpc,migration] @ git+https://github.com/mcbutterfield/PyOK.git"
 
-Extensions live under ``br.ok.extensions``. The migration command is
-``pyok-migration-assistant`` and its bundled mappings target ``br.ok.core``.
+Extensions live under ``br.steak.extensions``. The migration command is
+``pyok-migration-assistant`` and its bundled mappings target ``br.steak.core``.
 There is no ``pyok`` import alias. PyOK is not currently published to PyPI;
-install it using the GitHub URL above rather than ``pip install br-ok``.
+install it using the GitHub URL above rather than ``pip install br-steak``.
 Executing STK functionality still requires the compatible STK runtime, platform,
 and license required by upstream. A package import does not start STK.
 

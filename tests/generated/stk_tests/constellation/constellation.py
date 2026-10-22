@@ -26,7 +26,7 @@ from assertion_harness import *
 from display_times_helper import *
 from interfaces.stk_objects import *
 from logger import *
-from br.ok.core.stkobjects import *
+from br.steak.core.stkobjects import *
 
 
 class EarlyBoundTests(TestBase):

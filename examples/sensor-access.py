@@ -19,7 +19,7 @@
 # Start by launching a new STK instance. In this example, STKEngine is used.
 
 # +
-from br.ok.core.stkengine import STKEngine
+from br.steak.core.stkengine import STKEngine
 
 
 stk = STKEngine.start_application(no_graphics=False)
@@ -36,7 +36,7 @@ root.new_scenario("SensorDesign")
 # Once the scenario is created, show a 3D graphics window by running:
 
 # +
-from br.ok.core.experimental.jupyterwidgets import GlobeWidget
+from br.steak.core.experimental.jupyterwidgets import GlobeWidget
 
 
 globe_plotter = GlobeWidget(root, 640, 480)
@@ -46,7 +46,7 @@ globe_plotter.show()
 # It is also possible to show a 2D graphics window by running:
 
 # +
-from br.ok.core.experimental.jupyterwidgets import MapWidget
+from br.steak.core.experimental.jupyterwidgets import MapWidget
 
 
 map_plotter = MapWidget(root, 640, 480)
@@ -68,7 +68,7 @@ root.rewind()
 # First, insert a place object to represent the airport's radar site:
 
 # +
-from br.ok.core.stkobjects import STKObjectType
+from br.steak.core.stkobjects import STKObjectType
 
 
 radar_site = scenario.children.new(STKObjectType.PLACE, "RadarSite")
@@ -109,7 +109,7 @@ aircraft = scenario.children.new(STKObjectType.AIRCRAFT, "Aircraft")
 # Because the aircraft's route is defined by a set of waypoints, the aircraft's flight is modeled with a Great Arc propagator. Set the aircraft's propagator to the Great Arc propagator:
 
 # +
-from br.ok.core.stkobjects import PropagatorType
+from br.steak.core.stkobjects import PropagatorType
 
 
 aircraft.set_route_type(PropagatorType.GREAT_ARC)
@@ -155,7 +155,7 @@ satellite = scenario.children.new(STKObjectType.SATELLITE, "ImageSat")
 # Set the satellite's propagator to J4Pertubation:
 
 # +
-from br.ok.core.stkobjects import PropagatorType
+from br.steak.core.stkobjects import PropagatorType
 
 
 satellite.set_propagator_type(PropagatorType.J4_PERTURBATION)
@@ -165,7 +165,7 @@ propagator = satellite.propagator
 # Set the orbit's coordinate type to classical:
 
 # +
-from br.ok.core.stkutil import OrbitStateType
+from br.steak.core.stkutil import OrbitStateType
 
 
 orbit = propagator.initial_state.representation.convert_to(OrbitStateType.CLASSICAL)
@@ -174,7 +174,7 @@ orbit = propagator.initial_state.representation.convert_to(OrbitStateType.CLASSI
 # Use the returned `IOrbitStateClassical` object to set the `size_shape_type` property. This property designates which pair of elements describe the orbit. Set the `size_shape_type` to Semimajor Axis and Eccentricity:
 
 # +
-from br.ok.core.stkobjects import ClassicalSizeShape
+from br.steak.core.stkobjects import ClassicalSizeShape
 
 
 orbit.size_shape_type = ClassicalSizeShape.SEMIMAJOR_AXIS
@@ -193,7 +193,7 @@ orbit.orientation.argument_of_periapsis = 0
 # Using the orientation property, set the ascending node type to RAAN:
 
 # +
-from br.ok.core.stkobjects import OrientationAscNode
+from br.steak.core.stkobjects import OrientationAscNode
 
 
 orbit.orientation.ascending_node_type = (
@@ -208,7 +208,7 @@ orbit.orientation.ascending_node.value = 20
 # Then, use the `location` property of the `IOrbitStateClassical` object to set the location type to true anomaly:
 
 # +
-from br.ok.core.stkobjects import ClassicalLocation
+from br.steak.core.stkobjects import ClassicalLocation
 
 
 orbit.location_type = ClassicalLocation.TRUE_ANOMALY
@@ -240,7 +240,7 @@ fixed_sat_sensor = satellite.children.new(STKObjectType.SENSOR, "FixedSatelliteS
 # Then, set the sensor's pattern to simple conic with a cone half angle of $45^\circ$ and an angular resolution of $1^\circ$:
 
 # +
-from br.ok.core.stkobjects import SensorPattern
+from br.steak.core.stkobjects import SensorPattern
 
 
 fixed_sat_sensor.set_pattern_type(SensorPattern.SIMPLE_CONIC)
@@ -285,7 +285,7 @@ moving_sat_sensor = satellite.children.new(
 # The sensor is inserted as a fixed sensor by default, so set the sensor's pointing type to targeted:
 
 # +
-from br.ok.core.stkobjects import SensorPointing
+from br.steak.core.stkobjects import SensorPointing
 
 
 moving_sat_sensor.set_pointing_type(SensorPointing.TARGETED)
@@ -342,7 +342,7 @@ radar_dome_sensor.common_tasks.set_pattern_simple_conic(90, 1)
 # First, add a range access constraint to the sensor:
 
 # +
-from br.ok.core.stkobjects import AccessConstraintType
+from br.steak.core.stkobjects import AccessConstraintType
 
 
 dome_range_constraint = radar_dome_sensor.access_constraints.add_constraint(
@@ -364,7 +364,7 @@ dome_range_constraint.maximum = 150
 # Configure the sensor's 2D graphics properties to show a projection of the maximum range on the 2D map:
 
 # +
-from br.ok.core.stkobjects import SensorProjectionDistanceType
+from br.steak.core.stkobjects import SensorProjectionDistanceType
 
 
 radar_dome_sensor.graphics.projection.distance_type = (
@@ -515,7 +515,7 @@ sweep_range_constraint.maximum = 150
 # To view the moving sensor's field of view on the 2D graphics window, configure some of the sensors graphics properties:
 
 # +
-from br.ok.core.utilities.colors import Color
+from br.steak.core.utilities.colors import Color
 
 
 radar_sweep_sensor.graphics.projection.distance_type = (

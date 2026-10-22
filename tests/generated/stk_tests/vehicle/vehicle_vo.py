@@ -27,10 +27,10 @@ from assertion_harness import *
 from display_times_helper import *
 from interfaces.stk_objects import *
 from logger import *
-from br.ok.core.utilities.colors import *
-from br.ok.core.stkobjects import *
-from br.ok.core.stkutil import *
-from br.ok.core.analysis_workbench import *
+from br.steak.core.utilities.colors import *
+from br.steak.core.stkobjects import *
+from br.steak.core.stkutil import *
+from br.steak.core.analysis_workbench import *
 
 
 # region VOSigmaScaleProbabilityHelper

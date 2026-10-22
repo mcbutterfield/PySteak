@@ -1,0 +1,179 @@
+PreferencesConnect
+==================
+
+.. py:class:: br.steak.core.stkobjects.PreferencesConnect
+
+   Allow configuring connect preferences.
+
+.. py:currentmodule:: PreferencesConnect
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.steak.core.stkobjects.PreferencesConnect.acknowledge_message_receipt`
+              - Get or set the initial connect Acknowledge mode state.
+            * - :py:attr:`~br.steak.core.stkobjects.PreferencesConnect.allow_asynchronous_communications`
+              - Asynchronous allowed.
+            * - :py:attr:`~br.steak.core.stkobjects.PreferencesConnect.allow_connect`
+              - Get or set the connection allowed property.
+            * - :py:attr:`~br.steak.core.stkobjects.PreferencesConnect.allow_external_connect`
+              - Allow connections from other machines.
+            * - :py:attr:`~br.steak.core.stkobjects.PreferencesConnect.allow_logging`
+              - Allow for command logging.
+            * - :py:attr:`~br.steak.core.stkobjects.PreferencesConnect.authentication_mode`
+              - Get or set the authentication mode for the server.
+            * - :py:attr:`~br.steak.core.stkobjects.PreferencesConnect.error_notify_mode`
+              - Get or set the initial connect Error Notify mode state.
+            * - :py:attr:`~br.steak.core.stkobjects.PreferencesConnect.log_filename`
+              - File for logging commands.
+            * - :py:attr:`~br.steak.core.stkobjects.PreferencesConnect.maximum_connections`
+              - Max number of simultaneous connections.
+            * - :py:attr:`~br.steak.core.stkobjects.PreferencesConnect.polling_period`
+              - Period between port polls in msec.
+            * - :py:attr:`~br.steak.core.stkobjects.PreferencesConnect.socket`
+              - TCP/IP Socket Port.
+            * - :py:attr:`~br.steak.core.stkobjects.PreferencesConnect.tls_ca_file`
+              - Get or set the filepath to the server certificate authentication file for mTLS authentication. (e.g. ca.crt)
+            * - :py:attr:`~br.steak.core.stkobjects.PreferencesConnect.tls_server_certificate_file`
+              - Get or set the filepath to the server certificate file for mTLS authentication. (e.g. server.crt)
+            * - :py:attr:`~br.steak.core.stkobjects.PreferencesConnect.tls_server_key_file`
+              - Get or set the filepath to the server key file for mTLS authentication. (e.g. server.key)
+            * - :py:attr:`~br.steak.core.stkobjects.PreferencesConnect.uds_directory`
+              - Get or set the filepath to the directory for the UDS socket file. Supported on Linux platforms only.
+            * - :py:attr:`~br.steak.core.stkobjects.PreferencesConnect.uds_identifier`
+              - Get or set an optional UDS ID for multiple connections. Supported on Linux platforms only.
+            * - :py:attr:`~br.steak.core.stkobjects.PreferencesConnect.verbose`
+              - Get or set the initial connect Verbose mode state.
+            * - :py:attr:`~br.steak.core.stkobjects.PreferencesConnect.wildcard_ignore_nack`
+              - Ignore Backs when Wildcards used.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.steak.core.stkobjects import PreferencesConnect
+
+
+Property detail
+---------------
+
+.. py:property:: acknowledge_message_receipt
+    :canonical: br.steak.core.stkobjects.PreferencesConnect.acknowledge_message_receipt
+    :type: bool
+
+    Get or set the initial connect Acknowledge mode state.
+
+.. py:property:: allow_asynchronous_communications
+    :canonical: br.steak.core.stkobjects.PreferencesConnect.allow_asynchronous_communications
+    :type: bool
+
+    Asynchronous allowed.
+
+.. py:property:: allow_connect
+    :canonical: br.steak.core.stkobjects.PreferencesConnect.allow_connect
+    :type: bool
+
+    Get or set the connection allowed property.
+
+.. py:property:: allow_external_connect
+    :canonical: br.steak.core.stkobjects.PreferencesConnect.allow_external_connect
+    :type: bool
+
+    Allow connections from other machines.
+
+.. py:property:: allow_logging
+    :canonical: br.steak.core.stkobjects.PreferencesConnect.allow_logging
+    :type: bool
+
+    Allow for command logging.
+
+.. py:property:: authentication_mode
+    :canonical: br.steak.core.stkobjects.PreferencesConnect.authentication_mode
+    :type: ConnectAuthenticationMode
+
+    Get or set the authentication mode for the server.
+
+.. py:property:: error_notify_mode
+    :canonical: br.steak.core.stkobjects.PreferencesConnect.error_notify_mode
+    :type: bool
+
+    Get or set the initial connect Error Notify mode state.
+
+.. py:property:: log_filename
+    :canonical: br.steak.core.stkobjects.PreferencesConnect.log_filename
+    :type: str
+
+    File for logging commands.
+
+.. py:property:: maximum_connections
+    :canonical: br.steak.core.stkobjects.PreferencesConnect.maximum_connections
+    :type: int
+
+    Max number of simultaneous connections.
+
+.. py:property:: polling_period
+    :canonical: br.steak.core.stkobjects.PreferencesConnect.polling_period
+    :type: int
+
+    Period between port polls in msec.
+
+.. py:property:: socket
+    :canonical: br.steak.core.stkobjects.PreferencesConnect.socket
+    :type: int
+
+    TCP/IP Socket Port.
+
+.. py:property:: tls_ca_file
+    :canonical: br.steak.core.stkobjects.PreferencesConnect.tls_ca_file
+    :type: str
+
+    Get or set the filepath to the server certificate authentication file for mTLS authentication. (e.g. ca.crt)
+
+.. py:property:: tls_server_certificate_file
+    :canonical: br.steak.core.stkobjects.PreferencesConnect.tls_server_certificate_file
+    :type: str
+
+    Get or set the filepath to the server certificate file for mTLS authentication. (e.g. server.crt)
+
+.. py:property:: tls_server_key_file
+    :canonical: br.steak.core.stkobjects.PreferencesConnect.tls_server_key_file
+    :type: str
+
+    Get or set the filepath to the server key file for mTLS authentication. (e.g. server.key)
+
+.. py:property:: uds_directory
+    :canonical: br.steak.core.stkobjects.PreferencesConnect.uds_directory
+    :type: str
+
+    Get or set the filepath to the directory for the UDS socket file. Supported on Linux platforms only.
+
+.. py:property:: uds_identifier
+    :canonical: br.steak.core.stkobjects.PreferencesConnect.uds_identifier
+    :type: str
+
+    Get or set an optional UDS ID for multiple connections. Supported on Linux platforms only.
+
+.. py:property:: verbose
+    :canonical: br.steak.core.stkobjects.PreferencesConnect.verbose
+    :type: bool
+
+    Get or set the initial connect Verbose mode state.
+
+.. py:property:: wildcard_ignore_nack
+    :canonical: br.steak.core.stkobjects.PreferencesConnect.wildcard_ignore_nack
+    :type: bool
+
+    Ignore Backs when Wildcards used.
+
+

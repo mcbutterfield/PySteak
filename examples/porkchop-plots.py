@@ -31,7 +31,7 @@
 # Start by launching a new STK instance in headless mode (no GUI):
 
 # +
-from br.ok.core.stkengine import STKEngine
+from br.steak.core.stkengine import STKEngine
 
 
 stk = STKEngine.start_application(no_graphics=False)
@@ -43,7 +43,7 @@ print(f"Using {stk.version}")
 # Next, create a new scenario. The central body for this scenario must be the Sun.
 
 # +
-from br.ok.core.stkobjects import STKObjectType
+from br.steak.core.stkobjects import STKObjectType
 
 
 root = stk.new_object_root()
@@ -64,9 +64,9 @@ def linspace_dates(start_date, end_date, interval, unit):
 
     Parameters
     ----------
-    start_date : ~br.ok.core.stkutil.Date
+    start_date : ~br.steak.core.stkutil.Date
         Date to start the generation.
-    end_date : ~br.ok.core.stkutil.Date
+    end_date : ~br.steak.core.stkutil.Date
         Date to end the generation.
     interval : float
         Desired time interval between generated dates.
@@ -75,7 +75,7 @@ def linspace_dates(start_date, end_date, interval, unit):
 
     Returns
     -------
-    dates : list[~br.ok.core.stkutil.Date]
+    dates : list[~br.steak.core.stkutil.Date]
         List of dates linearly spaced by the desired interval.
 
     """
@@ -144,9 +144,9 @@ def get_object_pos_vel_at_epoch(
 
     Parameters
     ----------
-    stk_object : ~br.okcore.stkobjects.STKObject
+    stk_object : ~br.steakcore.stkobjects.STKObject
         Name of the object.
-    epoch : ~br.ok.core.stkutil.Date
+    epoch : ~br.steak.core.stkutil.Date
         Epoch date.
     frame_name : str
         Reference frame name.
@@ -176,7 +176,7 @@ def get_object_pos_vel_at_epoch(
 # Now, add the planets to the scene:
 
 # +
-from br.ok.core.stkobjects import EphemSourceType, PlanetPositionSourceType
+from br.steak.core.stkobjects import EphemSourceType, PlanetPositionSourceType
 
 
 for name in ["Earth", "Mars"]:
@@ -207,7 +207,7 @@ print("...")
 # A satellite object is used to solve for the Lambert transfer between Earth and Mars. Astrogator is used for its propagation. Make sure to clean the main sequence.
 
 # +
-from br.ok.core.stkobjects import PropagatorType
+from br.steak.core.stkobjects import PropagatorType
 
 
 satellite = scenario.children.new_on_central_body(
@@ -222,7 +222,7 @@ satellite.propagator.main_sequence.remove_all()
 # The initial state of the satellite must be changed for every launch date. However, the initial state segment instance remains in the main sequence. Therefore, it is possible to configure here only the constant parameters of the initial state of the satellite:
 
 # +
-from br.ok.core.stkobjects.astrogator import ElementSetType, SegmentType
+from br.steak.core.stkobjects.astrogator import ElementSetType, SegmentType
 
 
 initial_state = satellite.propagator.main_sequence.insert(
@@ -248,7 +248,7 @@ last_impulse = transfer.segments.insert(SegmentType.MANEUVER, "Last Impulse", "-
 # Configure the type of segments:
 
 # +
-from br.ok.core.stkobjects.astrogator import ManeuverType
+from br.steak.core.stkobjects.astrogator import ManeuverType
 
 
 first_impulse.set_maneuver_type(ManeuverType.IMPULSIVE)
@@ -264,7 +264,7 @@ lambert = transfer.profiles.add("Lambert Profile")
 # Configure the profile. Do not configure any parameters related with the target:
 
 # +
-from br.ok.core.stkobjects.astrogator import (
+from br.steak.core.stkobjects.astrogator import (
     LambertSolutionOptionType,
     LambertTargetCoordinateType,
 )
@@ -296,7 +296,7 @@ lambert.second_maneuver_segment = last_impulse.name
 # Activate the profile and configure its behavior when solving for the results:
 
 # +
-from br.ok.core.stkobjects.astrogator import (
+from br.steak.core.stkobjects.astrogator import (
     ProfileMode,
     ProfilesFinish,
     TargetSequenceAction,
@@ -319,7 +319,7 @@ transfer.reset_inner_targeters = False
 # +
 import numpy as np
 
-from br.ok.core.stkobjects.astrogator import LambertDirectionOfMotionType
+from br.steak.core.stkobjects.astrogator import LambertDirectionOfMotionType
 
 
 def lambert_solver(

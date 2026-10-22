@@ -62,7 +62,7 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         root = self.get_root()
         root.close_scenario()
 
-        from br.ok.core.stkobjects import Scenario
+        from br.steak.core.stkobjects import Scenario
 
         root.new_scenario(r"CoverageDataAnalysisSnippets")
         scenario: Scenario = root.current_scenario
@@ -70,7 +70,7 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         scenario.start_time = r"15 Mar 2024 16:00:00.000"
         scenario.stop_time = r"16 Mar 2024 16:00:00.000"
 
-        from br.ok.core.stkobjects import (
+        from br.steak.core.stkobjects import (
             Satellite,
             STKObjectType,
             PropagatorType,
@@ -81,7 +81,7 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
             OrbitStateClassical,
             CoordinateSystem,
         )
-        from br.ok.core.stkutil import OrbitStateType
+        from br.steak.core.stkutil import OrbitStateType
 
         # SATELLITES
 
@@ -125,7 +125,7 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
             propagator.propagate()
 
         # SENSORS
-        from br.ok.core.stkobjects import Sensor, SensorPattern
+        from br.steak.core.stkobjects import Sensor, SensorPattern
 
         circ_sens: Sensor = circ_sat.children.new(STKObjectType.SENSOR, "Circ_Sens")
         repeat_sens: Sensor = repeat_sat.children.new(STKObjectType.SENSOR, "Repeat_Sens")
@@ -136,7 +136,7 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
             sensor.common_tasks.set_pattern_rectangular(20, 10)
 
         # COVERAGE DEFINITION
-        from br.ok.core.stkobjects import CoverageDefinition, CoverageBounds, CoverageResolution
+        from br.steak.core.stkobjects import CoverageDefinition, CoverageBounds, CoverageResolution
 
         world_coverage: CoverageDefinition = scenario.children.new(STKObjectType.COVERAGE_DEFINITION, "World_Cov")
         world_coverage.grid.bounds_type = CoverageBounds.GLOBAL
@@ -154,7 +154,7 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         root = self.get_root()
         root.close_scenario()
 
-        from br.ok.core.stkobjects import Scenario
+        from br.steak.core.stkobjects import Scenario
 
         root.new_scenario(r"AccessDataAnalysisSnippets")
 
@@ -163,13 +163,13 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         scenario.start_time = r"1 Jun 2020 18:00:00.000"
         scenario.stop_time = r"2 Jun 2020 18:00:00.000"
 
-        from br.ok.core.stkobjects import STKObjectType, Facility
+        from br.steak.core.stkobjects import STKObjectType, Facility
 
         facility: Facility = root.current_scenario.children.new(STKObjectType.FACILITY, "Castle_Rock_Teleport")
 
         facility.position.assign_geodetic(39.2768, -104.807, 2071)
 
-        from br.ok.core.stkobjects import Sensor, SensorPattern, IAccessConstraint
+        from br.steak.core.stkobjects import Sensor, SensorPattern, IAccessConstraint
 
         sensor: Sensor = facility.children.new(STKObjectType.SENSOR, "CR_FOV")
 
@@ -182,7 +182,7 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
 
         # KSU-CUBESAT_47954
 
-        from br.ok.core.stkobjects import Satellite, PropagatorType, PropagatorSGP4
+        from br.steak.core.stkobjects import Satellite, PropagatorType, PropagatorSGP4
 
         ksu_cubesat: Satellite = root.current_scenario.children.new(STKObjectType.SATELLITE, "KSU-CUBESAT_47954")
 
@@ -202,7 +202,7 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         root = self.get_root()
         root.close_scenario()
 
-        from br.ok.core.stkobjects import Scenario
+        from br.steak.core.stkobjects import Scenario
 
         root.new_scenario(r"Aviator")
 
@@ -211,26 +211,26 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         scenario.start_time = r"1 Jul 2016 16:00:00.000"
         scenario.stop_time = r"1 Jul 2016 22:00:00.000"
 
-        from br.ok.core.stkobjects import STKObjectType, AreaTarget
+        from br.steak.core.stkobjects import STKObjectType, AreaTarget
 
         area_target: AreaTarget = root.current_scenario.children.new(STKObjectType.AREA_TARGET, "Airstrip")
         area_target.area_type_data.remove_all()
         boundary = [[35.74833, -117.63113], [35.74835, -117.63107], [35.73713, -117.62753], [35.73711, -117.6276]]
         area_target.common_tasks.set_area_type_pattern(boundary)
 
-        from br.ok.core.stkobjects import Place
+        from br.steak.core.stkobjects import Place
 
         place: Place = root.current_scenario.children.new(STKObjectType.PLACE, "NavPoint")
 
         place.position.assign_geodetic(34.8977, -117.6446, 0)
 
-        from br.ok.core.stkobjects import Target
+        from br.steak.core.stkobjects import Target
 
         target: Target = root.current_scenario.children.new(STKObjectType.TARGET, "GndTarget")
         target.position.assign_geodetic(34.8979, -117.6857, 1)
 
-        from br.ok.core.stkobjects import Aircraft, PropagatorType
-        from br.ok.core.stkobjects.aviator import (
+        from br.steak.core.stkobjects import Aircraft, PropagatorType
+        from br.steak.core.stkobjects.aviator import (
             AviatorPropagator,
             SiteType,
             ProcedureType,
@@ -278,7 +278,7 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         normal_takeoff.use_runway_terrain = True
         normal_takeoff.departure_altitude = 48.6464
 
-        from br.ok.core.stkobjects.aviator import (
+        from br.steak.core.stkobjects.aviator import (
             FuelTankInternal,
             StationCollection,
             WindAtmosphereModelSource,
@@ -309,7 +309,7 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         fuel_tank.initial_fuel_state = 20000
         fuel_tank.capacity = 60000
 
-        from br.ok.core.stkobjects.aviator import (
+        from br.steak.core.stkobjects.aviator import (
             SiteSTKObjectWaypoint,
             ProcedureHoldingCircular,
             CruiseSpeed,
@@ -331,7 +331,7 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         holding.use_alternate_entry_points = False
         holding.turn_direction = HoldingDirection.OUTBOUND_LEFT_TURN
 
-        from br.ok.core.stkobjects.aviator import ProcedureLanding, ApproachMode
+        from br.steak.core.stkobjects.aviator import ProcedureLanding, ApproachMode
 
         landing: ProcedureLanding = phase1.procedures.add(
             SiteType.SITE_RUNWAY_FROM_CATALOG, ProcedureType.PROCEDURE_LANDING

@@ -17,7 +17,7 @@
 # Start by launching a new STK instance. In this example, STKEngine is used.
 
 # +
-from br.ok.core.stkengine import STKEngine
+from br.steak.core.stkengine import STKEngine
 
 
 stk = STKEngine.start_application(no_graphics=False)
@@ -34,7 +34,7 @@ root.new_scenario("IntroductionToRadar")
 # Once the scenario is created, it is possible to show a 3D graphics window by running:
 
 # +
-from br.ok.core.experimental.jupyterwidgets import GlobeWidget
+from br.steak.core.experimental.jupyterwidgets import GlobeWidget
 
 
 globe_widget = GlobeWidget(root, 640, 480)
@@ -44,7 +44,7 @@ globe_widget.show()
 # Show a 2D graphics window by running:
 
 # +
-from br.ok.core.experimental.jupyterwidgets import MapWidget
+from br.steak.core.experimental.jupyterwidgets import MapWidget
 
 
 map_widget = MapWidget(root, 640, 480)
@@ -64,7 +64,7 @@ root.rewind()
 # A test aircraft is used to analyze the airfield surveillance radar. Insert the aircraft:
 
 # +
-from br.ok.core.stkobjects import STKObjectType
+from br.steak.core.stkobjects import STKObjectType
 
 
 aircraft = root.current_scenario.children.new(STKObjectType.AIRCRAFT, "TargetAircraft")
@@ -133,7 +133,7 @@ globe_widget.show()
 # The radar site is modeled by a place object. Insert the site:
 
 # +
-from br.ok.core.stkobjects import Place
+from br.steak.core.stkobjects import Place
 
 
 radar_site = Place(root.current_scenario.children.new(STKObjectType.PLACE, "RadarSite"))
@@ -155,7 +155,7 @@ antenna_sensor = radar_site.children.new(STKObjectType.SENSOR, "AntennaSensor")
 # Assign a simple conic field of view with a $2^\circ$ half angle to the sensor:
 
 # +
-from br.ok.core.stkobjects import SensorPattern
+from br.steak.core.stkobjects import SensorPattern
 
 
 antenna_sensor.common_tasks.set_pattern_simple_conic(2, 1)
@@ -164,7 +164,7 @@ antenna_sensor.common_tasks.set_pattern_simple_conic(2, 1)
 # The sensor points at the aircraft, so set the sensor's pointing type to targeted:
 
 # +
-from br.ok.core.stkobjects import SensorPointing
+from br.steak.core.stkobjects import SensorPointing
 
 
 antenna_sensor.set_pointing_type(SensorPointing.TARGETED)
@@ -181,7 +181,7 @@ antenna_sensor.pointing.targets.add(aircraft.path)
 # First, insert an elevation angle constraint on the sensor:
 
 # +
-from br.ok.core.stkobjects import AccessConstraintType
+from br.steak.core.stkobjects import AccessConstraintType
 
 
 elevation_constraint = antenna_sensor.access_constraints.add_constraint(
@@ -285,7 +285,7 @@ airport_radar = antenna_sensor.children.new(STKObjectType.RADAR, "Radar")
 # Pulse width is the width of the transmitted pulse (the uncompressed RF bandwidth can also be taken as the inverse of the pulse width). Set the pulse width to one microsecond:
 
 # +
-from br.ok.core.stkobjects import RadarModelMonostatic
+from br.steak.core.stkobjects import RadarModelMonostatic
 
 
 monostatic = RadarModelMonostatic(airport_radar.model_component_linking.component)
@@ -299,7 +299,7 @@ monostatic.mode_component_linking.component.waveform.pulse_definition.pulse_widt
 # First, set the radar's antenna model to the cosine squared aperture rectangular antenna pattern:
 
 # +
-from br.ok.core.stkobjects import AntennaModelApertureRectangularCosineSquared
+from br.steak.core.stkobjects import AntennaModelApertureRectangularCosineSquared
 
 
 antenna_control = airport_radar.model_component_linking.component.antenna_control
@@ -314,7 +314,7 @@ antenna_model = AntennaModelApertureRectangularCosineSquared(
 # Next, configure the antenna model to use beamwidth:
 
 # +
-from br.ok.core.stkobjects import RectangularApertureInputType
+from br.steak.core.stkobjects import RectangularApertureInputType
 
 
 antenna_model.input_type = RectangularApertureInputType.BEAMWIDTHS
@@ -348,7 +348,7 @@ antenna_model.efficiency = 55
 # First, configure the transmitter to use frequency (instead of wavelength) as its frequency specification:
 
 # +
-from br.ok.core.stkobjects import RadarFrequencySpecificationType
+from br.steak.core.stkobjects import RadarFrequencySpecificationType
 
 
 radar_transmitter = airport_radar.model_component_linking.component.transmitter
@@ -387,7 +387,7 @@ radar_receiver.enable_polarization = True
 # Set the receiver's system noise temperature compute type to calculate:
 
 # +
-from br.ok.core.stkobjects import NoiseTemperatureComputeType
+from br.steak.core.stkobjects import NoiseTemperatureComputeType
 
 
 radar_receiver.system_noise_temperature.compute_type = (

@@ -23,8 +23,8 @@
 import os
 import sys
 
-from br.ok.core.stkobjects import STKObjectType
-from br.ok.core.analysis_workbench import (
+from br.steak.core.stkobjects import STKObjectType
+from br.steak.core.analysis_workbench import (
     AngleType,
     AxesType,
     CalculationScalarType,

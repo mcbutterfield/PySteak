@@ -26,9 +26,9 @@ from assertion_harness import *
 from compatibility.interval_collection_extension_methods import *
 from logger import *
 
-from br.ok.core.stkobjects import *
-from br.ok.core.stkutil import *
-from br.ok.core.analysis_workbench import *
+from br.steak.core.stkobjects import *
+from br.steak.core.stkutil import *
+from br.steak.core.analysis_workbench import *
 
 
 class BugFixes(TestBase):

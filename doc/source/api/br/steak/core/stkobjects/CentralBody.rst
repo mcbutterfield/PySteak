@@ -1,0 +1,67 @@
+CentralBody
+===========
+
+.. py:class:: br.steak.core.stkobjects.CentralBody
+
+   A central body coclass.
+
+.. py:currentmodule:: CentralBody
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.steak.core.stkobjects.CentralBody.analysis_workbench_components`
+              - Return the central body's Vector Geometry Tool provider.
+            * - :py:attr:`~br.steak.core.stkobjects.CentralBody.ellipsoid`
+              - The central body ellipsoid.
+            * - :py:attr:`~br.steak.core.stkobjects.CentralBody.gravitational_parameter`
+              - The gravitational parameter of the central body in distance units cubed per time units squared (i.e. m^3*s^-2).
+            * - :py:attr:`~br.steak.core.stkobjects.CentralBody.name`
+              - A name of the central body.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.steak.core.stkobjects import CentralBody
+
+
+Property detail
+---------------
+
+.. py:property:: analysis_workbench_components
+    :canonical: br.steak.core.stkobjects.CentralBody.analysis_workbench_components
+    :type: IAnalysisWorkbenchComponentProvider
+
+    Return the central body's Vector Geometry Tool provider.
+
+.. py:property:: ellipsoid
+    :canonical: br.steak.core.stkobjects.CentralBody.ellipsoid
+    :type: CentralBodyEllipsoid
+
+    The central body ellipsoid.
+
+.. py:property:: gravitational_parameter
+    :canonical: br.steak.core.stkobjects.CentralBody.gravitational_parameter
+    :type: float
+
+    The gravitational parameter of the central body in distance units cubed per time units squared (i.e. m^3*s^-2).
+
+.. py:property:: name
+    :canonical: br.steak.core.stkobjects.CentralBody.name
+    :type: str
+
+    A name of the central body.
+
+

@@ -22,9 +22,9 @@
 
 from test_util import *
 from code_snippets.code_snippets_test_base import *
-from br.ok.core.stkobjects import *
-from br.ok.core.stkutil import *
-from br.ok.core.analysis_workbench import *
+from br.steak.core.stkobjects import *
+from br.steak.core.stkutil import *
+from br.steak.core.analysis_workbench import *
 
 
 class VGT(CodeSnippetsTestBase):

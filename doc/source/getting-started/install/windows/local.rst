@@ -7,9 +7,9 @@ This topic provides details on installing PySTK in Windows platforms.
 
     For this PyOK fork, install directly from GitHub::
 
-        python -m pip install "br-ok @ git+https://github.com/mcbutterfield/PyOK.git"
+        python -m pip install "br-steak @ git+https://github.com/mcbutterfield/PyOK.git"
 
-    Import the API with ``import br.ok.core``. PyOK is not published to PyPI;
+    Import the API with ``import br.steak.core``. PyOK is not published to PyPI;
     the artifact and PyPI instructions below describe the upstream workflow.
 
 .. note::
@@ -73,7 +73,7 @@ Install Windows artifacts by using the `pip`_ command:
 
             .. code-block:: text
 
-                python -m pip install "br-ok=={{ PYSTK_VERSION }}"
+                python -m pip install "br-steak=={{ PYSTK_VERSION }}"
         {% endif %}
 
         .. tab-item:: **Wheels install**
@@ -120,7 +120,7 @@ select the type of installation.
 
                     .. code-block:: bash
 
-                        python -m pip install br-ok[{{ target }}]
+                        python -m pip install br-steak[{{ target }}]
 
                 .. tab-item:: Wheelhouse install
 
@@ -135,7 +135,7 @@ select the type of installation.
 
                     .. code-block:: bash
 
-                        python -m pip install --find-links wheelhouse br-ok[{{ target }}]
+                        python -m pip install --find-links wheelhouse br-steak[{{ target }}]
 
             Dependencies included with the ``{{ target }}`` target are:
 
@@ -178,7 +178,7 @@ Verify a successful installation of PySTK by running:
 
     .. code-block:: python
 
-        from br.ok.core.stkengine import STKEngine
+        from br.steak.core.stkengine import STKEngine
 
 
         stk = STKEngine.start_application(no_graphics=True)

@@ -15,7 +15,7 @@
 # ## Launch a new STK instance
 
 # +
-from br.ok.core.stkengine import STKEngine
+from br.steak.core.stkengine import STKEngine
 
 
 stk = STKEngine.start_application(no_graphics=False)
@@ -32,7 +32,7 @@ root.new_scenario("CommRadar_MissileTest_Interference")
 # Once the scenario is created, you can view a 3D graphics window by running:
 
 # +
-from br.ok.core.experimental.jupyterwidgets import GlobeWidget
+from br.steak.core.experimental.jupyterwidgets import GlobeWidget
 
 
 globe_widget = GlobeWidget(root, 640, 480)
@@ -43,7 +43,7 @@ globe_widget.show()
 # Once the scenario is created, you can view a 2D graphics window by running:
 
 # +
-from br.ok.core.experimental.jupyterwidgets import MapWidget
+from br.steak.core.experimental.jupyterwidgets import MapWidget
 
 
 map_widget = MapWidget(root, 640, 480)
@@ -63,7 +63,7 @@ root.rewind()
 # Insert a new Missile object
 
 # +
-from br.ok.core.stkobjects import Missile, STKObjectType
+from br.steak.core.stkobjects import Missile, STKObjectType
 
 
 test_missile = scenario.children.new(STKObjectType.MISSILE, "test_missile")
@@ -80,7 +80,7 @@ root.units_preferences.item("Distance").set_current_unit("km")
 # Next, design the missile's trajectory:
 
 # +
-from br.ok.core.stkobjects import (
+from br.steak.core.stkobjects import (
     IPropagator,
     PropagatorType,
     VehicleImpactLocationPoint,
@@ -159,7 +159,7 @@ ground_range_report[["time", "ground range", "alt"]]
 # Insert a Transmitter object
 
 # +
-from br.ok.core.stkobjects import Transmitter
+from br.steak.core.stkobjects import Transmitter
 
 
 missile_transmitter = test_missile.children.new(STKObjectType.TRANSMITTER, "Missile_Tx")
@@ -193,7 +193,7 @@ transmitter_model.modulator.enable_signal_psd = True
 # Insert a new Ship object
 
 # +
-from br.ok.core.stkobjects import Ship
+from br.steak.core.stkobjects import Ship
 
 
 ship = scenario.children.new(STKObjectType.SHIP, "Ship")
@@ -204,7 +204,7 @@ ship = scenario.children.new(STKObjectType.SHIP, "Ship")
 # In the tutorial, the ship is defined to be stationary. First, set the propogator type to great arc:
 
 # +
-from br.ok.core.stkobjects import (
+from br.steak.core.stkobjects import (
     IGreatArcVehicle,
     PropagatorGreatArc,
     PropagatorType,
@@ -218,7 +218,7 @@ IGreatArcVehicle(ship).set_route_type(PropagatorType.GREAT_ARC)
 # Second, set the altitude reference:
 
 # +
-from br.ok.core.stkobjects import VehicleAltitudeReference
+from br.steak.core.stkobjects import VehicleAltitudeReference
 
 
 ship.route.set_altitude_reference_type(VehicleAltitudeReference.WGS84)
@@ -238,7 +238,7 @@ PropagatorGreatArc(IGreatArcVehicle(ship).route).set_points_specify_time_and_pro
 # Insert a Sensor Object
 
 # +
-from br.ok.core.stkobjects import Sensor, SensorPattern, SensorSimpleConicPattern
+from br.steak.core.stkobjects import Sensor, SensorPattern, SensorSimpleConicPattern
 
 
 antenna_motor = ship.children.new(STKObjectType.SENSOR, "Antenna_Motor")
@@ -254,7 +254,7 @@ SensorSimpleConicPattern(antenna_motor.pattern).cone_angle = 5
 # Set the antenna motor's location type to fixed.
 
 # +
-from br.ok.core.stkobjects import SensorLocation
+from br.steak.core.stkobjects import SensorLocation
 
 
 antenna_motor.set_location_type(SensorLocation.FIXED)
@@ -270,7 +270,7 @@ antenna_motor.location_data.assign_cartesian(75, 0, 75)
 # Target the test missile.
 
 # +
-from br.ok.core.stkobjects import BoresightType, TrackMode
+from br.steak.core.stkobjects import BoresightType, TrackMode
 
 
 antenna_motor.common_tasks.set_pointing_targeted_tracking(
@@ -294,7 +294,7 @@ globe_widget.show()
 # Insert a Receiver object that is attached to the "antenna motor" sensor.
 
 # +
-from br.ok.core.stkobjects import Receiver
+from br.steak.core.stkobjects import Receiver
 
 
 ship_receiver = antenna_motor.children.new(STKObjectType.RECEIVER, "Ship_Rx")
@@ -316,7 +316,7 @@ receiver_model.track_frequency_automatically = True
 # Define the receiver's antenna specifications. First, set the antenna model to helix.
 
 # +
-from br.ok.core.stkobjects import AntennaModelHelix, IAntennaModel
+from br.steak.core.stkobjects import AntennaModelHelix, IAntennaModel
 
 
 receiver_model.antenna_control.embedded_model_component_linking.set_component("Helix")
@@ -337,7 +337,7 @@ helix_model.backlobe_gain = -30
 # Let's now visualize the receiver's antenna pattern. First define a volume variable.
 
 # +
-from br.ok.core.stkobjects import AntennaVolumeGraphics
+from br.steak.core.stkobjects import AntennaVolumeGraphics
 
 
 volume = ship_receiver.graphics_3d.volume
@@ -366,7 +366,7 @@ volume.set_resolution(
 # Add gain coloring
 
 # +
-from br.ok.core.stkobjects import FigureOfMeritGraphics2DColorMethod
+from br.steak.core.stkobjects import FigureOfMeritGraphics2DColorMethod
 
 
 volume.color_method = FigureOfMeritGraphics2DColorMethod.EXPLICIT
@@ -392,7 +392,7 @@ for gain in range(-70, 1, 10):
 # +
 from pandas import DataFrame
 
-from br.ok.core.stkobjects import Access, ISTKObject
+from br.steak.core.stkobjects import Access, ISTKObject
 
 
 access = ISTKObject(ship_receiver).get_access_to_object(missile_transmitter)
@@ -426,7 +426,7 @@ link_budget_report[["ber"]]
 # +
 from pathlib import Path
 
-from br.ok.core.stkobjects import ExecuteCommandResult
+from br.steak.core.stkobjects import ExecuteCommandResult
 
 
 result = root.execute_command("GetDirectory / Database Satellite")
@@ -450,7 +450,7 @@ root.execute_command(command)
 # Assign the satellites to variables:
 
 # +
-from br.ok.core.stkobjects import Satellite
+from br.steak.core.stkobjects import Satellite
 
 
 sxm_8 = scenario.children.item("SXM-8_48838")
@@ -461,7 +461,7 @@ sxm_10 = scenario.children.item("SXM-10_64290")
 # ## Model the interfering satellites' transmitters
 
 # +
-from br.ok.core.stkobjects import TransmitterModelMedium
+from br.steak.core.stkobjects import TransmitterModelMedium
 
 
 transmitters = []
@@ -503,7 +503,7 @@ sxm_10_transmitter = transmitters[2]
 # Create an interference variable. Use this to modify the interference on the receiver.
 
 # +
-from br.ok.core.stkobjects import ISTKObject, RFInterference
+from br.steak.core.stkobjects import ISTKObject, RFInterference
 
 
 interference = RFInterference(
@@ -608,7 +608,7 @@ link_budget_report[["ber", "ber+i"]]
 # First, insert a radar object
 
 # +
-from br.ok.core.stkobjects import Radar
+from br.steak.core.stkobjects import Radar
 
 
 ship_radar = ship.children.new(STKObjectType.RADAR, "Ship_Radar")
@@ -643,7 +643,7 @@ monostatic_search_track_radar.waveform.pulse_integration.snr = 20
 # Configure the radar's antenna model to use an external pattern.
 
 # +
-from br.ok.core.stkobjects import AntennaControl, AntennaModelExternal
+from br.steak.core.stkobjects import AntennaControl, AntennaModelExternal
 
 
 antenna_control = ship_radar.model_component_linking.component.antenna_control
@@ -690,7 +690,7 @@ antenna_control.embedded_model_orientation.position_offset.set(37, 0, 120)
 # Create a radar transmitter:
 
 # +
-from br.ok.core.stkobjects import RadarFrequencySpecificationType, RadarReceiver
+from br.steak.core.stkobjects import RadarFrequencySpecificationType, RadarReceiver
 
 
 radar_transmitter = ship_radar.model_component_linking.component.transmitter
@@ -735,7 +735,7 @@ test_missile.radar_cross_section.inherit = False
 # Create a rcs band variable to manage the cross section properties:
 
 # +
-from br.ok.core.stkobjects import (
+from br.steak.core.stkobjects import (
     RadarCrossSectionComputeStrategyExternalFile,
     RadarCrossSectionFrequencyBand,
 )

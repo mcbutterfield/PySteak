@@ -1,0 +1,133 @@
+OrbitStateEquinoctial
+=====================
+
+.. py:class:: br.steak.core.stkobjects.OrbitStateEquinoctial
+
+   Bases: :py:class:`~br.steak.core.stkobjects.IOrbitState`
+
+   Equinoctial coordinate type, which uses the center of the Earth as the origin and the plane of the satellite's orbit as the reference plane.
+
+.. py:currentmodule:: OrbitStateEquinoctial
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.steak.core.stkobjects.OrbitStateEquinoctial.coordinate_system`
+              - Get the coordinate system and coordinate epoch.
+            * - :py:attr:`~br.steak.core.stkobjects.OrbitStateEquinoctial.coordinate_system_type`
+              - Get or set the coordinate system being used.
+            * - :py:attr:`~br.steak.core.stkobjects.OrbitStateEquinoctial.formulation`
+              - Get or set the Formulation can be Retrograde or Posigrade.
+            * - :py:attr:`~br.steak.core.stkobjects.OrbitStateEquinoctial.h`
+              - H/K collectively describe the shape of the satellite's orbit and the position of perigee. Dimensionless.
+            * - :py:attr:`~br.steak.core.stkobjects.OrbitStateEquinoctial.k`
+              - H/K collectively describe the shape of the satellite's orbit and the position of perigee. Dimensionless.
+            * - :py:attr:`~br.steak.core.stkobjects.OrbitStateEquinoctial.mean_longitude`
+              - Specify a satellite's position within its orbit at epoch and equals the sum of the classical RAAN, Argument of Perigee, and Mean Anomaly. Uses Angle dimension.
+            * - :py:attr:`~br.steak.core.stkobjects.OrbitStateEquinoctial.p`
+              - P/Q collectively describe the orientation of the satellite's orbit plane. Dimensionless.
+            * - :py:attr:`~br.steak.core.stkobjects.OrbitStateEquinoctial.q`
+              - P/Q collectively describe the orientation of the satellite's orbit plane. Dimensionless.
+            * - :py:attr:`~br.steak.core.stkobjects.OrbitStateEquinoctial.size_shape`
+              - Get the value of Mean Motion or Semimajor Axis.
+            * - :py:attr:`~br.steak.core.stkobjects.OrbitStateEquinoctial.size_shape_type`
+              - Get or set the orbit size option can be Mean Motion or Semimajor Axis.
+            * - :py:attr:`~br.steak.core.stkobjects.OrbitStateEquinoctial.state_epoch`
+              - Smart epoch component allows the user to configure the state epoch explicitly or implicitly (using a pre-defined or custom time instant component).
+            * - :py:attr:`~br.steak.core.stkobjects.OrbitStateEquinoctial.supported_coordinate_system_types`
+              - Return an array of supported coordinate system types.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.steak.core.stkobjects import OrbitStateEquinoctial
+
+
+Property detail
+---------------
+
+.. py:property:: coordinate_system
+    :canonical: br.steak.core.stkobjects.OrbitStateEquinoctial.coordinate_system
+    :type: OrbitStateCoordinateSystem
+
+    Get the coordinate system and coordinate epoch.
+
+.. py:property:: coordinate_system_type
+    :canonical: br.steak.core.stkobjects.OrbitStateEquinoctial.coordinate_system_type
+    :type: CoordinateSystem
+
+    Get or set the coordinate system being used.
+
+.. py:property:: formulation
+    :canonical: br.steak.core.stkobjects.OrbitStateEquinoctial.formulation
+    :type: EquinoctialFormulation
+
+    Get or set the Formulation can be Retrograde or Posigrade.
+
+.. py:property:: h
+    :canonical: br.steak.core.stkobjects.OrbitStateEquinoctial.h
+    :type: float
+
+    H/K collectively describe the shape of the satellite's orbit and the position of perigee. Dimensionless.
+
+.. py:property:: k
+    :canonical: br.steak.core.stkobjects.OrbitStateEquinoctial.k
+    :type: float
+
+    H/K collectively describe the shape of the satellite's orbit and the position of perigee. Dimensionless.
+
+.. py:property:: mean_longitude
+    :canonical: br.steak.core.stkobjects.OrbitStateEquinoctial.mean_longitude
+    :type: float
+
+    Specify a satellite's position within its orbit at epoch and equals the sum of the classical RAAN, Argument of Perigee, and Mean Anomaly. Uses Angle dimension.
+
+.. py:property:: p
+    :canonical: br.steak.core.stkobjects.OrbitStateEquinoctial.p
+    :type: float
+
+    P/Q collectively describe the orientation of the satellite's orbit plane. Dimensionless.
+
+.. py:property:: q
+    :canonical: br.steak.core.stkobjects.OrbitStateEquinoctial.q
+    :type: float
+
+    P/Q collectively describe the orientation of the satellite's orbit plane. Dimensionless.
+
+.. py:property:: size_shape
+    :canonical: br.steak.core.stkobjects.OrbitStateEquinoctial.size_shape
+    :type: IClassicalSizeShape
+
+    Get the value of Mean Motion or Semimajor Axis.
+
+.. py:property:: size_shape_type
+    :canonical: br.steak.core.stkobjects.OrbitStateEquinoctial.size_shape_type
+    :type: EquinoctialSizeShape
+
+    Get or set the orbit size option can be Mean Motion or Semimajor Axis.
+
+.. py:property:: state_epoch
+    :canonical: br.steak.core.stkobjects.OrbitStateEquinoctial.state_epoch
+    :type: ITimeToolInstantSmartEpoch
+
+    Smart epoch component allows the user to configure the state epoch explicitly or implicitly (using a pre-defined or custom time instant component).
+
+.. py:property:: supported_coordinate_system_types
+    :canonical: br.steak.core.stkobjects.OrbitStateEquinoctial.supported_coordinate_system_types
+    :type: list
+
+    Return an array of supported coordinate system types.
+
+

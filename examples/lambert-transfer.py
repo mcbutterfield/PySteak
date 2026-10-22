@@ -24,7 +24,7 @@
 # Start by launching a new STK instance. In this example, ``STKEngine`` is used with graphics (``no_graphics`` mode set to ``False``). This means that the graphic user interface (GUI) of the product is not launched but 2D and 3D visualization is still available through the STK Engine controls & Jupyter widgets:
 
 # +
-from br.ok.core.stkengine import STKEngine
+from br.steak.core.stkengine import STKEngine
 
 
 stk = STKEngine.start_application(no_graphics=False)
@@ -36,7 +36,7 @@ print(f"Using {stk.version}")
 # Next, create a new scenario. The central body for this scenario must be the Sun.
 
 # +
-from br.ok.core.stkobjects import STKObjectType
+from br.steak.core.stkobjects import STKObjectType
 
 
 root = stk.new_object_root()
@@ -57,7 +57,7 @@ root.rewind()
 # Once created, you can visualize the scenario in a 3D graphics window. Update the value of the far plane of the camera to ensure that distant objects are represented in the scene.
 
 # +
-from br.ok.core.experimental.jupyterwidgets import GlobeWidget
+from br.steak.core.experimental.jupyterwidgets import GlobeWidget
 
 
 plotter = GlobeWidget(root, 640, 480)
@@ -70,12 +70,12 @@ plotter.show()
 # Once the scenario is created, planets can be added. The default ephemerides are used for modeling the orbit of the Earth and Mars. However, it is possible to use other sources for the ephemerides, as provided by the ``EphemSourceType`` enumeration. Finally, a royal blue color is used for representing the Earth while a salmon color is used for Mars.
 
 # +
-from br.ok.core.stkobjects import (
+from br.steak.core.stkobjects import (
     EphemSourceType,
     PlanetPositionSourceType,
     STKObjectType,
 )
-from br.ok.core.utilities.colors import Colors
+from br.steak.core.utilities.colors import Colors
 
 
 planet_names_and_colors = {
@@ -219,7 +219,7 @@ satellite = root.current_scenario.children.new_on_central_body(
 # Then, indicate the type of propagator used for the satellite. In this case, the propagator must be astrogator.
 
 # +
-from br.ok.core.stkobjects import PropagatorType
+from br.steak.core.stkobjects import PropagatorType
 
 
 satellite.set_propagator_type(PropagatorType.ASTROGATOR)
@@ -234,7 +234,7 @@ satellite.propagator.main_sequence.remove_all()
 # Now, declare the initial state of the satellite by using an initial state segment.
 
 # +
-from br.ok.core.stkobjects.astrogator import ElementSetType, SegmentType
+from br.steak.core.stkobjects.astrogator import ElementSetType, SegmentType
 
 
 initial_state = satellite.propagator.main_sequence.insert(
@@ -266,7 +266,7 @@ initial_state.element.vz = initial_velocity[2]
 # The transfer sequence can be modeled as a target sequence containing three segments: a first impulsive maneuver, a propagation, and a last impulsive maneuver.
 
 # +
-from br.ok.core.stkobjects.astrogator import ManeuverType
+from br.steak.core.stkobjects.astrogator import ManeuverType
 
 
 lambert_transfer = satellite.propagator.main_sequence.insert(
@@ -317,7 +317,7 @@ lambert = lambert_transfer.profiles.add("Lambert Profile")
 # It is also important to enable the second maneuver property. This allows to specify the target velocity.
 
 # +
-from br.ok.core.stkobjects.astrogator import LambertTargetCoordinateType
+from br.steak.core.stkobjects.astrogator import LambertTargetCoordinateType
 
 
 lambert.coord_system_name = "CentralBody/Sun Inertial"
@@ -352,7 +352,7 @@ print(f"Time of flight: {tof} seconds")
 # **Since planets are modeled as points, see the problem statement, the value for the altitude padding for the central body collision is 0 km.**
 
 # +
-from br.ok.core.stkobjects.astrogator import (
+from br.steak.core.stkobjects.astrogator import (
     LambertDirectionOfMotionType,
     LambertSolutionOptionType,
 )
@@ -386,7 +386,7 @@ lambert.second_maneuver_segment = last_impulse.name
 # Once the whole control sequence is declared and the Lambert profile active, the simulation can be performed. Ensure that the Lambert profile is active and that the mission control sequence runs all active profiles. In addition, any profile must run to return and continue once finished. Do not continue on failure or reset inner targeters.
 
 # +
-from br.ok.core.stkobjects.astrogator import (
+from br.steak.core.stkobjects.astrogator import (
     ProfileMode,
     ProfilesFinish,
     TargetSequenceAction,

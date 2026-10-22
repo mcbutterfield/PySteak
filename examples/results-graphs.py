@@ -11,7 +11,7 @@
 # Start by launching a new STK instance. In this example, STKEngine is used.
 
 # +
-from br.ok.core.stkengine import STKEngine
+from br.steak.core.stkengine import STKEngine
 
 
 stk = STKEngine.start_application(no_graphics=False)
@@ -26,7 +26,7 @@ root.new_scenario("GraphsAndResults")
 # Once the scenario is created, it is possible to show a 3D graphics window by running:
 
 # +
-from br.ok.core.experimental.jupyterwidgets import GlobeWidget
+from br.steak.core.experimental.jupyterwidgets import GlobeWidget
 
 
 globe_widget = GlobeWidget(root, 640, 480)
@@ -36,7 +36,7 @@ globe_widget.show()
 # Show a 2D graphics window by running:
 
 # +
-from br.ok.core.experimental.jupyterwidgets import MapWidget
+from br.steak.core.experimental.jupyterwidgets import MapWidget
 
 
 map_widget = MapWidget(root, 640, 480)
@@ -56,7 +56,7 @@ root.rewind()
 # Now that a new scenario is available, add a new satellite:
 
 # +
-from br.ok.core.stkobjects import STKObjectType
+from br.steak.core.stkobjects import STKObjectType
 
 
 satellite = root.current_scenario.children.new(
@@ -67,7 +67,7 @@ satellite = root.current_scenario.children.new(
 # Ensure that the satellite's associated times use the scenario's times as well.
 
 # +
-from br.ok.core.stkobjects import PropagatorTwoBody, PropagatorType
+from br.steak.core.stkobjects import PropagatorTwoBody, PropagatorType
 
 
 satellite.set_propagator_type(PropagatorType.TWO_BODY)
@@ -85,7 +85,7 @@ propagator.propagate()
 # To retrieve the data for the `J2000 Position Velocity` report, setup its specific data providers for use in the Object Model. Use the various `DataProvider` interfaces to do this:
 
 # +
-from br.ok.core.stkobjects import DataProviderGroup
+from br.steak.core.stkobjects import DataProviderGroup
 
 
 cart_vel = DataProviderGroup(satellite.data_providers["Cartesian Velocity"])
@@ -137,7 +137,7 @@ schema = str(satellite.data_providers.get_schema())
 # The following example demonstrates setting the satellite's object path as the PreData for the `RIC Coordinates` data provider and then calls the data provider's computation execution method.
 
 # +
-from br.ok.core.stkobjects import DataProviderResult, DataProviderTimeVarying
+from br.steak.core.stkobjects import DataProviderResult, DataProviderTimeVarying
 
 
 provider = DataProviderTimeVarying(satellite.data_providers["RIC Coordinates"])

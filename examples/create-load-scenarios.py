@@ -7,7 +7,7 @@
 # To create a new scenario, first connect to STK. This tutorial uses STK Engine.
 
 # +
-from br.ok.core.stkengine import STKEngine
+from br.steak.core.stkengine import STKEngine
 
 
 # Connect to the STK Application object
@@ -33,7 +33,7 @@ print(scenario.path)
 # After creating (or loading) the scenario, PySTK enables the creation and manipulation of objects like satellites, aircraft, or ground stations. For example, to add a satellite:
 
 # +
-from br.ok.core.stkobjects import STKObjectType
+from br.steak.core.stkobjects import STKObjectType
 
 
 # Create a satellite in the scenario
@@ -43,7 +43,7 @@ satellite = scenario.children.new(STKObjectType.SATELLITE, "MySatellite")
 # To set the satellite's orbit and to set a propagator type:
 
 # +
-from br.ok.core.stkobjects import PropagatorType
+from br.steak.core.stkobjects import PropagatorType
 
 
 # Set the satellite's orbit (assuming you want a basic orbit definition)
@@ -57,7 +57,7 @@ propagator.propagate()  # To propagate the orbit
 # It is possible to display the created scenario by using PySTK widgets for Jupyter:
 
 # + tags=["nbsphinx-thumbnail"]
-from br.ok.core.experimental.jupyterwidgets import GlobeWidget
+from br.steak.core.experimental.jupyterwidgets import GlobeWidget
 
 
 plotter = GlobeWidget(root, 640, 480)

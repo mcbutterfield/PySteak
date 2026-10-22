@@ -1,0 +1,212 @@
+MCSTargetSequence
+=================
+
+.. py:class:: br.steak.core.stkobjects.astrogator.MCSTargetSequence
+
+   Bases: :py:class:`~br.steak.core.stkobjects.astrogator.IMCSSegment`, :py:class:`~br.steak.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`, :py:class:`~br.steak.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~br.steak.core.stkobjects.astrogator.ICloneable`
+
+   The Target Sequence segment.
+
+.. py:currentmodule:: MCSTargetSequence
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.steak.core.stkobjects.astrogator.MCSTargetSequence.apply_profile`
+              - Apply Changes - applies the current values of specified profile to the segments within the target sequence.
+            * - :py:attr:`~br.steak.core.stkobjects.astrogator.MCSTargetSequence.apply_profile_by_name`
+              - Apply Changes - applies the current values of specified profile to the segments within the target sequence.
+            * - :py:attr:`~br.steak.core.stkobjects.astrogator.MCSTargetSequence.apply_profiles`
+              - Apply Changes - applies the current values of search profiles' controls and the changes specified by the segment configuration profiles to the segments within the target sequence.
+            * - :py:attr:`~br.steak.core.stkobjects.astrogator.MCSTargetSequence.reset_profile`
+              - Reset - resets the current values of specified profile.
+            * - :py:attr:`~br.steak.core.stkobjects.astrogator.MCSTargetSequence.reset_profile_by_name`
+              - Reset - resets the current values of specified profile.
+            * - :py:attr:`~br.steak.core.stkobjects.astrogator.MCSTargetSequence.reset_profiles`
+              - Reset - resets the controls of the search profiles to the segments' values.
+            * - :py:attr:`~br.steak.core.stkobjects.astrogator.MCSTargetSequence.set_all_profile_modes`
+              - Set the mode for all profiles in this target sequence to the value held by the SetAllProfileModesTo property.
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.steak.core.stkobjects.astrogator.MCSTargetSequence.action`
+              - Whether to run the sequence nominally or using profiles.
+            * - :py:attr:`~br.steak.core.stkobjects.astrogator.MCSTargetSequence.continue_on_failure`
+              - Continue if profiles don't converge - if true, the target sequence continues if a profile fails to converge; otherwise, the MCS will stop upon the failure of a search profile.
+            * - :py:attr:`~br.steak.core.stkobjects.astrogator.MCSTargetSequence.profiles`
+              - Return the profiles used within the target sequence.
+            * - :py:attr:`~br.steak.core.stkobjects.astrogator.MCSTargetSequence.reset_inner_targeters`
+              - If true, inner target sequences will have their profiles reset before each run.
+            * - :py:attr:`~br.steak.core.stkobjects.astrogator.MCSTargetSequence.segments`
+              - Return the segments contained within the target sequence.
+            * - :py:attr:`~br.steak.core.stkobjects.astrogator.MCSTargetSequence.set_all_profile_modes_to`
+              - The mode setting that will be applied to all profiles in this target sequence when the SetAllProfileModes method is invoked.
+            * - :py:attr:`~br.steak.core.stkobjects.astrogator.MCSTargetSequence.when_profiles_finish`
+              - When Profiles Converge - the action to be carried out if targeting has converged.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.steak.core.stkobjects.astrogator import MCSTargetSequence
+
+
+Property detail
+---------------
+
+.. py:property:: action
+    :canonical: br.steak.core.stkobjects.astrogator.MCSTargetSequence.action
+    :type: TargetSequenceAction
+
+    Whether to run the sequence nominally or using profiles.
+
+.. py:property:: continue_on_failure
+    :canonical: br.steak.core.stkobjects.astrogator.MCSTargetSequence.continue_on_failure
+    :type: bool
+
+    Continue if profiles don't converge - if true, the target sequence continues if a profile fails to converge; otherwise, the MCS will stop upon the failure of a search profile.
+
+.. py:property:: profiles
+    :canonical: br.steak.core.stkobjects.astrogator.MCSTargetSequence.profiles
+    :type: ProfileCollection
+
+    Return the profiles used within the target sequence.
+
+.. py:property:: reset_inner_targeters
+    :canonical: br.steak.core.stkobjects.astrogator.MCSTargetSequence.reset_inner_targeters
+    :type: bool
+
+    If true, inner target sequences will have their profiles reset before each run.
+
+.. py:property:: segments
+    :canonical: br.steak.core.stkobjects.astrogator.MCSTargetSequence.segments
+    :type: MCSSegmentCollection
+
+    Return the segments contained within the target sequence.
+
+.. py:property:: set_all_profile_modes_to
+    :canonical: br.steak.core.stkobjects.astrogator.MCSTargetSequence.set_all_profile_modes_to
+    :type: ProfileMode
+
+    The mode setting that will be applied to all profiles in this target sequence when the SetAllProfileModes method is invoked.
+
+.. py:property:: when_profiles_finish
+    :canonical: br.steak.core.stkobjects.astrogator.MCSTargetSequence.when_profiles_finish
+    :type: ProfilesFinish
+
+    When Profiles Converge - the action to be carried out if targeting has converged.
+
+
+Method detail
+-------------
+
+
+
+.. py:method:: apply_profile(self, profile: IProfile) -> None
+    :canonical: br.steak.core.stkobjects.astrogator.MCSTargetSequence.apply_profile
+
+    Apply Changes - applies the current values of specified profile to the segments within the target sequence.
+
+    :Parameters:
+
+        **profile** : :obj:`~IProfile`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: apply_profile_by_name(self, profile: str) -> None
+    :canonical: br.steak.core.stkobjects.astrogator.MCSTargetSequence.apply_profile_by_name
+
+    Apply Changes - applies the current values of specified profile to the segments within the target sequence.
+
+    :Parameters:
+
+        **profile** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: apply_profiles(self) -> None
+    :canonical: br.steak.core.stkobjects.astrogator.MCSTargetSequence.apply_profiles
+
+    Apply Changes - applies the current values of search profiles' controls and the changes specified by the segment configuration profiles to the segments within the target sequence.
+
+    :Returns:
+
+        :obj:`~None`
+
+
+
+
+
+
+.. py:method:: reset_profile(self, profile: IProfile) -> None
+    :canonical: br.steak.core.stkobjects.astrogator.MCSTargetSequence.reset_profile
+
+    Reset - resets the current values of specified profile.
+
+    :Parameters:
+
+        **profile** : :obj:`~IProfile`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: reset_profile_by_name(self, profile: str) -> None
+    :canonical: br.steak.core.stkobjects.astrogator.MCSTargetSequence.reset_profile_by_name
+
+    Reset - resets the current values of specified profile.
+
+    :Parameters:
+
+        **profile** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: reset_profiles(self) -> None
+    :canonical: br.steak.core.stkobjects.astrogator.MCSTargetSequence.reset_profiles
+
+    Reset - resets the controls of the search profiles to the segments' values.
+
+    :Returns:
+
+        :obj:`~None`
+
+
+.. py:method:: set_all_profile_modes(self) -> None
+    :canonical: br.steak.core.stkobjects.astrogator.MCSTargetSequence.set_all_profile_modes
+
+    Set the mode for all profiles in this target sequence to the value held by the SetAllProfileModesTo property.
+
+    :Returns:
+
+        :obj:`~None`
+
+
+
+
+

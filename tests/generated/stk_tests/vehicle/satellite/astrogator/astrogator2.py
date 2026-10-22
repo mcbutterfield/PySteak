@@ -21,10 +21,10 @@
 # SOFTWARE.
 
 from test_util import *
-from br.ok.core.stkobjects import *
-from br.ok.core.stkobjects.astrogator import *
-from br.ok.core.stkx import *
-from br.ok.core.stkutil import *
+from br.steak.core.stkobjects import *
+from br.steak.core.stkobjects.astrogator import *
+from br.steak.core.stkx import *
+from br.steak.core.stkutil import *
 
 
 class EarlyBoundTests(TestBase):

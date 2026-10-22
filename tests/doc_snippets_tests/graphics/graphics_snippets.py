@@ -23,10 +23,10 @@
 import os
 import sys
 
-from br.ok.core.graphics import FontStyle, ScreenOverlayOrigin, ScreenOverlayUnit
-from br.ok.core.stkobjects import STKObjectType
-from br.ok.core.stkutil import AzElAboutBoresight
-from br.ok.core.utilities.colors import Colors
+from br.steak.core.graphics import FontStyle, ScreenOverlayOrigin, ScreenOverlayUnit
+from br.steak.core.stkobjects import STKObjectType
+from br.steak.core.stkutil import AzElAboutBoresight
+from br.steak.core.utilities.colors import Colors
 
 # Add path to the parent directory to use some common utilities
 sys.path.insert(1, os.path.join(os.path.dirname(os.path.realpath(__file__)), ".."))
@@ -62,7 +62,7 @@ class GraphicsSnippets(CodeSnippetsTestBase):
         eid="graphics~CylinderFillOptions",
     )
     def CylinderFillEnumerationSnippet(self):
-        from br.ok.core.graphics import CylinderFillOptions
+        from br.steak.core.graphics import CylinderFillOptions
 
         # CylinderFillOptions inherits from enum.IntFlag and may be combined
         # using the `|` operator

@@ -25,8 +25,8 @@
 
 import pytest
 
-from br.ok.extensions.scenario_construction import construct_scenario_from_dict
-from br.ok.core.stkobjects import Scenario, Place, Sensor, STKObjectType, Antenna
+from br.steak.extensions.scenario_construction import construct_scenario_from_dict
+from br.steak.core.stkobjects import Scenario, Place, Sensor, STKObjectType, Antenna
 
 from stk_environment import stk_root
 

@@ -28,9 +28,9 @@ from typing import Optional
 
 
 if os.name == "nt":
-    from br.ok.core.stkdesktop import STKDesktopApplication, STKDesktop
-from br.ok.core.stkengine import STKEngineApplication, STKEngine
-from br.ok.core.stkobjects import STKObjectRoot
+    from br.steak.core.stkdesktop import STKDesktopApplication, STKDesktop
+from br.steak.core.stkengine import STKEngineApplication, STKEngine
+from br.steak.core.stkobjects import STKObjectRoot
 
 
 class StkEnvironment:
@@ -68,7 +68,7 @@ class StkEnvironment:
 
         def __init__(self, no_graphics: bool, args):
             # Lazy import to avoid direct dependency on grpc and protobug
-            from br.ok.core.stkruntime import STKRuntimeApplication, STKRuntime
+            from br.steak.core.stkruntime import STKRuntimeApplication, STKRuntime
 
             if args.attach:
                 self.stk: "STKRuntimeApplication" = STKRuntime.attach_to_application(
@@ -111,7 +111,7 @@ class StkEnvironment:
         def __init__(self):
             # Lazy import to avoid direct dependency on tkinter
             from tkinter import Tk, BOTH, YES, LEFT
-            from br.ok.core.stkengine.tkcontrols import GlobeControl, MapControl
+            from br.steak.core.stkengine.tkcontrols import GlobeControl, MapControl
 
             self.window = Tk()
             self.globeControl = GlobeControl(self.window, width=320, height=200)

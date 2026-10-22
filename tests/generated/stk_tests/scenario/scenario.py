@@ -30,13 +30,13 @@ from logger import *
 from math2 import *
 from seet_helper import *
 from stk_util_helper import *
-from br.ok.core.utilities.colors import *
+from br.steak.core.utilities.colors import *
 from parameterized import *
 
-from br.ok.core.stkobjects import *
-from br.ok.core.stkutil import *
-from br.ok.core.analysis_workbench import *
-from br.ok.core.graphics import *
+from br.steak.core.stkobjects import *
+from br.steak.core.stkutil import *
+from br.steak.core.analysis_workbench import *
+from br.steak.core.graphics import *
 
 
 class EarlyBoundTests(TestBase):

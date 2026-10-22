@@ -29,12 +29,12 @@ import matplotlib
 
 from pathlib import Path
 
-from br.ok.extensions.data_analysis.graphs.access_graphs import access_duration_pie_chart, bit_error_rate_line_chart, carrier_to_noise_ratio_line_chart, cumulative_dwell_cumulative_pie_chart, ebno_line_chart, radar_sar_azimuth_resolution_line_chart, radar_sar_time_resolution_line_chart, revisit_diagram_interval_pie_chart, aer_line_chart, access_interval_graph, az_el_polar_center_90_graph, angular_rates_line_chart, elevation_angle_line_chart, gaps_interval_graph, probability_of_detection_line_chart, radar_antenna_gain_line_chart, radar_propagation_loss_line_chart, radar_searchtrack_integration_line_chart, radar_searchtrack_snr_line_chart, radar_system_noise_line_chart, signal_to_noise_ratio_line_chart, sun_rfi_line_chart
+from br.steak.extensions.data_analysis.graphs.access_graphs import access_duration_pie_chart, bit_error_rate_line_chart, carrier_to_noise_ratio_line_chart, cumulative_dwell_cumulative_pie_chart, ebno_line_chart, radar_sar_azimuth_resolution_line_chart, radar_sar_time_resolution_line_chart, revisit_diagram_interval_pie_chart, aer_line_chart, access_interval_graph, az_el_polar_center_90_graph, angular_rates_line_chart, elevation_angle_line_chart, gaps_interval_graph, probability_of_detection_line_chart, radar_antenna_gain_line_chart, radar_propagation_loss_line_chart, radar_searchtrack_integration_line_chart, radar_searchtrack_snr_line_chart, radar_system_noise_line_chart, signal_to_noise_ratio_line_chart, sun_rfi_line_chart
 from stk_environment import stk_root
 
 @pytest.fixture()
 def basic_access(stk_root):
-    from br.ok.core.stkobjects import STKObjectType, PropagatorType, ConstraintLighting, AccessConstraintType
+    from br.steak.core.stkobjects import STKObjectType, PropagatorType, ConstraintLighting, AccessConstraintType
 
     stk_root.new_scenario("GraphTest")
     stk_root.execute_command("Terrain * TerrainServer UseTerrainForAnalysis No")
@@ -63,7 +63,7 @@ def basic_access(stk_root):
 
 @pytest.fixture()
 def leap_second_access(stk_root):
-    from br.ok.core.stkobjects import STKObjectType, PropagatorType
+    from br.steak.core.stkobjects import STKObjectType, PropagatorType
 
     stk_root.new_scenario("GraphTest")
     stk_root.execute_command("Terrain * TerrainServer UseTerrainForAnalysis No")
@@ -87,7 +87,7 @@ def leap_second_access(stk_root):
 
 @pytest.fixture()
 def basic_radar_access(stk_root):
-    from br.ok.core.stkobjects import STKObjectType
+    from br.steak.core.stkobjects import STKObjectType
 
     stk_root.new_scenario("GraphTest")
     stk_root.execute_command("Terrain * TerrainServer UseTerrainForAnalysis No")
@@ -120,7 +120,7 @@ def basic_radar_access(stk_root):
 
 @pytest.fixture()
 def communications_access(stk_root):
-    from br.ok.core.stkobjects import STKObjectType, PropagatorType
+    from br.steak.core.stkobjects import STKObjectType, PropagatorType
 
     stk_root.new_scenario("GraphTest")
     scenario = stk_root.current_scenario
@@ -144,7 +144,7 @@ def communications_access(stk_root):
 
 @pytest.fixture()
 def sar_radar_access(stk_root):
-    from br.ok.core.stkobjects import STKObjectType, PropagatorType
+    from br.steak.core.stkobjects import STKObjectType, PropagatorType
 
     stk_root.new_scenario("GraphTest")
     scenario = stk_root.current_scenario

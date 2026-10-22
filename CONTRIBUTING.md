@@ -249,11 +249,11 @@ tox -f docker-rm-{ubuntu,windows}_container-{py311,py312,py313}
 - The second section of the example should be a problem statement. This statement should include all of the parameters needed in the example, as well as a description of what the example aims to determine. Write this section in an imperative form.
 - Include an explanation with each code cell. In a Jupyter notebook, this entails adding a markdown cell before each code cell. The explanations should be included before, not after, the corresponding code.
 - The examples are built with the documentation and included in the help. As part of the build process, screenshots of the STK Engine 2D and 3D graphics are inserted in the document. You do not need to include the screenshots yourself. However, do include the graphics widgets (2D or 3D) at points in your example. When the documentation is built, a screenshot of the widget will be inserted in its place.
-    - These widgets are included in `br.ok.core.experimental.jupyterwidgets`
+    - These widgets are included in `br.steak.core.experimental.jupyterwidgets`
     - To include a 2D widget run:
 
         ```python
-        from br.ok.core.experimental.jupyterwidgets import MapWidget
+        from br.steak.core.experimental.jupyterwidgets import MapWidget
 
         map_plotter = MapWidget(root, 640, 480)
 
@@ -263,7 +263,7 @@ tox -f docker-rm-{ubuntu,windows}_container-{py311,py312,py313}
     - To include a 3D widget run:
 
         ```python
-        from br.ok.core.experimental.jupyterwidgets import GlobeWidget
+        from br.steak.core.experimental.jupyterwidgets import GlobeWidget
 
         globe_plotter = GlobeWidget(root, 640, 480)
 

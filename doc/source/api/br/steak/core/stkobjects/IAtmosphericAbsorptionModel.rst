@@ -1,0 +1,50 @@
+IAtmosphericAbsorptionModel
+===========================
+
+.. py:class:: br.steak.core.stkobjects.IAtmosphericAbsorptionModel
+
+   Provide access to the properties and methods an atmospheric absorption model.
+
+.. py:currentmodule:: IAtmosphericAbsorptionModel
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.steak.core.stkobjects.IAtmosphericAbsorptionModel.name`
+              - Get the atmospheric absorption model name.
+            * - :py:attr:`~br.steak.core.stkobjects.IAtmosphericAbsorptionModel.type`
+              - Get the atmospheric absorption model type enumeration.
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.steak.core.stkobjects import IAtmosphericAbsorptionModel
+
+
+Property detail
+---------------
+
+.. py:property:: name
+    :canonical: br.steak.core.stkobjects.IAtmosphericAbsorptionModel.name
+    :type: str
+
+    Get the atmospheric absorption model name.
+
+.. py:property:: type
+    :canonical: br.steak.core.stkobjects.IAtmosphericAbsorptionModel.type
+    :type: AtmosphericAbsorptionModelType
+
+    Get the atmospheric absorption model type enumeration.
+
+

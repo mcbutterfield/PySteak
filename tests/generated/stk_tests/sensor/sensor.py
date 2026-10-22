@@ -34,11 +34,11 @@ from math2 import *
 from orientation_helper import *
 from vehicle.vehicle_basic import *
 from vehicle.vehicle_vo import *
-from br.ok.core.utilities.colors import *
+from br.steak.core.utilities.colors import *
 
-from br.ok.core.stkobjects import *
-from br.ok.core.stkutil import *
-from br.ok.core.analysis_workbench import *
+from br.steak.core.stkobjects import *
+from br.steak.core.stkutil import *
+from br.steak.core.analysis_workbench import *
 
 
 class EarlyBoundTests(TestBase):

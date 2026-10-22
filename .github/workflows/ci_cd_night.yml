@@ -22,7 +22,7 @@ on:
     - cron: '0 0 * * 6,0'
       # From Saturday to Sunday (both included) at 00:00 UTC. Used for running the
 env:
-  ANSYS_STK: 'br-ok'
+  ANSYS_STK: 'br-steak'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
   LICENSE_SERVER_PORT: '1055'
   MAIN_PYTHON_VERSION: '3.12'
@@ -43,7 +43,7 @@ permissions: {}
 jobs:
 
   build-wheelhouse:
-    name: "Wheelhouse br-ok[${{ matrix.target }}] / ${{ matrix.os }} / ${{ matrix.python-version
+    name: "Wheelhouse br-steak[${{ matrix.target }}] / ${{ matrix.os }} / ${{ matrix.python-version
       }}"
     runs-on: ${{ matrix.os }}
     if: (github.event_name == 'workflow_dispatch' && inputs.run-doc == true) || github.event_name

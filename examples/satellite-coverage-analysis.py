@@ -14,7 +14,7 @@
 # Start by launching a new STK instance. In this example, STKEngine is used.
 
 # +
-from br.ok.core.stkengine import STKEngine
+from br.steak.core.stkengine import STKEngine
 
 
 stk = STKEngine.start_application(no_graphics=False)
@@ -31,7 +31,7 @@ root.new_scenario("SatGraveyardCoverage")
 # Once the scenario is created, it is possible to show a 3D graphics window by running:
 
 # +
-from br.ok.core.experimental.jupyterwidgets import GlobeWidget
+from br.steak.core.experimental.jupyterwidgets import GlobeWidget
 
 
 globe_plotter = GlobeWidget(root, 640, 480)
@@ -53,7 +53,7 @@ root.rewind()
 # First, insert the satellite:
 
 # +
-from br.ok.core.stkobjects import STKObjectType
+from br.steak.core.stkobjects import STKObjectType
 
 
 satellite = scenario.children.new(STKObjectType.SATELLITE, "EarthObsSat")
@@ -62,7 +62,7 @@ satellite = scenario.children.new(STKObjectType.SATELLITE, "EarthObsSat")
 # Set the propagator to J2Pertubation:
 
 # +
-from br.ok.core.stkobjects import PropagatorType
+from br.steak.core.stkobjects import PropagatorType
 
 
 satellite.set_propagator_type(PropagatorType.J2_PERTURBATION)
@@ -74,7 +74,7 @@ propagator = satellite.propagator
 # First, set the orbit's coordinate type to classical:
 
 # +
-from br.ok.core.stkutil import OrbitStateType
+from br.steak.core.stkutil import OrbitStateType
 
 
 orbit = propagator.initial_state.representation.convert_to(OrbitStateType.CLASSICAL)
@@ -83,7 +83,7 @@ orbit = propagator.initial_state.representation.convert_to(OrbitStateType.CLASSI
 # Use the returned ``IOrbitStateClassical`` object to set the ``size_shape_type`` property. This property designates which pair of elements describe the orbit. Set the ``size_shape_type`` to Semi-major Axis and Eccentricity:
 
 # +
-from br.ok.core.stkobjects import ClassicalSizeShape
+from br.steak.core.stkobjects import ClassicalSizeShape
 
 
 orbit.size_shape_type = ClassicalSizeShape.SEMIMAJOR_AXIS
@@ -102,7 +102,7 @@ orbit.orientation.argument_of_periapsis = 0
 # Using the orientation property, set the ascending node type to RAAN:
 
 # +
-from br.ok.core.stkobjects import OrientationAscNode
+from br.steak.core.stkobjects import OrientationAscNode
 
 
 orbit.orientation.ascending_node_type = (
@@ -117,7 +117,7 @@ orbit.orientation.ascending_node.value = 150.34
 # Then, use the `location` property of the `IOrbitStateClassical` object to set the location type to true anomaly:
 
 # +
-from br.ok.core.stkobjects import ClassicalLocation
+from br.steak.core.stkobjects import ClassicalLocation
 
 
 orbit.location_type = ClassicalLocation.TRUE_ANOMALY
@@ -143,7 +143,7 @@ sensor = satellite.children.new(STKObjectType.SENSOR, "SatelliteSensor")
 # Then, set the sensor's type to a simple conic sensor with a $45^\circ$ half angle and an angular resolution of $1^\circ$:
 
 # +
-from br.ok.core.stkobjects import SensorPattern
+from br.steak.core.stkobjects import SensorPattern
 
 
 sensor.set_pattern_type(SensorPattern.SIMPLE_CONIC)
@@ -175,7 +175,7 @@ sat_grave_coverage = scenario.children.new(
 # To set the coverage definition's bounds to the elliptical area around Point Nemo, first set the bounds type to use custom regions:
 
 # +
-from br.ok.core.stkobjects import CoverageBounds
+from br.steak.core.stkobjects import CoverageBounds
 
 
 sat_grave_coverage.grid.bounds_type = CoverageBounds.CUSTOM_REGIONS
@@ -196,7 +196,7 @@ ellipse.bearing = 45
 # First, set the grid's resolution to use a latitude/longitude resolution:
 
 # +
-from br.ok.core.stkobjects import CoverageResolution
+from br.steak.core.stkobjects import CoverageResolution
 
 
 sat_grave_coverage.grid.resolution_type = (
@@ -236,7 +236,7 @@ figure_of_merit = sat_grave_coverage.children.new(
 # Then, set the Figure of Merit's definition type to simple coverage:
 
 # +
-from br.ok.core.stkobjects import FigureOfMeritDefinitionType
+from br.steak.core.stkobjects import FigureOfMeritDefinitionType
 
 
 figure_of_merit.set_definition_type(FigureOfMeritDefinitionType.SIMPLE_COVERAGE)
@@ -303,7 +303,7 @@ plt.show()
 # The Figure of Merit can be used to visualize the coverage satisfaction over time. To do so, first configure the Figure of Merit's graphics to show the accumulation of coverage up to the current time:
 
 # +
-from br.ok.core.stkobjects import FigureOfMeritGraphics2DAccumulation
+from br.steak.core.stkobjects import FigureOfMeritGraphics2DAccumulation
 
 
 figure_of_merit.graphics.show_graphics = True
@@ -327,7 +327,7 @@ root.play_forward()
 # The satellite graveyard can only be imaged by the satellite's sensor when it is illuminated by daylight. To reflect this constraint, assign a lighting constraint to the Place object representing Point Nemo:
 
 # +
-from br.ok.core.stkobjects import AccessConstraintType
+from br.steak.core.stkobjects import AccessConstraintType
 
 
 lighting_constraint = point_nemo.access_constraints.add_constraint(
@@ -338,7 +338,7 @@ lighting_constraint = point_nemo.access_constraints.add_constraint(
 # Then, constrain the lighting to penumbra or direct sun:
 
 # +
-from br.ok.core.stkobjects import ConstraintLighting
+from br.steak.core.stkobjects import ConstraintLighting
 
 
 lighting_constraint.condition = ConstraintLighting.PENUMBRA_OR_DIRECT_SUN
@@ -347,7 +347,7 @@ lighting_constraint.condition = ConstraintLighting.PENUMBRA_OR_DIRECT_SUN
 # Point Nemo now contains the constraint that must be applied to the entire grid. Set the coverage definition's point definition to use place objects as the reference constraint class:
 
 # +
-from br.ok.core.stkobjects import CoverageGridClass
+from br.steak.core.stkobjects import CoverageGridClass
 
 
 sat_grave_coverage.point_definition.grid_class = CoverageGridClass.PLACE

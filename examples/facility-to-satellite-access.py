@@ -17,7 +17,7 @@
 # Start by launching a new STK instance. In this example, STKEngine is used.
 
 # +
-from br.ok.core.stkengine import STKEngine
+from br.steak.core.stkengine import STKEngine
 
 
 stk = STKEngine.start_application(no_graphics=False)
@@ -36,7 +36,7 @@ root.new_scenario("SatelliteAccessScenario")
 # Once the scenario is created, it is possible to show a 3D graphics window by running:
 
 # +
-from br.ok.core.experimental.jupyterwidgets import GlobeWidget
+from br.steak.core.experimental.jupyterwidgets import GlobeWidget
 
 
 plotter = GlobeWidget(root, 640, 480)
@@ -56,7 +56,7 @@ root.rewind()
 # Create a Static STK Object (facility). All new objects are attached to an existing parent object. In this case, the new facility is added to the children collection of the scenario.
 
 # +
-from br.ok.core.stkobjects import STKObjectType
+from br.steak.core.stkobjects import STKObjectType
 
 
 facility = root.current_scenario.children.new(STKObjectType.FACILITY, "Philadelphia")
@@ -73,7 +73,7 @@ facility = root.current_scenario.children.new(STKObjectType.FACILITY, "Philadelp
 root.units_preferences.item("LatitudeUnit").set_current_unit("deg")
 root.units_preferences.item("LongitudeUnit").set_current_unit("deg")
 
-# Then, set the position of the facility using a cartodetic (latitude, longitude, altitude) position. The ``position`` property is of the type ``IPosition`` located in the STK Utility library (``br.ok.core.stkutil``). Change the position of the facility to latitude $39.95^\circ$ and longitude $-75.16^\circ$, which corresponds approximately to Philadelphia's location:
+# Then, set the position of the facility using a cartodetic (latitude, longitude, altitude) position. The ``position`` property is of the type ``IPosition`` located in the STK Utility library (``br.steak.core.stkutil``). Change the position of the facility to latitude $39.95^\circ$ and longitude $-75.16^\circ$, which corresponds approximately to Philadelphia's location:
 
 facility.position.assign_planetodetic(39.95, -75.16, 0)
 
@@ -109,7 +109,7 @@ sensor = facility.children.new(STKObjectType.SENSOR, "MySensor")
 # Now, set the sensor’s pattern to complex conic. The default sensor object is defined as a simple conic sensor. So, the first step is to change the sensor type to complex conic. The API also provides a helper function to set the sensor pattern properties. To access this helper function, get an ``ISensorCommonTasks`` object through the sensor's ``common_tasks`` property.
 
 # +
-from br.ok.core.stkobjects import SensorPattern
+from br.steak.core.stkobjects import SensorPattern
 
 
 sensor.set_pattern_type(SensorPattern.COMPLEX_CONIC)
@@ -123,7 +123,7 @@ sensor.common_tasks.set_pattern_complex_conic(50, 90, 0, 90)
 # Add an access constraint to the sensor defining a maximum range of $40$ km:
 
 # +
-from br.ok.core.stkobjects import AccessConstraintType
+from br.steak.core.stkobjects import AccessConstraintType
 
 
 access_constraint = sensor.access_constraints.add_constraint(AccessConstraintType.RANGE)
@@ -141,7 +141,7 @@ access_constraint.maximum = 40
 # +
 import pathlib
 
-from br.ok.core.stkobjects import PropagatorType
+from br.steak.core.stkobjects import PropagatorType
 
 
 satellite = root.current_scenario.children.new(STKObjectType.SATELLITE, "MySatellite")
@@ -164,7 +164,7 @@ plotter.show()
 # Since it is very hard to observe satellites when they are in the Earth's shadow, add a direct sun constraint to the satellite object:
 
 # +
-from br.ok.core.stkobjects import ConstraintLighting
+from br.steak.core.stkobjects import ConstraintLighting
 
 
 lighting_constraint = satellite.access_constraints.add_constraint(
@@ -295,7 +295,7 @@ data_provider_result.data_sets.to_numpy_array()[:10]
 # Create a vector between the satellite and facility objects:
 
 # +
-from br.ok.core.analysis_workbench import VectorType
+from br.steak.core.analysis_workbench import VectorType
 
 
 vector = facility.analysis_workbench_components.vectors.factory.create(
@@ -309,7 +309,7 @@ vector.destination.set_point(
 # Visualize the vector and set its size to $4.0$:
 
 # +
-from br.ok.core.stkobjects import GeometricElementType
+from br.steak.core.stkobjects import GeometricElementType
 
 
 boresight_vector = facility.graphics_3d.vector.vector_geometry_tool_components.add(

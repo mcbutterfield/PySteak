@@ -222,7 +222,7 @@ class DataAnalysisUtilTests(unittest.TestCase):
 
     @unittest.skipIf(skip_test, test_skipped_msg)
     def test_large_array_chunking(self):
-        from br.ok.core.internal.dataanalysisutil import _module_config
+        from br.steak.core.internal.dataanalysisutil import _module_config
 
         old_chunk_size = _module_config["TOARRAY_CHUNK_COUNT"]
         try:

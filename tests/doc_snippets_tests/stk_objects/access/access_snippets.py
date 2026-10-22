@@ -23,7 +23,7 @@
 import os
 import sys
 
-from br.ok.core.stkobjects import (
+from br.steak.core.stkobjects import (
     AberrationType,
     AccessConstraintType,
     AccessTimeType,
@@ -33,7 +33,7 @@ from br.ok.core.stkobjects import (
     OnePointAccessSummary,
     STKObjectType,
 )
-from br.ok.core.analysis_workbench import SmartIntervalState
+from br.steak.core.analysis_workbench import SmartIntervalState
 
 # Add path to the parent directory to use some common utilities
 sys.path.insert(1, os.path.join(os.path.dirname(os.path.realpath(__file__)), ".."))

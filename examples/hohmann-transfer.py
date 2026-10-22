@@ -22,7 +22,7 @@
 # Start by launching a new STK instance. In this example, ``STKEngine`` is used in ``no_graphics`` mode. This means that the graphic user interface (GUI) of the product is not launched:
 
 # +
-from br.ok.core.stkengine import STKEngine
+from br.steak.core.stkengine import STKEngine
 
 
 stk = STKEngine.start_application(no_graphics=False)
@@ -39,7 +39,7 @@ root.new_scenario("HohmannTransfer")
 # Once created, it is possible to show a 3D graphics window by running:
 
 # +
-from br.ok.core.experimental.jupyterwidgets import GlobeWidget
+from br.steak.core.experimental.jupyterwidgets import GlobeWidget
 
 
 plotter = GlobeWidget(root, 640, 480)
@@ -51,7 +51,7 @@ plotter.show()
 # Now that a new scenario is available, add a new satellite:
 
 # +
-from br.ok.core.stkobjects import STKObjectType
+from br.steak.core.stkobjects import STKObjectType
 
 
 satellite = root.current_scenario.children.new(STKObjectType.SATELLITE, "Satellite")
@@ -60,7 +60,7 @@ satellite = root.current_scenario.children.new(STKObjectType.SATELLITE, "Satelli
 # Then, declare the type of orbit propagator used for the satellite:
 
 # +
-from br.ok.core.stkobjects import PropagatorType
+from br.steak.core.stkobjects import PropagatorType
 
 
 satellite.set_propagator_type(PropagatorType.ASTROGATOR)
@@ -76,7 +76,7 @@ satellite.propagator.options.draw_trajectory_in_3d = True
 # Start by adding a new segment to the main sequence for modeling the initial state of the satellite:
 
 # +
-from br.ok.core.stkobjects.astrogator import SegmentType
+from br.steak.core.stkobjects.astrogator import SegmentType
 
 
 initial_state = satellite.propagator.main_sequence.insert(
@@ -87,7 +87,7 @@ initial_state = satellite.propagator.main_sequence.insert(
 # A total of six orbital parameters are required to specify the initial state of the satellite. Considering the data provided in this example, Keplerian elements can be used. Thus, it is possible to assign the following parameters:
 
 # +
-from br.ok.core.stkobjects.astrogator import ElementSetType
+from br.steak.core.stkobjects.astrogator import ElementSetType
 
 
 initial_state.set_element_type(ElementSetType.KEPLERIAN)
@@ -113,7 +113,7 @@ parking_orbit_propagate.stopping_conditions["Duration"].properties.trip = 7200
 # Additional configurations, like the color used to visualize the orbit of the satellite, can also be declared by running:
 
 # +
-from br.ok.core.utilities.colors import Colors
+from br.steak.core.utilities.colors import Colors
 
 
 parking_orbit_propagate.properties.color = Colors.Blue
@@ -133,7 +133,7 @@ parking_orbit_propagate.properties.color = Colors.Blue
 # All maneuvers are modeled as `IMPULSIVE` maneuver type. The attitude control used is of the type `THRUST_VECTOR`.
 
 # +
-from br.ok.core.stkobjects.astrogator import AttitudeControl, ManeuverType
+from br.steak.core.stkobjects.astrogator import AttitudeControl, ManeuverType
 
 
 hohmann_transfer = satellite.propagator.main_sequence.insert(
@@ -178,7 +178,7 @@ for control_sequence in hohmann_transfer.segments:
 # Enable the component of the velocity impulse along the X axis as a control parameter. Add the radius of apoapsis as a result to be achieved.
 
 # +
-from br.ok.core.stkobjects.astrogator import ControlManeuver
+from br.steak.core.stkobjects.astrogator import ControlManeuver
 
 
 first_impulse.enable_control_parameter(ControlManeuver.IMPULSIVE_CARTESIAN_X)
@@ -188,7 +188,7 @@ first_impulse.results.add("Keplerian Elems/Radius of Apoapsis")
 # Now, configure the solver for this first impulse. A differential corrector can be used to solve for the values of the control parameters to achieved the desired results:
 
 # +
-from br.ok.core.stkobjects.astrogator import ProfileMode
+from br.steak.core.stkobjects.astrogator import ProfileMode
 
 
 hohmann_start_solver = hohmann_start.profiles["Differential Corrector"]
@@ -263,7 +263,7 @@ propagate_final_orbit.stopping_conditions["Duration"].properties.trip = 86400.00
 # Once that all the segments for the main sequence are defined, the main control sequence can be executed to solve for the desired values in each sequence:
 
 # +
-from br.ok.core.stkobjects.astrogator import TargetSequenceAction
+from br.steak.core.stkobjects.astrogator import TargetSequenceAction
 
 
 hohmann_start.action = TargetSequenceAction.RUN_ACTIVE_PROFILES

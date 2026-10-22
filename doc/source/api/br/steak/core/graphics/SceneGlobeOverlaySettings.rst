@@ -1,0 +1,67 @@
+SceneGlobeOverlaySettings
+=========================
+
+.. py:class:: br.steak.core.graphics.SceneGlobeOverlaySettings
+
+   Settings used by globe overlay objects. These settings only affect the scene.
+
+.. py:currentmodule:: SceneGlobeOverlaySettings
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.steak.core.graphics.SceneGlobeOverlaySettings.anti_alias_imagery`
+              - Get or set a value indicating whether or not imagery is anti-aliased.
+            * - :py:attr:`~br.steak.core.graphics.SceneGlobeOverlaySettings.imagery_pixel_error`
+              - Get or set the pixel error for imagery. This is the number of pixels that the rendered imagery is different from the actual imagery data. The default is 1.0 pixel.
+            * - :py:attr:`~br.steak.core.graphics.SceneGlobeOverlaySettings.projected_raster_model_projection`
+              - Get or set whether projected raster globe overlays will also project onto models.
+            * - :py:attr:`~br.steak.core.graphics.SceneGlobeOverlaySettings.terrain_mesh_pixel_error`
+              - Get or set the pixel error for terrain meshes. This is the number of pixels that the rendered terrain is different from the actual terrain data. The default is 2.0 pixels.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.steak.core.graphics import SceneGlobeOverlaySettings
+
+
+Property detail
+---------------
+
+.. py:property:: anti_alias_imagery
+    :canonical: br.steak.core.graphics.SceneGlobeOverlaySettings.anti_alias_imagery
+    :type: bool
+
+    Get or set a value indicating whether or not imagery is anti-aliased.
+
+.. py:property:: imagery_pixel_error
+    :canonical: br.steak.core.graphics.SceneGlobeOverlaySettings.imagery_pixel_error
+    :type: float
+
+    Get or set the pixel error for imagery. This is the number of pixels that the rendered imagery is different from the actual imagery data. The default is 1.0 pixel.
+
+.. py:property:: projected_raster_model_projection
+    :canonical: br.steak.core.graphics.SceneGlobeOverlaySettings.projected_raster_model_projection
+    :type: bool
+
+    Get or set whether projected raster globe overlays will also project onto models.
+
+.. py:property:: terrain_mesh_pixel_error
+    :canonical: br.steak.core.graphics.SceneGlobeOverlaySettings.terrain_mesh_pixel_error
+    :type: float
+
+    Get or set the pixel error for terrain meshes. This is the number of pixels that the rendered terrain is different from the actual terrain data. The default is 2.0 pixels.
+
+

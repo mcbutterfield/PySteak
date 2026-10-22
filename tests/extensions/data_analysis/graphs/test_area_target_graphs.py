@@ -23,13 +23,13 @@
 
 # """Test the `area_target_graphs` module."""
 
-from br.ok.extensions.data_analysis.graphs.area_target_graphs import centroid_solar_az_el_line_chart
+from br.steak.extensions.data_analysis.graphs.area_target_graphs import centroid_solar_az_el_line_chart
 import pytest
 from stk_environment import stk_root
 
 @pytest.fixture()
 def area_target(stk_root):
-    from br.ok.core.stkobjects import STKObjectType, PropagatorType, ConstraintLighting, AccessConstraintType
+    from br.steak.core.stkobjects import STKObjectType, PropagatorType, ConstraintLighting, AccessConstraintType
 
     stk_root.new_scenario("GraphTest")
     scenario = stk_root.current_scenario

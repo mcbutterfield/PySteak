@@ -26,8 +26,8 @@ from app_provider import *
 from assertion_harness import *
 from display_times_helper import *
 from logger import *
-from br.ok.core.stkobjects import *
-from br.ok.core.stkutil import *
+from br.steak.core.stkobjects import *
+from br.steak.core.stkutil import *
 
 
 class AccessConstraintHelper(object):

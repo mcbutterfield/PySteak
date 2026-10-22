@@ -23,8 +23,8 @@
 import os
 import sys
 
-from br.ok.core.stkobjects import AntennaContourType, SensorRefractionType, STKObjectType
-from br.ok.core.stkutil import AzElAboutBoresight
+from br.steak.core.stkobjects import AntennaContourType, SensorRefractionType, STKObjectType
+from br.steak.core.stkutil import AzElAboutBoresight
 
 # Add path to the parent directory to use some common utilities
 sys.path.insert(1, os.path.join(os.path.dirname(os.path.realpath(__file__)), ".."))

@@ -1,0 +1,39 @@
+VideoFormat
+===========
+
+.. py:class:: br.steak.core.graphics.VideoFormat
+
+   IntEnum
+
+
+.. py:currentmodule:: VideoFormat
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Members
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~H264`
+              - H.264 file format.
+
+            * - :py:attr:`~WMV`
+              - Windows Media Video (WMV) file format.
+
+            * - :py:attr:`~PRO_RES`
+              - Apple ProRes file format.
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.steak.core.graphics import VideoFormat
+
+

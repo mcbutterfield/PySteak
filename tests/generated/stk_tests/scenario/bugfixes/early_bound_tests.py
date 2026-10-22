@@ -26,7 +26,7 @@ from assertion_harness import *
 from events.simple_animation_monitor import *
 from logger import *
 from parameterized import *
-from br.ok.core.stkobjects import *
+from br.steak.core.stkobjects import *
 
 
 class EarlyBoundTests(TestBase):

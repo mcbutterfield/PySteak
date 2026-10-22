@@ -1,7 +1,7 @@
 API reference
 =============
 
-This page contains the API reference of ``br-ok`` package. The API is
+This page contains the API reference of ``br-steak`` package. The API is
 split into two main sections, the core and the extensions.
 
 .. jinja:: main_toctree
@@ -11,7 +11,7 @@ split into two main sections, the core and the extensions.
     .. grid:: 1 1 2 2
 
         .. grid-item-card:: :fa:`atom` Core
-            :link: api/br/ok/core
+            :link: api/br/steak/core
             :link-type: doc
             :padding: 2 2 2 2
 
@@ -19,7 +19,7 @@ split into two main sections, the core and the extensions.
             features.
 
         .. grid-item-card:: :fa:`puzzle-piece` Extensions
-            :link: api/br/ok/extensions
+            :link: api/br/steak/extensions
             :link-type: doc
             :padding: 2 2 2 2
 
@@ -28,8 +28,8 @@ split into two main sections, the core and the extensions.
     .. toctree::
        :hidden:
 
-       api/br/ok/core
-       api/br/ok/extensions
+       api/br/steak/core
+       api/br/steak/extensions
 
     {% else %}
 

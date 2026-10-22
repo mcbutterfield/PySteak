@@ -265,7 +265,7 @@ Review and test the suggested code changes. Once you are satisfied with the resu
 Migration table
 ===============
 
-The table below lists the interface, classes, enumerations, and method names that have been updated in PySTK. You can look up a specific name using the Search box to only display the rows that contain that symbol. Note that the root of the namespace has also changed from :py:attr:`agi.stk[version]` to :py:attr:`br.ok.core`.
+The table below lists the interface, classes, enumerations, and method names that have been updated in PySTK. You can look up a specific name using the Search box to only display the rows that contain that symbol. Note that the root of the namespace has also changed from :py:attr:`agi.stk[version]` to :py:attr:`br.steak.core`.
 
 .. jinja:: migration_table
 

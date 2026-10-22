@@ -1,0 +1,189 @@
+ProjectedRasterOverlay
+======================
+
+.. py:class:: br.steak.core.graphics.ProjectedRasterOverlay
+
+   Bases: :py:class:`~br.steak.core.graphics.IGlobeImageOverlay`, :py:class:`~br.steak.core.graphics.IGlobeOverlay`
+
+   A globe image overlay which projects a raster onto the terrain or surface of the central body. You can also enable projection onto models by setting projected raster model projection to true for a Scene...
+
+.. py:currentmodule:: ProjectedRasterOverlay
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.steak.core.graphics.ProjectedRasterOverlay.border_color`
+              - Get or set the color of the projection's border.
+            * - :py:attr:`~br.steak.core.graphics.ProjectedRasterOverlay.border_translucency`
+              - Get or set the translucency of the projection's border.
+            * - :py:attr:`~br.steak.core.graphics.ProjectedRasterOverlay.border_width`
+              - Get or set the width of the projection's border.
+            * - :py:attr:`~br.steak.core.graphics.ProjectedRasterOverlay.color`
+              - Get or set the color of the projected raster.
+            * - :py:attr:`~br.steak.core.graphics.ProjectedRasterOverlay.directions`
+              - Get the direction vectors in the central body's fixed reference frame that define the projection's frustum...
+            * - :py:attr:`~br.steak.core.graphics.ProjectedRasterOverlay.far_plane_color`
+              - Get or set the color of the projection's far plane.
+            * - :py:attr:`~br.steak.core.graphics.ProjectedRasterOverlay.far_plane_translucency`
+              - Get or set the translucency of the projection's far plane.
+            * - :py:attr:`~br.steak.core.graphics.ProjectedRasterOverlay.frustum_color`
+              - Get or set the color of the projection's frustum.
+            * - :py:attr:`~br.steak.core.graphics.ProjectedRasterOverlay.frustum_translucency`
+              - Get or set the translucency of the projection's frustum.
+            * - :py:attr:`~br.steak.core.graphics.ProjectedRasterOverlay.projection`
+              - Get or set the projection that projects the raster.
+            * - :py:attr:`~br.steak.core.graphics.ProjectedRasterOverlay.raster`
+              - Get or set the raster that is projected.
+            * - :py:attr:`~br.steak.core.graphics.ProjectedRasterOverlay.shadow_color`
+              - Get or set the color of the projection's shadow.
+            * - :py:attr:`~br.steak.core.graphics.ProjectedRasterOverlay.shadow_translucency`
+              - Get or set the translucency of the projection's shadow.
+            * - :py:attr:`~br.steak.core.graphics.ProjectedRasterOverlay.show_far_plane`
+              - Get or set whether to show the far plane of the projection. If this is set to true, you will see the projected raster even when it does not intersect terrain.
+            * - :py:attr:`~br.steak.core.graphics.ProjectedRasterOverlay.show_frustum`
+              - Get or set whether to show the frustum of the projection.
+            * - :py:attr:`~br.steak.core.graphics.ProjectedRasterOverlay.show_shadows`
+              - Get or set whether to show shadows or not. When set to true, the raster will only be projected onto parts of the terrain visible from the projection's position. When false, the raster will project onto any terrain inside the projection's view frustum...
+            * - :py:attr:`~br.steak.core.graphics.ProjectedRasterOverlay.supported`
+              - Get whether or not the video card supports the projected raster overlay.
+            * - :py:attr:`~br.steak.core.graphics.ProjectedRasterOverlay.transparent_color`
+              - Get or set the color that will become transparent.
+            * - :py:attr:`~br.steak.core.graphics.ProjectedRasterOverlay.use_transparent_color`
+              - Get or set whether transparent color should be used.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.steak.core.graphics import ProjectedRasterOverlay
+
+
+Property detail
+---------------
+
+.. py:property:: border_color
+    :canonical: br.steak.core.graphics.ProjectedRasterOverlay.border_color
+    :type: Color
+
+    Get or set the color of the projection's border.
+
+.. py:property:: border_translucency
+    :canonical: br.steak.core.graphics.ProjectedRasterOverlay.border_translucency
+    :type: float
+
+    Get or set the translucency of the projection's border.
+
+.. py:property:: border_width
+    :canonical: br.steak.core.graphics.ProjectedRasterOverlay.border_width
+    :type: float
+
+    Get or set the width of the projection's border.
+
+.. py:property:: color
+    :canonical: br.steak.core.graphics.ProjectedRasterOverlay.color
+    :type: Color
+
+    Get or set the color of the projected raster.
+
+.. py:property:: directions
+    :canonical: br.steak.core.graphics.ProjectedRasterOverlay.directions
+    :type: list
+
+    Get the direction vectors in the central body's fixed reference frame that define the projection's frustum...
+
+.. py:property:: far_plane_color
+    :canonical: br.steak.core.graphics.ProjectedRasterOverlay.far_plane_color
+    :type: Color
+
+    Get or set the color of the projection's far plane.
+
+.. py:property:: far_plane_translucency
+    :canonical: br.steak.core.graphics.ProjectedRasterOverlay.far_plane_translucency
+    :type: float
+
+    Get or set the translucency of the projection's far plane.
+
+.. py:property:: frustum_color
+    :canonical: br.steak.core.graphics.ProjectedRasterOverlay.frustum_color
+    :type: Color
+
+    Get or set the color of the projection's frustum.
+
+.. py:property:: frustum_translucency
+    :canonical: br.steak.core.graphics.ProjectedRasterOverlay.frustum_translucency
+    :type: float
+
+    Get or set the translucency of the projection's frustum.
+
+.. py:property:: projection
+    :canonical: br.steak.core.graphics.ProjectedRasterOverlay.projection
+    :type: IProjection
+
+    Get or set the projection that projects the raster.
+
+.. py:property:: raster
+    :canonical: br.steak.core.graphics.ProjectedRasterOverlay.raster
+    :type: IRaster
+
+    Get or set the raster that is projected.
+
+.. py:property:: shadow_color
+    :canonical: br.steak.core.graphics.ProjectedRasterOverlay.shadow_color
+    :type: Color
+
+    Get or set the color of the projection's shadow.
+
+.. py:property:: shadow_translucency
+    :canonical: br.steak.core.graphics.ProjectedRasterOverlay.shadow_translucency
+    :type: float
+
+    Get or set the translucency of the projection's shadow.
+
+.. py:property:: show_far_plane
+    :canonical: br.steak.core.graphics.ProjectedRasterOverlay.show_far_plane
+    :type: bool
+
+    Get or set whether to show the far plane of the projection. If this is set to true, you will see the projected raster even when it does not intersect terrain.
+
+.. py:property:: show_frustum
+    :canonical: br.steak.core.graphics.ProjectedRasterOverlay.show_frustum
+    :type: bool
+
+    Get or set whether to show the frustum of the projection.
+
+.. py:property:: show_shadows
+    :canonical: br.steak.core.graphics.ProjectedRasterOverlay.show_shadows
+    :type: bool
+
+    Get or set whether to show shadows or not. When set to true, the raster will only be projected onto parts of the terrain visible from the projection's position. When false, the raster will project onto any terrain inside the projection's view frustum...
+
+.. py:property:: supported
+    :canonical: br.steak.core.graphics.ProjectedRasterOverlay.supported
+    :type: bool
+
+    Get whether or not the video card supports the projected raster overlay.
+
+.. py:property:: transparent_color
+    :canonical: br.steak.core.graphics.ProjectedRasterOverlay.transparent_color
+    :type: Color
+
+    Get or set the color that will become transparent.
+
+.. py:property:: use_transparent_color
+    :canonical: br.steak.core.graphics.ProjectedRasterOverlay.use_transparent_color
+    :type: bool
+
+    Get or set whether transparent color should be used.
+
+

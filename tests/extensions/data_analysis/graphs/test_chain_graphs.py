@@ -24,12 +24,12 @@
 
 import pytest
 from pathlib import Path
-from br.ok.extensions.data_analysis.graphs.chain_graphs import complete_chain_access_interval_graph, individual_object_access_interval_graph, individual_strand_access_interval_graph, number_of_accesses_line_chart
+from br.steak.extensions.data_analysis.graphs.chain_graphs import complete_chain_access_interval_graph, individual_object_access_interval_graph, individual_strand_access_interval_graph, number_of_accesses_line_chart
 from stk_environment import stk_root
 
 @pytest.fixture()
 def chain(stk_root):
-    from br.ok.core.stkobjects import STKObjectType, PropagatorType
+    from br.steak.core.stkobjects import STKObjectType, PropagatorType
 
     stk_root.new_scenario("GraphTest")
     scenario = stk_root.current_scenario

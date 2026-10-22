@@ -31,11 +31,11 @@ from interfaces.stk_objects import *
 from orientation_helper import *
 from stk_util_helper import *
 from vehicle.vehicle_vo import *
-from br.ok.core.utilities.colors import *
+from br.steak.core.utilities.colors import *
 from parameterized import *
 
-from br.ok.core.stkobjects import *
-from br.ok.core.stkutil import *
+from br.steak.core.stkobjects import *
+from br.steak.core.stkutil import *
 
 
 class EarlyBoundTests(TestBase):

@@ -4,7 +4,7 @@ on:
     types: [opened, synchronize, reopened, labeled, unlabeled]
 
 env:
-  ANSYS_STK: 'br-ok'
+  ANSYS_STK: 'br-steak'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
   LICENSE_SERVER_PORT: '1055'
   MAIN_PYTHON_VERSION: '3.13'
@@ -158,7 +158,7 @@ jobs:
           fail-level: 'warning'
 
   build-wheelhouse:
-    name: "Wheelhouse br-ok[${{ matrix.target }}] / ${{ matrix.os }} / ${{ matrix.python-version
+    name: "Wheelhouse br-steak[${{ matrix.target }}] / ${{ matrix.os }} / ${{ matrix.python-version
       }}"
     runs-on: ${{ matrix.os }}
     needs: [code-style, doc-style]

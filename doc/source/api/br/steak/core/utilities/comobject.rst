@@ -1,0 +1,38 @@
+The ``comobject`` module
+========================
+
+.. py:module:: br.steak.core.utilities.comobject
+
+Summary
+-------
+
+.. tab-set::
+
+    .. tab-item:: Classes
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:class:`~br.steak.core.utilities.comobject.COMObject`
+              - Holds a raw COM pointer.
+
+
+
+Description
+-----------
+
+Contains a wrapper for a raw COM object that is not part of the Object Model.
+
+.. py:currentmodule:: br.steak.core.utilities.comobject
+
+.. TABLE OF CONTENTS
+
+.. toctree::
+    :titlesonly:
+    :maxdepth: 1
+    :hidden:
+
+     COMObject<comobject/COMObject>
+
+

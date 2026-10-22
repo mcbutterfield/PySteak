@@ -1,0 +1,90 @@
+RasterFactory
+=============
+
+.. py:class:: br.steak.core.graphics.RasterFactory
+
+   A raster dataset. A raster consists of one or more bands, or sets of values, which are most commonly associated with colors when the raster represents an image...
+
+.. py:currentmodule:: RasterFactory
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.steak.core.graphics.RasterFactory.initialize_with_raster`
+              - Initialize a raster from another raster.
+            * - :py:attr:`~br.steak.core.graphics.RasterFactory.initialize_with_string_uri`
+              - Initialize a raster from a Uri, which can be a file, HTTP, HTTPS, or FTP source. See raster for a list of supported formats.
+            * - :py:attr:`~br.steak.core.graphics.RasterFactory.initialize_with_string_uri_xy_width_and_height`
+              - Initialize a raster from a Uri. Only the specified subsection of the raster is read. See raster for a list of supported formats.
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.steak.core.graphics import RasterFactory
+
+
+
+Method detail
+-------------
+
+.. py:method:: initialize_with_raster(self, raster: IRaster) -> IRaster
+    :canonical: br.steak.core.graphics.RasterFactory.initialize_with_raster
+
+    Initialize a raster from another raster.
+
+    :Parameters:
+
+        **raster** : :obj:`~IRaster`
+
+
+    :Returns:
+
+        :obj:`~IRaster`
+
+.. py:method:: initialize_with_string_uri(self, uri: str) -> IRaster
+    :canonical: br.steak.core.graphics.RasterFactory.initialize_with_string_uri
+
+    Initialize a raster from a Uri, which can be a file, HTTP, HTTPS, or FTP source. See raster for a list of supported formats.
+
+    :Parameters:
+
+        **uri** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~IRaster`
+
+.. py:method:: initialize_with_string_uri_xy_width_and_height(self, uri: str, x: int, y: int, width: int, height: int) -> IRaster
+    :canonical: br.steak.core.graphics.RasterFactory.initialize_with_string_uri_xy_width_and_height
+
+    Initialize a raster from a Uri. Only the specified subsection of the raster is read. See raster for a list of supported formats.
+
+    :Parameters:
+
+        **uri** : :obj:`~str`
+
+        **x** : :obj:`~int`
+
+        **y** : :obj:`~int`
+
+        **width** : :obj:`~int`
+
+        **height** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~IRaster`
+

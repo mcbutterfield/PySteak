@@ -57,8 +57,8 @@ class ColorSnippets(CodeSnippetsTestBase):
         eid="utilities.colors~Color | utilities.colors~Colors",
     )
     def GetSetRGBColorSnippet(self, root):
-        from br.ok.core.stkobjects import STKObjectType
-        from br.ok.core.utilities.colors import Color, Colors
+        from br.steak.core.stkobjects import STKObjectType
+        from br.steak.core.utilities.colors import Color, Colors
 
         facility = root.current_scenario.children.new(STKObjectType.FACILITY, "facility1")
 
@@ -76,7 +76,7 @@ class ColorSnippets(CodeSnippetsTestBase):
         eid="utilities.colors~Color | utilities.colors~ColorRGBA | utilities.colors~Colors",
     )
     def GetSetRGBAColorSnippet(self, root):
-        from br.ok.core.utilities.colors import Colors, ColorRGBA
+        from br.steak.core.utilities.colors import Colors, ColorRGBA
 
         manager = root.current_scenario.scene_manager
         point = manager.initializers.point_batch_primitive.initialize()

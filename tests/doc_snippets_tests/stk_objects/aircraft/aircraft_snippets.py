@@ -23,7 +23,7 @@
 import os
 import sys
 
-from br.ok.core.stkobjects import (
+from br.steak.core.stkobjects import (
     STKObjectType,
     VehicleAltitudeReference,
     AttitudeProfile,

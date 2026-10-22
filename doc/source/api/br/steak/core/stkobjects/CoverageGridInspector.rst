@@ -1,0 +1,164 @@
+CoverageGridInspector
+=====================
+
+.. py:class:: br.steak.core.stkobjects.CoverageGridInspector
+
+   CoverageGridInspector class provides methods to use the grid inspector tool for coverage definition.
+
+.. py:currentmodule:: CoverageGridInspector
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.steak.core.stkobjects.CoverageGridInspector.clear_selection`
+              - Clear the selected point or region.
+            * - :py:attr:`~br.steak.core.stkobjects.CoverageGridInspector.get_grid_point_selection`
+              - Return a collection of grid points that allows the user to select points into the grid inspector.
+            * - :py:attr:`~br.steak.core.stkobjects.CoverageGridInspector.select_point`
+              - Lat param uses Latitude Dimension. Lon param uses Longitude Dimension.
+            * - :py:attr:`~br.steak.core.stkobjects.CoverageGridInspector.select_region`
+              - Select a region.
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.steak.core.stkobjects.CoverageGridInspector.message`
+              - Retrieve the message when a point or region is selected.
+            * - :py:attr:`~br.steak.core.stkobjects.CoverageGridInspector.point_coverage`
+              - Access for the point selected in the graphics window.
+            * - :py:attr:`~br.steak.core.stkobjects.CoverageGridInspector.point_daily_coverage`
+              - Access times for the point selected in the graphics window.
+            * - :py:attr:`~br.steak.core.stkobjects.CoverageGridInspector.point_probability_of_coverage`
+              - Get the probability of coverage for the point selected in the graphics window being achieved as a function of the time past a request for coverage.
+            * - :py:attr:`~br.steak.core.stkobjects.CoverageGridInspector.region_coverage`
+              - Summary of coverage for the region selected in the graphics window.
+            * - :py:attr:`~br.steak.core.stkobjects.CoverageGridInspector.region_full_coverage`
+              - Summary of the coverage intervals for the selected region, including access start and end times, duration of each interval and the percentage of the region covered during each pass.
+            * - :py:attr:`~br.steak.core.stkobjects.CoverageGridInspector.region_pass_coverage`
+              - Detailed information about the intervals of time when each asset can provide coverage to the selected region.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.steak.core.stkobjects import CoverageGridInspector
+
+
+Property detail
+---------------
+
+.. py:property:: message
+    :canonical: br.steak.core.stkobjects.CoverageGridInspector.message
+    :type: str
+
+    Retrieve the message when a point or region is selected.
+
+.. py:property:: point_coverage
+    :canonical: br.steak.core.stkobjects.CoverageGridInspector.point_coverage
+    :type: IDataProviderInfo
+
+    Access for the point selected in the graphics window.
+
+.. py:property:: point_daily_coverage
+    :canonical: br.steak.core.stkobjects.CoverageGridInspector.point_daily_coverage
+    :type: IDataProviderInfo
+
+    Access times for the point selected in the graphics window.
+
+.. py:property:: point_probability_of_coverage
+    :canonical: br.steak.core.stkobjects.CoverageGridInspector.point_probability_of_coverage
+    :type: IDataProviderInfo
+
+    Get the probability of coverage for the point selected in the graphics window being achieved as a function of the time past a request for coverage.
+
+.. py:property:: region_coverage
+    :canonical: br.steak.core.stkobjects.CoverageGridInspector.region_coverage
+    :type: IDataProviderInfo
+
+    Summary of coverage for the region selected in the graphics window.
+
+.. py:property:: region_full_coverage
+    :canonical: br.steak.core.stkobjects.CoverageGridInspector.region_full_coverage
+    :type: IDataProviderInfo
+
+    Summary of the coverage intervals for the selected region, including access start and end times, duration of each interval and the percentage of the region covered during each pass.
+
+.. py:property:: region_pass_coverage
+    :canonical: br.steak.core.stkobjects.CoverageGridInspector.region_pass_coverage
+    :type: IDataProviderInfo
+
+    Detailed information about the intervals of time when each asset can provide coverage to the selected region.
+
+
+Method detail
+-------------
+
+.. py:method:: clear_selection(self) -> None
+    :canonical: br.steak.core.stkobjects.CoverageGridInspector.clear_selection
+
+    Clear the selected point or region.
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: get_grid_point_selection(self) -> CoverageGridPointSelection
+    :canonical: br.steak.core.stkobjects.CoverageGridInspector.get_grid_point_selection
+
+    Return a collection of grid points that allows the user to select points into the grid inspector.
+
+    :Returns:
+
+        :obj:`~CoverageGridPointSelection`
+
+
+
+
+
+
+
+
+.. py:method:: select_point(self, lat: typing.Any, lon: typing.Any) -> None
+    :canonical: br.steak.core.stkobjects.CoverageGridInspector.select_point
+
+    Lat param uses Latitude Dimension. Lon param uses Longitude Dimension.
+
+    :Parameters:
+
+        **lat** : :obj:`~typing.Any`
+
+        **lon** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: select_region(self, region_name: str) -> None
+    :canonical: br.steak.core.stkobjects.CoverageGridInspector.select_region
+
+    Select a region.
+
+    :Parameters:
+
+        **region_name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~None`
+

@@ -31,7 +31,7 @@ from logger import *
 from vehicle.vehicle_basic import *
 from vehicle.vehicle_gfx import *
 from vehicle.vehicle_vo import *
-from br.ok.core.stkobjects import *
+from br.steak.core.stkobjects import *
 
 
 class EarlyBoundTests(TestBase):

@@ -24,8 +24,8 @@ import pytest
 from test_util import *
 from assertion_harness import *
 
-from br.ok.core.stkobjects.aviator import *
-from br.ok.core.stkobjects import *
+from br.steak.core.stkobjects.aviator import *
+from br.steak.core.stkobjects import *
 
 
 class EarlyBoundTests(TestBase):

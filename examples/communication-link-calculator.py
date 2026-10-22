@@ -19,7 +19,7 @@
 # Start by launching a new STK instance. In this example, STKEngine is used.
 
 # +
-from br.ok.core.stkengine import STKEngine
+from br.steak.core.stkengine import STKEngine
 
 
 stk = STKEngine.start_application(no_graphics=False)
@@ -36,7 +36,7 @@ root.new_scenario("Communications")
 # Once the scenario is created, it is possible to show a 3D graphics window by running:
 
 # +
-from br.ok.core.experimental.jupyterwidgets import GlobeWidget
+from br.steak.core.experimental.jupyterwidgets import GlobeWidget
 
 
 globe = GlobeWidget(root, 640, 480)
@@ -58,7 +58,7 @@ root.rewind()
 # +
 import pathlib
 
-from br.ok.core.stkobjects import TerrainFileType
+from br.steak.core.stkobjects import TerrainFileType
 
 
 install_dir = root.execute_command("GetDirectory / STKHome")[0]
@@ -87,7 +87,7 @@ terrain = scenario.terrain.item("Earth").terrain_collection.add(
 # To add the satellite, first insert a satellite object:
 
 # +
-from br.ok.core.stkobjects import PropagatorType, STKObjectType
+from br.steak.core.stkobjects import PropagatorType, STKObjectType
 
 
 satellite = root.current_scenario.children.new(
@@ -124,7 +124,7 @@ transmitter = satellite.children.new(STKObjectType.TRANSMITTER, "DownloadTransmi
 
 # The transmitter's `model` property now contains a `TransmitterModelSimple` object. Set the model's frequency to $1.7045$ GHz:
 
-from br.ok.core.stkobjects import TransmitterModelSimple
+from br.steak.core.stkobjects import TransmitterModelSimple
 
 
 transmitter_model = TransmitterModelSimple(
@@ -147,7 +147,7 @@ transmitter_model.enable_polarization = True
 # Finally, set the model's polarization type to right-hand circular:
 
 # +
-from br.ok.core.stkobjects import PolarizationType
+from br.steak.core.stkobjects import PolarizationType
 
 
 transmitter_model.set_polarization_type(PolarizationType.RIGHT_HAND_CIRCULAR)
@@ -162,7 +162,7 @@ sensor = camp_site.children.new(STKObjectType.SENSOR, "ServoMotor")
 # Then, set the sensor's pattern to a half power pattern, which is designed to visually model parabolic antennas. The sensor half angle is determined by frequency and antenna diameter.
 
 # +
-from br.ok.core.stkobjects import SensorPattern
+from br.steak.core.stkobjects import SensorPattern
 
 
 sensor.set_pattern_type(SensorPattern.HALF_POWER)
@@ -179,7 +179,7 @@ sensor.pattern.antenna_diameter = 1.6
 # The sensor is steerable and tracks the satellite, so set the sensor's pointing type to targeted:
 
 # +
-from br.ok.core.stkobjects import SensorPointing
+from br.steak.core.stkobjects import SensorPointing
 
 
 sensor.set_pointing_type(SensorPointing.TARGETED)
@@ -227,7 +227,7 @@ receiver.model_component_linking.set_component("Complex Receiver Model")
 
 # Next, use the model's `antenna_control` property to set the receiver's embedded model to a parabolic antenna:
 
-from br.ok.core.stkobjects import ReceiverModelComplex
+from br.steak.core.stkobjects import ReceiverModelComplex
 
 
 receiver_model = ReceiverModelComplex(receiver.model_component_linking.component)
@@ -238,7 +238,7 @@ receiver_model.antenna_control.embedded_model_component_linking.set_component(
 # The receiver model's antenna control's `embedded_model` property now holds an `AntennaModelParabolic` object, through which it is possible to configure the antenna model. First, configure the antenna model to use diameter as its input type:
 
 # +
-from br.ok.core.stkobjects import AntennaModelInputType, AntennaModelParabolic
+from br.steak.core.stkobjects import AntennaModelInputType, AntennaModelParabolic
 
 
 antenna_control = AntennaModelParabolic(
@@ -311,7 +311,7 @@ receiver_basic_link_df.head(10)[link_budget_columns]
 # Next, add a terrain mask to the receiver to add terrain into the access analysis. A terrain mask causes STK to constrain access to an object by any terrain data in the line of sight to which access is being calculated. Add a terrain mask access constraint:
 
 # +
-from br.ok.core.stkobjects import AccessConstraintType
+from br.steak.core.stkobjects import AccessConstraintType
 
 
 terrain_constraint = receiver.access_constraints.add_constraint(
@@ -368,7 +368,7 @@ receiver_environmental_link_df.head(10)[link_budget_columns]
 # The receiver's system noise temperature enables specifying the system's inherent noise characteristics, which can help simulate real-world RF situations more accurately. STK can use either a constant system noise temperature value, or can calculate it based off of different noise sources. In this case, configure the receiver model's system noise temperature to use calculated values:
 
 # +
-from br.ok.core.stkobjects import NoiseTemperatureComputeType
+from br.steak.core.stkobjects import NoiseTemperatureComputeType
 
 
 receiver_model.system_noise_temperature.compute_type = (

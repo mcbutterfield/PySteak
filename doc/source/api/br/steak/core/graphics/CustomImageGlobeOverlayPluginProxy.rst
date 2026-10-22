@@ -1,0 +1,59 @@
+CustomImageGlobeOverlayPluginProxy
+==================================
+
+.. py:class:: br.steak.core.graphics.CustomImageGlobeOverlayPluginProxy
+
+   A proxy class provides access to a custom image globe overlay implemented by a plugin. Proxies are instantiated using custom image globe overlay plugin activator.
+
+.. py:currentmodule:: CustomImageGlobeOverlayPluginProxy
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.steak.core.graphics.CustomImageGlobeOverlayPluginProxy.custom_image_globe_overlay`
+              - Return a custom image globe overlay.
+            * - :py:attr:`~br.steak.core.graphics.CustomImageGlobeOverlayPluginProxy.is_custom_image_globe_overlay_supported`
+              - Return true if custom image globe overlays are supported.
+            * - :py:attr:`~br.steak.core.graphics.CustomImageGlobeOverlayPluginProxy.real_plugin_object`
+              - Return a pointer to plugin object's IUnknown interface.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.steak.core.graphics import CustomImageGlobeOverlayPluginProxy
+
+
+Property detail
+---------------
+
+.. py:property:: custom_image_globe_overlay
+    :canonical: br.steak.core.graphics.CustomImageGlobeOverlayPluginProxy.custom_image_globe_overlay
+    :type: CustomImageGlobeOverlay
+
+    Return a custom image globe overlay.
+
+.. py:property:: is_custom_image_globe_overlay_supported
+    :canonical: br.steak.core.graphics.CustomImageGlobeOverlayPluginProxy.is_custom_image_globe_overlay_supported
+    :type: bool
+
+    Return true if custom image globe overlays are supported.
+
+.. py:property:: real_plugin_object
+    :canonical: br.steak.core.graphics.CustomImageGlobeOverlayPluginProxy.real_plugin_object
+    :type: typing.Any
+
+    Return a pointer to plugin object's IUnknown interface.
+
+

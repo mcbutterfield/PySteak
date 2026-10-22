@@ -21,7 +21,7 @@
 # SOFTWARE.
 
 import pytest
-from br.ok.extensions.data_analysis.graphs.scenario_graphs import greenwich_hour_angle_line_chart, polewanderx_line_chart, polewandery_line_chart, ut1_utc_line_chart
+from br.steak.extensions.data_analysis.graphs.scenario_graphs import greenwich_hour_angle_line_chart, polewanderx_line_chart, polewandery_line_chart, ut1_utc_line_chart
 from stk_environment import stk_root
 
 @pytest.fixture()

@@ -1,0 +1,69 @@
+StateCalcScript
+===============
+
+.. py:class:: br.steak.core.stkobjects.astrogator.StateCalcScript
+
+   Bases: :py:class:`~br.steak.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~br.steak.core.stkobjects.astrogator.ICloneable`
+
+   Script Calc objects.
+
+.. py:currentmodule:: StateCalcScript
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~br.steak.core.stkobjects.astrogator.StateCalcScript.calculation_object_arguments`
+              - Get the arguments to be applied to the function.
+            * - :py:attr:`~br.steak.core.stkobjects.astrogator.StateCalcScript.calculation_object_arguments_link_embed`
+              - Get the arguments to be applied to the function.
+            * - :py:attr:`~br.steak.core.stkobjects.astrogator.StateCalcScript.inline_func`
+              - Get or set the expression to be applied as a function.
+            * - :py:attr:`~br.steak.core.stkobjects.astrogator.StateCalcScript.unit_dimension`
+              - Get or set the unit dimension.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from br.steak.core.stkobjects.astrogator import StateCalcScript
+
+
+Property detail
+---------------
+
+.. py:property:: calculation_object_arguments
+    :canonical: br.steak.core.stkobjects.astrogator.StateCalcScript.calculation_object_arguments
+    :type: CalculationObjectCollection
+
+    Get the arguments to be applied to the function.
+
+.. py:property:: calculation_object_arguments_link_embed
+    :canonical: br.steak.core.stkobjects.astrogator.StateCalcScript.calculation_object_arguments_link_embed
+    :type: CalculationObjectLinkEmbedControlCollection
+
+    Get the arguments to be applied to the function.
+
+.. py:property:: inline_func
+    :canonical: br.steak.core.stkobjects.astrogator.StateCalcScript.inline_func
+    :type: str
+
+    Get or set the expression to be applied as a function.
+
+.. py:property:: unit_dimension
+    :canonical: br.steak.core.stkobjects.astrogator.StateCalcScript.unit_dimension
+    :type: str
+
+    Get or set the unit dimension.
+
+

@@ -23,8 +23,8 @@
 import os
 import sys
 
-from br.ok.core.stkobjects import EphemSourceType, STKObjectType
-from br.ok.core.utilities.colors import Colors
+from br.steak.core.stkobjects import EphemSourceType, STKObjectType
+from br.steak.core.utilities.colors import Colors
 
 # Add path to the parent directory to use some common utilities
 sys.path.insert(1, os.path.join(os.path.dirname(os.path.realpath(__file__)), ".."))

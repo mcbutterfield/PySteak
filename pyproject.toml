@@ -3,7 +3,7 @@ build-backend = "flit_core.buildapi"
 requires = [ "flit-core>=3.2,<5" ]
 
 [project]
-name = "br-ok"
+name = "br-steak"
 description = "PyOK: Butterfield Research Orbital Kit, a namespace fork of PySTK."
 readme = "README.rst"
 license = "MIT"
@@ -39,10 +39,10 @@ dependencies = [
 optional-dependencies.all = [
   # NOTE: self-referential extras are supported by pip's requirement specifiers.
   # See: https://pip.pypa.io/en/latest/reference/requirement-specifiers/#self-referential-extras
-  "br-ok[core,extensions,grpc,jupyter,migration]",
+  "br-steak[core,extensions,grpc,jupyter,migration]",
 ]
 optional-dependencies.core = [
-  # NOTE: no dependencies are installed by default ensuring a dependency-free installation of br-ok[core]
+  # NOTE: no dependencies are installed by default ensuring a dependency-free installation of br-steak[core]
 ]
 optional-dependencies.extensions = [
   "matplotlib==3.10.9",
@@ -73,7 +73,7 @@ urls.Source = "https://github.com/mcbutterfield/PyOK"
 # NOTE: The `dependency-groups` section is used to define groups of dependencies
 # only available when a developer clones the repository and installs the package
 # for local development.
-scripts.pyok-migration-assistant = "br.ok.core.tools.api_migration_assistant.api_migration_assistant:main"
+scripts.pyok-migration-assistant = "br.steak.core.tools.api_migration_assistant.api_migration_assistant:main"
 
 [dependency-groups]
 vulnerabilities = [
@@ -120,13 +120,13 @@ docstyle = [
 ]
 
 [tool.flit.module]
-name = "br.ok"
+name = "br.steak"
 
 [tool.ruff]
 line-length = 120
 extend-exclude = [
   "doc/source/conf.py",
-  "src/br/ok/core/internal/*.py",
+  "src/br/steak/core/internal/*.py",
   "tests/**/*.py",
 ]
 
@@ -136,7 +136,7 @@ extend-exclude = [
 # Run: `pre-commit run codespell --all-files --show-diff-on-failure` to recreate
 # the conditions under which codespell runs during CI/CD.
 # [tool.codespell]
-# skip = './src/br/ok/core/internal,./tests,./doc/_build,./doc/styles'
+# skip = './src/br/steak/core/internal,./tests,./doc/_build,./doc/styles'
 # ignore-words = "./doc/styles/config/vocabularies/ANSYS/accept.txt"
 lint.select = [
   "D",   # pydocstyle, see https://beta.ruff.rs/docs/rules/#pydocstyle-d
@@ -175,14 +175,14 @@ source = [
 
 [tool.coverage.run]
 branch = true
-source = [ "src/br/ok" ]
+source = [ "src/br/steak" ]
 relative_files = true
 
 [tool.coverage.report]
 show_missing = true
 
 [tool.towncrier]
-package = "br.ok.core"
+package = "br.steak.core"
 directory = "doc/source/changelog"
 filename = "doc/source/changelog.rst"
 start_string = ".. towncrier release notes start\n"
